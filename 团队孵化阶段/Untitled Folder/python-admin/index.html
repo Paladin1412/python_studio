@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展示项目平台</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+    <div>
+        <div class="navs">
+            <ul class="nav nav-pills">
+                <li role="presentation" class="active"><a href="index.html">斗图</a></li>
+                <li role="presentation"><a href="company.html">公司列表</a></li>
+                <li role="presentation"><a href="yzm.html">50W验证码查看平台</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="list-group dt-box ">
+                <div class="dta-box">
+                    
+                </div>
+            </div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination pagination-lg" id="page">
+                 
+                </ul>
+            </nav>
+        </div>
+    </div>
+</body>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="js/bootstrap-paginator.js"></script>
+<script>
+    $(function () {
+   
+        load(1);
+        var page='';
+   
+        var max='';
+    function load(page) {
+
+        var html = '';
+        $.ajax({
+            url: 'http://192.168.89.7:5000/doutu_img?page=' + page + '&limit=20',
+            dataType: "JSON",
+            contentType: "application/json;charset=utf-8",
+            type: 'get',
+
+            success: function (data) {
+                res = data.data;
+                var totalPages=data.count;
+                for (var i = 0; i <= res.length; i++) {
+                    try {
+                        console.log(res[i].id)
+                        html += '<a href="javascript:;" class="col-xs-6 col-sm-3">\
+                        <img src="' + res[i].url + ' "  alt="'+ res[i].id+'" > </a>'
+                    } catch (error) {
+
+                    }
+
+                }
+                $('.dta-box').html(html)
+                var element = $('#page');
+				var options = {
+					bootstrapMajorVersion : 3,
+					currentPage : page, // 当前页数
+					numberOfPages : 20, // 显示按钮的数量
+					totalPages : totalPages, // 总页数
+					itemTexts : function(type, page, current) {
+						switch (type) {
+						case "first":
+							return "首页";
+						case "prev":
+							return "上一页";
+						case "next":
+							return "下一页";
+						case "last":
+							return "末页";
+						case "page":
+							return page;
+						}
+					},
+					// 点击事件，用于通过Ajax来刷新整个list列表
+					onPageClicked : function(event, originalEvent, type, page) {
+						load(page);
+					}
+				};
+
+				element.bootstrapPaginator(options);
+
+
+                //最大页数，查到的最大页数交个默认的最大页数
+            }
+        });
+    }
+
+   
+})
+    </script>
+
+</html>

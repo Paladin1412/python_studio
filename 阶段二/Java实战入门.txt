@@ -1,0 +1,11386 @@
+软件项目开发讲义
+
+Java 入门实践指南
+
+作者 陈九龙
+
+KOWLOON 内部资料
+
+1
+
+软件项目开发讲义
+
+目
+
+录
+
+第一章 基础入门......................................................................................................................................... 5
+
+序幕：Java 的故事......................................................................................................................... 6
+1.java 开发环境配置..................................................................................................................... 8
+2.第一个 Java............................................................................................................................... 11
+3.Java 中的基本数据类型........................................................................................................... 14
+总结和任务.................................................................................................................................... 17
+
+第二章 类与对象.......................................................................................................................................18
+
+面向对象编程................................................................................................................................ 19
+1.类的结构.................................................................................................................................... 20
+2.方法的结构详解........................................................................................................................ 22
+总结和任务.................................................................................................................................... 26
+
+第三章 登录界面开发...............................................................................................................................27
+
+1.构造器方法................................................................................................................................ 28
+2.方法的重载(overLoad)............................................................................................................... 29
+3.构造器方法与一般方法的区别................................................................................................. 29
+4.this 关键字............................................................................................................................... 29
+5.值传递与引用传递.................................................................................................................... 30
+6.swing 登录界面开发................................................................................................................. 33
+总结和任务.................................................................................................................................... 36
+
+第四章 类的继承.......................................................................................................................................37
+1.
+
+KOWLOON 内部资料
+
+2
+
+软件项目开发讲义
+
+2.static 关键字............................................................................................................................... 67
+3.super 关键字...............................................................................................................................68
+4.package 关键字:......................................................................................................................... 70
+5.final 关键字：.............................................................................................................................70
+6.其它关键字：............................................................................................................................. 71
+总结和任务.................................................................................................................................... 71
+
+第七章 数组与基本数据结构.................................................................................................................. 73
+
+1.数组的使用:................................................................................................................................ 74
+2.使用数组管理学生信息............................................................................................................. 80
+3.
+
+KOWLOON 内部资料
+
+3
+
+软件项目开发讲义
+
+第十二章 IO 体系结构和基础应用....................................................................................................... 123
+
+1.流的基础概念：...................................................................................................................... 124
+2.InputStream/Outpustream 子类：文件读写.......................................................................124
+3.缓冲流的使用.......................................................................................................................... 129
+4.对象的串行化：...................................................................................................................... 131
+5.原始数据类型读写流：.......................................................................................................... 132
+6.画板数据保存成文件.............................................................................................................. 133
+7.BMP 格式文件解析................................................................................................................... 137
+总结和任务.................................................................................................................................. 141
+
+第十三章 高级 Swing 组之菜单应用.................................................................................................... 142
+
+1.菜单的基本概念：.................................................................................................................. 143
+2.窗体上的菜单使用示例：...................................................................................................... 143
+
+3.
+
+KOWLOON 内部资料
+
+4
+
+软件项目开发讲义
+
+第十七章
+
+KOWLOON 内部资料
+
+5
+
+软件项目开发讲义
+
+第一章 基础入门
+
+本章目标：
+
+完成本章后，你将能够：
+1．学会安装 JDK，配置环境变量
+2．编写第一个简单 java 程序，编译并运行
+3．掌握 java 中基本数据类型，流程控制和 String 的用法；
+
+KOWLOON 内部资料
+
+6
+
+软件项目开发讲义
+
+序幕：Java 的故事
+
+1.java 诞生：
+
+1991 年的一个夏天，Sun 公司一小组工程师聚集在一起，认真思考日常
+
+KOWLOON 内部资料
+
+7
+
+软件项目开发讲义
+
+2.Java 在哪里？
+
+迄今为止，Java 平台已吸引了 650 多万软件开发者。它在各个重要的行业部门得到了广泛
+的应用，而
+
+KOWLOON 内部资料
+
+8
+
+软件项目开发讲义
+
+1.java 开发环境配置
+
+1.1 安装 JDK
+
+要在电脑上开发运行 Java 程序，你的机器上必须有 Java 的环境，即要安装有 JDK(Java
+development Kit)Java 开发工具包和运行时环境。
+
+1.下载安装 JDK
+
+用鼠标单击 window 的“开始”菜单，点击弹出菜单中的“运行”(在 XP 中是命令提示符)，
+就会跳出一个黑乎乎的命令行窗口；所谓命令行，就是让你输入命令，不是用鼠点单击的，现在
+请在命令行输入 Java 然后按下回车键；如果屏幕上输出的是“abc” 不是内部或外部命令，也
+不是可运行的程序或批处理文件。---说明你的机器上没有 Java 开发环境；
+
+KOWLOON 内部资料
+
+9
+
+软件项目开发讲义
+
+点击“Download JDK”
+
+KOWLOON 内部资料
+
+10
+
+软件项目开发讲义
+
+继续 “高级-->环境变量”
+
+图 1.2.2
+
+KOWLOON 内部资料
+
+11
+
+软件项目开发讲义
+
+Javac –version，如图 1.2.4，看到了吗？
+
+现在，你的机器就可以运行、编译 Java 程序啦！
+
+图 1.2.4
+
+2.第一个 Java
+
+2.1.编写源代码
+
+Java 程序开发过程分为四步：第一步：编写源码；第二步：编译源码；第三步：调试；第四
+步：运行程序。
+Java 源代码是以“类”为单位的，一个类对应于一个文本文件；例如，我们编写一个输出简
+单信息的程序,HelloWorld.Java 类代码如下。
+
+public class HelloWorld {
+public static void main(String [] args){
+System.out.println("欢迎来到KOWLOON实训！");
+
+}
+
+}
+
+如图 2.1.1。
+
+图 2.1.1
+
+KOWLOON 内部资料
+
+12
+
+软件项目开发讲义
+
+2.2.编译，运行，如图 2.2.1
+
+图 2.2.1
+从命令行进行，通过 cd 命令切换到我们的源代码所在的 c:\test 目录下，执行 Javac 源文
+件名.Java 即可编译程序；编译通过后，执行 Java 源文件名即可看到运行结果。
+如果报错，你需要细心检查下，这就是现在所谓调试的过程。查看你写的源码是否跟以上的
+源码相同？文件名是不是跟第一行 public class 后面的类名相同？大小写是否都是一致？切记
+Java 代码是区分大小写的！
+括号是否都是成对出现了？标点是否输入成了中文下的全解符号了？注解的格式是否写错
+了？这样细查一遍，你肯定会找到没有成功的错误！编译如果没有任何错误提示，那就成功了，
+我们还会看到，目录下出现了同名的.class 文件，这就是 Java 代码编译过后的结果。
+赶快动手试下！
+
+2.3.Java 运行机制初探
+
+1.编译：当我们执行 javac FirstJava.java 时，
+
+KOWLOON 内部资料
+
+13
+
+软件项目开发讲义
+
+JVM 的全称是 Java Virtual Machine，即 Java 虚拟机，JVM 就包含在我们安装 JDK 中；Java 编译
+后的类文件的运行，是由 JVM 执行的。JVM
+
+KOWLOON 内部资料
+
+14
+
+软件项目开发讲义
+
+聪明的你肯定不会满足于此！
+如何输出一个等腰三角形？
+如何输出一个尖朝上的三角形？
+如果要填充的字符串是要用户任意输入的？…
+只要你动手，你就会做到！
+
+3.Java 中的基本数据类型
+
+3.1.基本数据类型
+
+总体而言，Java 中的数据类型分为两大类，即原始类型和对象类型（或叫引用类型），后者是
+指由类生成的对象的类型，我们将在下一节详解；Java 中的原始类型有如下 8 种，如表 3.1.1 所
+示。
+
+类型
+
+称呼
+
+byte
+
+字节型
+
+int
+
+整型
+
+short
+
+短整型
+
+long
+
+长整型
+
+值域
+
+8 bits
+
+32 bits
+
+16 bits
+
+64 bits
+
+表示范围
+
+-128~127
+
+-2,147,483,648~ -2,147,483,647
+
+-32,768~32,767
+
+-9,223,372,036,854,775,808
+
+char
+
+字符型
+
+16 bits (UNICODE)
+
+0~65535
+
+float
+
+浮点型
+
+32 bits IEEE 754-1985
+
+double
+
+双精度
+
+64 bits IEEE 754-1985
+
+boolean
+
+布尔型
+
+true/flase
+
+只有“真”或“假”两种结果
+
+关于数据值域的基础知识说明：
+
+表 3.1.1
+
+1. 一个 bit 计算机可以存诸的最小数据单位.即 1 位，只可能是 0 或 1。
+
+2. 一个 byte 由八个 bit 组成，即八位，2 的 8 次方，可以表达 256 个整数值，又由与 byte
+在 Java 中是有符号的(即在正负数之分)，所以范围为-128~127。
+
+3.一个 char 在 Java 中由两个 byte 组成，用来表示一个字符，即 unicode 编码. 是无符号
+类型。
+
+4. int 和 float 在 Java 中由四个 byte 组成。
+
+5.每个 long 或 double 型变量占用八个 byte 的存储空间。
+
+6.1 K(kilobyte ,即 KB)由 1024 个 byte 组成， 1M( megabyte ,即 MB) 由 1024K 组成，
+1G( gigabytes ，即 GB) 由 1024M 组成。
+
+在具体的应用中，根据变量所要赋值的范围，选择合适的类型；如我们要定义一个年龄的变
+量，一般年令整数的范围肯定是在 0~127 间，所以就定义为 byte 类型、而没必要写成 int age、
+
+KOWLOON 内部资料
+
+15
+
+软件项目开发讲义
+
+更不能写成 boolean age。
+
+3.2.数据类型的定义
+
+程序中的整数默认的都是 int 型，即在方法调用直接传入的一个具体的整数值，默认情况下
+是 int 型。一个整数值可直接根据其字面值赋给 int 或变量，或值域大与 int 型变量的 long、float
+或 double。常用定义格式代码如下。
+
+int countA=100;
+int countB= countA;
+//定义为一个浮点类型
+float
+dintance=1000000;
+//十六进制的int格式定义:以0x开头
+int countHex=0x32;
+//八进制的int定义:以0开头
+int countE=077;
+//定义一个byte类型
+byte b=12;
+//定义一个boolean型变量,初值为true;
+boolean result=true;
+
+整数的转型：小范围的整数类型值可通过赋值运算直接转换为大范转的原始类型，从 byte→
+short→ char→ int→long→float→ double 是可以自动转换；反之，则需要强制转换，转换代
+码如下。
+
+byte
+threadCount=123;
+int t= threadCount;//自动转换；
+threadCount=(byte)t;//强制转换
+
+如果是大围类数据强制转为小范围数据时，代码如下。
+
+public static void main(String[] args) {
+int
+i= 1024;
+byte b=(byte)i;//强制转换
+System.out.println("结果是: "+b);
+
+}
+
+输出的结果将会出乎你的意料，请自己测试并思考为什么？
+
+3.3.使用 String
+
+请记住：String 是 Java 中的一个类，而不是一种基数据类型，因为它有自己的方法和属性，
+具体请看源代码中 Stirng 类的定义。
+字符串可以直接赋值的方式创建：String temStr="这是直接赋值创建的 String"；通过
+String 类可创建 String 对象，代码如下。
+
+public static void main(String[] args) {
+String s="字符串1";
+String s2=new String("新建的字符串");
+s=s+s2;
+System.out.println("结果是 "+s);
+
+}
+
+为什么我们说“特殊的 String”呢？String 是一个类，String 对象肯定就是引用类型，但它
+
+KOWLOON 内部资料
+
+16
+
+软件项目开发讲义
+
+却是跟原始类型一样，遵守值传递的规则；这是因为 String 类在 JVM 中是被特别设计过的，因为
+它的用量特别大，为了提高效率，String 通过值传递方式来使用。String 是最为常用的一种数据
+类型，String 类中也提供了非常多的可直接调用的方法，代码如下。
+
+public static void main(String[] args) {
+String sa="NetJava";
+String sb="JavaNet";
+//两个字符串是否相等
+boolean b=sa.equals(sb);
+System.out.println("相等性比较: "+b);
+//乎略大小写的相等性比较
+String sc="netJava";
+b=sa.equalsIgnoreCase(sa);
+System.out.println("乎略大小写的相等性比较: "+b);
+//判断一个字符串是否以另一个字符串结尾:
+String se="Java";
+if(sa.endsWith(se)){
+System.out.println(sa+"是以 "+se+" 结尾的");
+
+}
+//判断一个字符串在另一个字符中第一次出现的位置
+String sf="a";
+int index=sa.indexOf(sf);
+System.out.println(sf+"在 "+sa+"中第一次出现的位置是 "+index);
+//判断一个字符串在另一个字符中最后一次出现的位置
+index=sa.lastIndexOf(sf);
+System.out.println(sf+"在 "+sa+"中最后一次出现的位置是 "+index);
+//得到一个字符串的长度
+int len=sa.length();
+System.out.println(sa+"的长度是 "+len);
+//截取字符串：
+int start=1,end=4;
+String subs=sa.substring(start,end);
+System.out.println("截取后的字符串是: "+subs);
+//原始类型与字符串相加，会自动转型为字符串，并取其字面值：
+int it=100;boolean bo=false; float f=12.4f;
+System.out.println(it+" "+bo+" "+f);
+
+}
+
+}
+
+请测试字符串的如上方法调用的功能，并能根据 API 文档，学会使用其它几个方法调用。
+关与转义字符：在程序代码中，对与一些特殊字符串需要做转义处理，如程序中要输出一个
+字符串中含有“、程序要输出一个换行符；在 Java 中用”\”表示一个转义字符；代码如下示例。
+
+System.out.println("这是含\"引号\"的字符串");
+System.out.println("这是输出斜杠符号\\的字符串");
+System.out.println("这做为\r\n两行输出");
+System.out.println("这输出一个 tab\t,长度为四个空格");
+System.out.println("输出带\"引号的\"字符串");
+
+KOWLOON 内部资料
+
+17
+
+软件项目开发讲义
+
+总结和任务
+
+1.实践：安装配置 JDK，编写简单 Java 程序。
+2.实践：打印出一个顶点朝上的等腰三角形。
+3.
+
+KOWLOON 内部资料
+
+18
+
+软件项目开发讲义
+
+第二章 类与对象
+
+本章目标：
+
+完成本章后，你将能够：
+1.掌握什么是类，什么是对象，类的定义规则，学会编写类。
+2.通过类创建对象，调用对象的方法。
+
+KOWLOON 内部资料
+
+19
+
+软件项目开发讲义
+
+面向对象编程
+
+OOP
+
+在程序中模拟现实
+世界中的概念
+
+在 OOP 中，现实世界的
+所有事物都被视为对象
+
+能够在程序中用类似的实体
+模拟现实世界中的实体
+
+对象
+
+对象是存在的具体实体，具有明确定义的状态和行为。
+
+对象实例
+
+学生
+
+KOWLOON 内部资料
+
+20
+
+软件项目开发讲义
+
+1.类的结构
+
+1.1.如何定义类
+
+通过前面的学习，我们己经知道，Java 代码是以类为单位的，现在继续我们的《学生信息管
+
+KOWLOON 内部资料
+
+21
+
+软件项目开发讲义
+
+1.2.通过类创建对象，调用对象的方法
+
+有了上面这个 Student 类后，无论我们要管理多少个学生，都可以通过这个类创建具体的学
+生对象，调用每一个对象所具有的方法（在类中己定义），就可以改变每个对象自己的属性--类，
+在这个意义上可以理解类就是一个模板。新的 Manager 类代码如下。
+
+/**管理员类的定义*/
+public class Manager {
+/**程序运行的入口点*/
+public static void main(String[] args) {
+// 创建一个学生对象
+Student st1=new Student();
+//调用这个对象的方法
+st1.setName("比尔盖子");
+st1.study();
+//再创建一个学生对象
+Student st2=new Student();
+//调用这个对象设置名字方法
+st2.setName("乔布斯");
+//调用5次这个对象学习的方法
+for(int i=0;i<5;i++){
+st2.study();
+}
+//再调用一次他玩的方法
+st2.play();
+
+}
+
+}
+
+KOWLOON 内部资料
+
+22
+
+软件项目开发讲义
+
+自己的方法，改变的就是具体对象的属性值。
+
+1．3．2.类是一种自定义的数据类型
+
+例如代码中。
+
+// 创建一个学生对象
+
+Student st1= . . .;
+
+Student st2= . . .;
+
+我们首先理解的就是 st1 是一个 Student 类型的变量，st2 也是一个 Student 类型的变量。
+
+1．3．3.通过类，可以创建多个对象
+
+类是对所有对象的定义，通过类创建具体的对象，例如代码。
+
+// 创建一个学生对象
+
+Student st1= new Student();
+
+等价与如下代码。
+
+// 声明一个Student类型的变量st1;
+Student st1;
+//将st1这个变量名指向新建的一个Student对象
+st1=new Student();
+// st1 这个变量名以后就指代着一个 Student 对象
+
+创建对象是通过 new 关键字实现的，在上面这个例子中，都是通过调用类的“默认构造器”
+创建对象。
+
+2.方法的结构详解
+
+2.1.方法基本结构
+
+方法在类中定义，通过对象调用，方法的基本结构如下。
+
+访问限定符 返回值 方法名字(参数类型 参数变量名,. . . ){
+方法体. . . ;
+
+}
+
+我们重新编写 Student 类，在这个例子上进行分析。
+
+/**
+* 简单学生类定义
+* @author: KOWLOON
+*/
+public class Student {
+/**
+* 设置学生姓名的值
+* @param n:要设置为的名字
+*/
+public void setName(String n){
+name=n;
+
+}
+
+KOWLOON 内部资料
+
+23
+
+软件项目开发讲义
+
+/**取得学生名字*/
+public String getName(){
+return name;
+
+}
+/**
+* 学生学习的方法
+* @param hour:要学习的时间长度
+* @param k:要学习的课目名称
+*/
+public void study(int hour,String k){
+km=k;
+scro+=hour/3;
+if(scro>5){
+//如果学的多了，休息一会．．．
+toSleep(hour/3);
+
+}
+
+}
+/**学生玩的方法*/
+public void play(int hour){
+scro-=hour;
+
+}
+/**私有方法，可以类内部调用*/
+private void toSleep(int t){
+System.out.println(name+" 去休息小时是 "+t);
+
+}
+/**输出某个学生对象信息的方法*/
+public void showInfo(){
+System.out.println(name+" 学分是 "+scro+" 所学科目是 "+km);
+
+}
+public String km="未知科目";
+//学生名字属性:私有，在类内部调用
+private String name;
+//学生的学们属性:私有，在类内部调用
+private int scro=0;
+
+}
+
+2.2.方法的分类
+
+1.根据方法的返回值，可以将方法分类为：有返回值的方法和无返回值的方法，代码如下。
+
+/**设置学生姓名的值:无返回值*/
+public void setName(String n){
+name=n;
+
+}
+/**取得学生名字 :有返回值*/
+public String getName(){
+return name;
+
+KOWLOON 内部资料
+
+24
+
+软件项目开发讲义
+
+}
+
+例如上面的 getName 方法，定义的返回值类型是 String，在方法的结尾，就必须返回一个
+String 类型的值；如果方法定义为 void，则不需要任何返回值，这样的方法我们一般称之为命令。
+有返回值的方法，在对象调用时，就可以通过变量接收返回值。
+
+Student st=new Student();
+st.setName("小明");
+//调用方法，并接收返回值:
+String s=st.getName();
+System.out.println("st 对象 getName 返回的值是: "+s);
+
+void 类型的方法，调用时没有返回值，则不能接收！
+2.有参数方法和无参数方法
+方法定义时，括号中如果有参数，在调用时必须传入指定类型的参数变量，本例中代码如下。
+
+/**取得学生名字 :有返回值，无参方法*/
+public String getName(){
+return name;
+
+}
+/**
+* 学生学习的方法:有参数的方法
+* @param hour:要学习的时间长度
+* @param k:要学习的课目名称
+*/
+public void study(int hour,String k){
+km=k;
+scro+=hour/3;
+if(scro>5){
+//如果学的多了，休息一会．．．
+toSleep(hour/3);
+
+}
+
+}
+
+调用时代码如下。
+
+Student st=new Student();
+st.setName("小明");
+//调用方法，并接收返回值:
+String s=st.getName();
+System.out.println("st对象getName返回的值是: "+s);
+int t=10;
+String kmmc="软件工程";
+//调用并传入参数：
+st.study(t, kmmc);
+//调用无参方法:
+st.showInfo();
+
+KOWLOON 内部资料
+
+25
+
+软件项目开发讲义
+
+2.3.对象做为方法参数传递
+
+例如我们再定义一个 Teacher 类代码如下。
+
+/**Teacher类定义*/
+public class Teacher {
+/**
+* 教某个学生的方法
+* @param st:要教的学生对象
+*/
+public void teacStudent(Student st){
+String km="Java学习";
+int hour=10;
+st.study(hour, km);
+st.showInfo();
+
+}
+
+}
+
+Teacher 类中有一个 teacStudent 方法，这个方法接收的参数是 Student 类型变量。调用时代码
+如下。
+
+/**管理员类的定义*/
+public class Manager {
+/**程序运行的入口点*/
+public static void main(String[] args) {
+// 声明一个Student类型的变量st1;
+Student st1;
+//将st1这个变量名指向新建的一个Student对象
+st1=new Student();
+//调用这个对象的方法
+st1.setName("比尔盖子");
+//创建一个Teacher对象
+Teacher te=new Teacher();
+//调用教学方法，传入要教的学生对象的名字
+te.teacStudent(st1);
+
+}
+
+}
+
+在上例中，st 变量则做为 Student 类型变量，被传入方法。
+
+KOWLOON 内部资料
+
+26
+
+软件项目开发讲义
+
+总结和任务
+
+1.实践：完成本节所有示例代码编写。
+2.扩展：根据本节示例，编写几个类，生成对象并相互调用，如老板与员工对象间的调用
+要求类定义中有有参/无参/有返回值/无返回值的方法定义。
+3.总结：类如何定义？类中可以定义哪些？
+
+4. 总结：说明类与其对象之间的关系。
+
+5.其它总结。
+
+KOWLOON 内部资料
+
+27
+
+软件项目开发讲义
+
+第三章 登录界面开发
+
+本章目标：
+
+完成本章后，你将能够：
+1. 掌握什么是构造器方法和构造器方法的用途。
+2. 掌握方法的重载，构造方法与一般方法的区别。
+3. this 关键字的用法。
+4. 登录界面开发，常用 swing 组件的使用。
+
+KOWLOON 内部资料
+
+28
+
+软件项目开发讲义
+
+1.构造器方法
+
+当我们创建某个类的对象时，一般的格式是 : 类名 变量名 =new 类名 ()；如在本例中
+Student st1=new Student()；这里的 Student()就叫作 Student 类的构造器方法。
+每一个类默认的都有一个无参构造器，即可以通过 new 类名()调用而创建对象。我们也可
+以自己给类重新定义构造器方法，这叫做构造器方法的重载，代码如下。
+
+/**
+* 简单学生类定义
+* @author: KOWLOON
+*/
+public class Student {
+//无参构造器方法
+public Student(){
+}
+//构造时，传入名字参数，初始化name属性值
+public Student(String name){
+this.name=name;
+
+}
+//构造时，初始化name,km属性值
+public Student(String name,String km){
+this.name=name;
+this.km=km;
+
+}
+///其它方法定义...
+public String km="未知科目";
+//学生名字属性:私有，在类内部调用
+private String name="未知姓名";
+//学生的学们属性:私有，在类内部调用
+private int scro=0;
+
+}
+
+现在 Student 类有三个不同的构造器，在使用时，如下例：
+
+/**程序运行的入口点*/
+public static void main(String[] args) {
+// 创建一个学生对象:使用无参构造器
+Student st1=new Student();
+// 创建一个学生对象:一个参数的构造器
+String name="NetJava";
+Student st2=new Student(name);
+// 创建一个学生对象:二个参数的构造器
+String n="CodeKiller";
+String km="Java";
+Student st3=new Student(n,km);
+
+}
+
+使用构造器重载的好处是：在对象创建时，就可以初始对象内部属性的值；比如一个小孩子一
+出生，他的国籍属性就被赋上了值。
+
+KOWLOON 内部资料
+
+29
+
+软件项目开发讲义
+
+2.方法的重载(overLoad)
+
+在一个类中，可以定义多个同名，但参数类型和数量不同的方法，叫做方法的重载。例如：在
+Student 类中，可以定义方法，代码如下。
+
+public void study(int hour,String k){
+km=k;
+scro+=hour/3;
+if(scro>5){
+//如果学的多了，休息一会．．．
+toSleep(hour/3);
+
+}
+
+}
+public void study(int hour){
+System.out.println("不知在学什么");
+
+}
+public void study(){
+System.out.println("什么都没学！");
+
+}
+
+调用时，传入的参数和哪个方法定义时的参数相配，则调用对应的方法。
+
+3.构造器方法与一般方法的区别
+
+构造器严格的说不算是“方法”--只是因为它也可以传入参数。构造器方法没有任何返回值
+的定义，且必须与类名字相同。构造器方法只有在创建对象时调用--对于一个对象而言，它的构
+造器只能调用一次。
+构造器也可以重载，就像方法一样，定义可以传入不同参数列表的构造器，这也是构造器方
+法的主要用途：在创建对象时，初始化对象某些属性值。
+要注意的是：每个类都会默认的有一个无参的构造器，但如果重新写了一个有参数的构造器，
+则默认的无参构造器就不能调用，除非在类定义中显式声明。
+
+4.this 关键字
+
+上述例中，多处用到 this 关键字，this 在类中用来指代当前对象，就是所有的“人类”中
+都可以有”我”这个词一样，具体到哪个人，这个”我”指的就是哪个，代码如下。
+
+// 创建一个学生对象:一个参数的构造器
+String name="NetJava";
+Student st2=new Student(name);
+
+Student 类的构造器中 this 就指的是 st2 所代表的对象。
+
+//构造时，传入名字参数，初始化name属性值
+public Student(String name){
+this.name=name;
+
+}
+
+KOWLOON 内部资料
+
+30
+
+软件项目开发讲义
+
+this 关键字还有另一大用途，就是可以在构造器中调用自己的另外一个构造器--这也是构造器
+与一般方法的另一大区别：构造器中可以调用构造器，也可以调用方法；但在一般方法中，不能
+调用构造器。假如我们希望无论在调用 Student 的任一个构造器时，它的属性都需要赋上初值，
+则代码如下。
+
+//无参构造器方法
+public Student(){
+//调用自己的构造器
+this("未知名字","Java",0);
+
+}
+//构造时，传入名字参数，初始化name属性值
+public Student(String name){
+this(name,"Java",0);
+
+}
+//构造时，初始化name,km属性值
+public Student(String name,String km){
+this(name,km,0);
+
+}
+//构造时，初始化name,km,scro属性值
+public Student(String name,String km,int scro){
+this.name=name;
+this.km=km;
+this.scro=scro;
+
+}
+///其它方法定义...
+public String km;
+private String name;
+private int scro;
+
+}
+
+需要特别注意的是，在构造器中通过 this 调用另外一个构造器时，调用的代码必须是第一行，
+且只能调用一次！
+
+5.值传递与引用传递
+
+5.1.值传递
+
+Java 中的数据类型分为两大类：一类是引用类型，也叫类类型，是指通过类创建的对象的变
+量名字；一类是原始类型，即 8 大基本类型，这类型的数据在调用传递时遵守“值传递”规则，
+代码如下。
+
+public class Student {
+public void changeInt(int t){
+t=100;
+
+}
+
+}
+
+然后我们创建对象，调用其中的方法代码如下。
+
+public class Manager {
+
+KOWLOON 内部资料
+
+31
+
+软件项目开发讲义
+
+/**程序运行的入口点*/
+public static void main(String[] args) {
+// 创建对象
+Student st1=new Student();
+int i=100000;
+//调用方法，在changeInt中改变i的值
+st1.changeInt(i);
+System.out.println("这里i的值是: "+i);
+
+}
+
+}
+
+运行这段程序，打印出的结果 i 肯定是 100000；这里要证明的就是，在方法 changeInt 中所
+所改变的 t 与 i 没关系，方法中对 t 的改变，不会影响到调用代码中 i 的值。
+
+5.2.引用传递
+
+在理解引用传递之前，先要明白何谓引用，代码如下。
+
+// 创建对象
+Student st1=new Student();
+
+这段代码可以描述为：首先声名一个 Student 类型的变量 st1，再将这个 st1 变量名指向一个
+新建的 Student 对象。st1 变量是这个新建对象的名字--并不是对象数据本身！例如你是一个学
+生对象，且叫“学生甲”，当我们使用“学生甲”这个名字时，“引用”的就是你，但你的实体与
+“学生甲”这个名字不是一个东东，你们之间称做“学生甲”这个名字引用了你这个对象。
+请看示例代码如下。
+
+/**程序运行的入口点*/
+public static void main(String[] args) {
+// 创建对象
+Student st1=new Student();// 1
+st1.setName("第一个");
+Student st2=new Student();// 2
+st2.setName("第二个");
+Student st3=new Student();// 3
+st3.setName("第三个");
+//进行交换
+st1=st2; // 4
+st2=st3; // 5
+st3=st1; // 6
+String name=st3.getName();
+System.out.println("现在 st3 的名字其实是: "+name);
+
+}
+
+要知 st3 得到的 name 值是什么，就必须搞清到第 6 行时，st3 到底指向的是哪个对象！如果你
+还猜不出以上程序执行的结果是什么，我们通过分析图 3.2.1。
+
+KOWLOON 内部资料
+
+32
+
+软件项目开发讲义
+
+Student st1=new Student();// 1
+st1.setName("第1个");
+Student st2=new Student();// 2
+st2.setName("第2个");
+Student st3=new Student();// 3
+st3.setName("第3个");
+
+//进行交换：
+st1=st2; // 4
+st2=st3; // 5
+st3=st1; // 6
+
+String name=st3.getName();
+
+第 1 个对象
+
+Name=”第 1 个”
+
+第 2 个对象
+
+Name=”第 2 个”
+
+第 3 个对象
+
+Name=”第 3 个”
+
+图 3.2.1
+从最终的结果我们可以看到，st3 变量名，最终指向了 st2 对象，即名字值被赋为“第 2 个”
+的对象。
+同样的，在方法调用时，如果方法的参数是引用类型，传入的则只是一个对象名字的引用，而
+不是这个对象本身！代码如下。
+
+public class Teacher {
+public void changeST(Student st){
+String newName="我就是要改你的名字！";
+st.setName(newName);
+
+}
+
+}
+
+然后，我们在 main 方法中调用，并传入一个学生对象，代码如下。
+
+public static void main(String[] args) {
+// 创建对象
+Student st1=new Student();
+//调用前，设定学生名字
+st1.setName("第一个");
+Teacher te=new Teacher();
+//传入对象引用名：
+te.changeST(st1);
+String name=st1.getName();
+System.out.println("调用后st1的名字其实是: "+name);
+
+}
+
+打印出的结果值，其实是在 te 对象的 changeST 方法中被改变的值：即调用时，main 方法中的
+st1 和 changeST 中的 st 变量名，都是指向的同一个 Student 对象！
+
+KOWLOON 内部资料
+
+33
+
+软件项目开发讲义
+
+6.swing 登录界面开发
+
+6.1.Swing 例程展示
+
+到底什么是 Swing 组件？我们在安装 JDK 时，就带了 Swing 的 demo 示例，请转到你的 JDK 安
+装 目 录 下 面 ， 一 般 在 Java_home 下 面 的 demo\jfc\SwingSet2 目 录 下 ， 你 应 会 看 到 一 个
+SwingSet2.jar 是 可 执 行 的 Swing 程 序 ， src 目 录 下 是 源 代 码 ， 运 行 这 个 程 序 (Java -jar
+SwingSet2.jar)会看到如图 1.1.1 所示。
+
+图 5.1.1
+在这个示例中，全面展示了 JFrame(窗体)、JButton(按钮)、JTree(树形结构)等 Swing 体系内
+组件的功能，并展示了编程时的源码。
+
+6.2 简单 Swing 界面例程
+
+我们首先开发一个简单的界面程序，一般而言，一个界面首先是一个 JFrame 对象，即一个窗体；
+然后我们就可以这个窗体上放置其它元素组件，代码如下。
+
+//Swing界面测试
+public class JFrameTest {
+//程序入口
+public static void main(String[] args) {
+JFrameTest tf=new JFrameTest();
+tf.showFrame();
+
+}
+//显示一个窗体界面的方法
+public void showFrame(){
+
+KOWLOON 内部资料
+
+34
+
+软件项目开发讲义
+
+//构造一个窗体对象
+javax.swing.JFrame frame=new javax.swing.JFrame();
+//设置标题:
+frame.setTitle("第一个界面程序");
+//设置窗体大小
+frame.setSize(200,200);
+//让窗体显示出来,这句要放到最后面
+frame.setVisible(true);
+
+}
+
+}
+
+执行上面这段代码，你应看到一个图 1.4.1 界面出现。
+
+图 1.4.1
+接下来，看我们如何给这个界面上加上其它元素组件。
+
+6.3.给窗体上加上元素组件
+
+JFrame 是属与容器类组件的，它有一个万能的 add(Component comp)---Swing 中所有继承与
+Javax.Swing.Component 的对象都可以加到一个 Frame 上—-看到 Component 的子类头你就知有多
+少！如下例程所示，我们给界面加上一个标签，一个文本输入框和一个按钮，代码如下。
+
+//显示一个加有多个组件的窗体界面
+public void showFrame(){
+//构造一个窗体对象
+javax.swing.JFrame frame=new javax.swing.JFrame();
+frame.setTitle("第一个界面程序");//设置标题
+//创建一个标签元素：
+javax.swing.JLabel la_name=new javax.swing.JLabel("名字: ");
+//创建一个指定长度的文本
+javax.swing.JTextField jta_name=new javax.swing.JTextField(4);
+//创建一个按钮：
+javax.swing.JButton bu_login=new javax.swing.JButton("登陆");
+//将这三个组件加到窗体上：
+frame.add(la_name);
+frame.add(jta_name);
+frame.add(bu_login);
+frame.setSize(200,200); //设置窗体大小
+frame.setVisible(true); //让窗体显示出来,这句要放到最后面
+
+KOWLOON 内部资料
+
+35
+
+软件项目开发讲义
+
+}
+
+重新运行程序，运行结果如图 1.5.1，这样的结果却并非我们所愿。
+
+图 1.5.1
+最后加上的按钮对象点据了整个窗体界面！这是因为，我们并没有告诉 Frame 对象，应按何种
+规则，摆放在它上面的元素组件。
+
+6.4.使布局管理器管理界面的排放
+
+要让元素组件在窗体上摆放的稍有规则，就必须在放置元素组件前，设置窗体的“布局管理器
+对象”，设置了布局管理器后，元素的组件就按布局管理器的规则进行排放，Java 中有多种布局
+管理器，都是 Java.awt.LayoutManager 接口的子类，常用的实现类有 Java.awt.FlowLayout，即
+流式布局管理器，加上布局管理器后的代码如下。
+
+//显示一个加有多个组件的窗体界面
+public void showFrame(){
+//构造一个窗体对象
+javax.swing.JFrame frame=new javax.swing.JFrame();
+//设置标题:
+frame.setTitle("第一个界面程序");
+//在放置元素组件前，要创建并给窗体加上布局管理器：
+//创建流式布局管理器对象：
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+frame.setLayout(fl);
+//创建一个标签元素：
+javax.swing.JLabel la_name=new javax.swing.JLabel("名字: ");
+//创建一个指定长度的文本
+javax.swing.JTextField jta_name=new javax.swing.JTextField(4);
+//创建一个按钮：
+javax.swing.JButton bu_login=new javax.swing.JButton("登陆");
+//将这三个组件加到窗体上：
+frame.add(la_name);
+frame.add(jta_name);
+frame.add(bu_login);
+frame.setSize(200,100); //设置窗体大小
+frame.setDefaultCloseOperation(3); //窗体关闭时程序退出
+frame.setVisible(true); //让窗体显示出来,这句要放到最后面
+
+}
+
+OK，现在看到界面上的所有组件了吧？另外，上例中我们还设置了当这个窗体关闭时，程
+序退出，不知你有没注意到，前面展示的窗体，当关闭后，程序还是在运行中---如是在 Eclipse
+中你可看到代表程序在运行的红色标记并没有在关闭窗体后消失。
+要注意的是：组件都有性质相同的调用方法名字，对与我们使用 Swing 组件而言，由与任何
+
+KOWLOON 内部资料
+
+36
+
+软件项目开发讲义
+
+一个组件都是继承与 Jcomponent 而来，所以它们都有共同性质和作同的一些方法，这些方法都具
+
+KOWLOON 内部资料
+
+37
+
+软件项目开发讲义
+
+第四章 类的继承
+
+本章目标：
+
+完成本章后，你将能够：
+1.理解为什么需要继承，解决了什么问题
+2.类继承的用法，接口，抽象类的用法
+
+KOWLOON 内部资料
+
+38
+
+软件项目开发讲义
+
+1.
+
+KOWLOON 内部资料
+
+39
+
+软件项目开发讲义
+
+1.2.继承到了什么？
+
+我们说“UNStudent 继承了 Student 类”，就将 UNStudent 称做 Student 的子类，Student 叫
+UNStudent 的父类，UNStudent 中就自动具有了 Student 中定义的属性和方法，如下代码示例：
+//程序入口
+
+public static void main(String[] args) {
+
+//创建大学生类的对象
+
+UNStudent uns=new UNStudent();
+
+//调用方法：这些方法是从父类中继承来的
+
+uns.setName("我是大学生");
+uns.study();
+
+}
+
+}
+
+执行这段代码，程序输出如下：
+Student 类中学习方法,学生名字是我是大学生
+这就证明，我们创建的 UNStudent 对象调用 study 方法时，实际上是调用它的父类中的方法；
+当然，UNStudent 类内还可以再定义它自己所特有的方法。
+
+1.3.方法的重写(OverWrite)：
+
+上例中调用 UNStudent 中的方法，跟 Student 中的方法是同样的效果---这似乎不合情理，大学
+生虽有学习方法，但和一般学生学习的方法应是不一样的。所以我们有必要在 UNStudent 中对继
+承来的方法进行重写，即保持方法的定义不变，但方法内部实现同父类中不同，新的 UNStudent
+类如下：
+
+//继承Student类
+
+public class UNStudent extends Student {
+
+//重写了继承自父类中的方法
+
+public void study(){
+
+System.out.println("UNStudent学习,要独立,名字 "+getName());
+
+}
+
+}
+
+再在，再来调用：
+//程序入口
+
+public static void main(String[] args) {
+
+//创建大学生类的对象
+
+UNStudent uns=new UNStudent();
+
+//调用方法：这些方法是从父类中继承来的
+
+uns.setName("我是大学生");
+uns.study();
+
+输出的结果就是调用 UNStudent 中的方法调用的结果：
+UNStudent 学习,要独立,名字 我是大学生
+这应很好理解：如果子类重写了父类中的方法，调用的就是子类中的实现，否则就调用父类
+中的方法----当你花钱时，如果你自己实现了工作的方法，花的是自己的钱，否则，花的肯定是
+你从父亲那里继承来的钱。
+
+KOWLOON 内部资料
+
+40
+
+软件项目开发讲义
+
+1.4.自动转型：
+
+自动转型，指的是子类对象会自动转变为父类类型，请看代码：
+//程序入口
+
+public static void main(String[] args) {
+
+//父类类型变量名用来引用子类对象
+
+Student uns=new UNStudent();
+
+//调用方法：这些方法是从父类中继承来的
+
+uns.setName("我是大学生");
+uns.study();
+
+}
+
+上例中使用 Student 类型变量 uns 指向（引用）一个 UNStudent 对象，这只有当 UNStudent
+是 Student 的子类(或孙子类)时成立；但反过来不可以，因为我们可以说“一个大学生是一个学
+生”，反之则不行。这样的关系，我们之为”is a “的关系。
+自动转型后，在使用 uns 变量时，uns 是一个 Student 类型的，但设用 uns.study()方法时，
+到底调用的是 Student 中的呢还是 UNStudent 中的呢？答案还是“如果子类重写了父类中的方法，
+调用的就是子类中的实现，否则就调用父类中的方法“ ，虽然 uns 是一个 Student 类型的变量。
+特别注意的是：当子类对象自动转型为父类类型时，通过父类类型变量的引用，只能调用己
+在父类中定义的方法，不能调用子类中自己的方法；在 java 中，子类一次只能继承一个父类，即
+单根继承。
+
+1.5.
+
+KOWLOON 内部资料
+
+41
+
+软件项目开发讲义
+
+Student 的子类，都可以做为参数。当我们再让 Teacher 对象使用 Student 对象时，场景可能是：
+//程序入口
+
+public static void main(String[] args) {
+
+//父类类型变量名用来引用子类对象
+
+Student us=new UNStudent();
+us.setName("我是大学生");
+Student cs=new ComStudent();
+cs.setName("计算者");
+
+//创建一个老师对象
+
+Teacher tc=new Teacher();
+
+//传入两个学生对象
+
+tc.teacStu(us, cs);
+
+}
+
+程序执行的结果可能你己猜到了----猜不到就自己执行一遍！
+对于 Teacher 类中的 teacStu 方法而言，只有到运行的时候，才知道具体的两个 Student 类
+型至底是什么学生，执行什么方法。
+
+2.接口的使用：
+
+2.1.接口的定义:
+
+在类定义时，我们知道，类是对所有对象所共有的方法和属性的定义，即类是一种抽象的规
+则，类与它的对象间的关系可以看做一般与具体间的关系――就像”人”这个词与”每一个具体
+的人”之间的关系一样。定义一个类无非是两个用途：或者生成对象调用其方法，或者用作给其
+它类来继承。
+在后一种用途上，根据类的继承规则，即使子类中不重写父类的方法，也会调用父类的方法；
+但在特定的用途上，我们要求子类必须重写父类中的方法，这就需要定义接口，假设我们要编写
+一个绘图工具，这个程序中就会存在一个“形状“的概念---这一类对象知道怎样绘制出自己。我
+们就可以定义一个形状类的接口：
+/**形状接口的定义*/
+
+public interface NetJavaShape {
+public final static String compName="KOWLOON";
+
+//接口中定义的方法x1,y1和x2,y2代表要绘制的两个坐标点各自的xy坐标
+
+public void draw(int x1,int y1,int x2,int y2);
+
+}
+
+首先看到，接口的定义不是用 class，而是 interface；接口中定义了一个没有任何方法体实
+现的方法---这是接口中定义方法的规则，只要定义方法返回类型，方法名，参数表，不能有实现！
+方法前无论是否写了 public 限定符，接口中的方法都是 public 型的。
+当然，只要你愿意，接口中也可以什么都不定义！由于接口中没有任何方法的具体实现，所
+以不能直接使用接口创建对象，如下代码是错误的：
+
+NetJavaShape ns=new NetJavaShape();
+
+KOWLOON 内部资料
+
+42
+
+软件项目开发讲义
+
+接口中还可以定义属性，但接口中的属性是常量值，即不可再改变的，如上例，compName 完
+整的写法是：
+
+public final static String compName="KOWLOON";
+
+(关于 public、final、static 等关键字，我们将在下一节详细讨论)；
+
+2.2.
+
+KOWLOON 内部资料
+
+43
+
+软件项目开发讲义
+
+public String doOther(){
+String s="这是我实现了OtherShape接口中的方法";
+
+return s;
+
+}
+
+}
+
+现在再使用时，ImpOval 类的对象即可以是 NetJavaShape 的，也可以是 OtherShape 类型的：
+
+public static void main(String[] args) {
+NetJavaShape shape=new ImpOval();
+int x1=10,y1=12;
+int x2=20,y2=20;
+shape.draw(x1, y1, x2, y2);
+//做为OtherShape:
+OtherShape os=new ImpOval();
+os.doOther();
+
+}
+
+当一个类实现多个接口，自动转为某个接口类型时，就只能调用在其接口中定义的方法。
+
+2.3.接口的继承：
+
+在 java 中，类可以通过 extends 继承类，类可以通过 implements 关键字实现接口；接口与
+接口之间，也可以通过 extends 关键字实现继承，与类继承不同的是，一个接口同样可以继承多
+个接口，例如：
+/**形状接口的定义:这个接口继承了另外两个接口*/
+
+public interface NetJavaShape extends
+
+OtherShape,java.io.Serializable{
+public final static String compName="KOWLOON";
+
+//接口中定义的方法
+
+void draw(int x1,int y1,int x2,int y2);
+
+}
+
+现在，我们的 NetJavaShape 继承了两个接口，(java.io.Serializeable 接口是 JDK 中接供的
+一个接口，这个接口中没有任何方法实现，只是用来做标志用---实现了这个接口的类的对象可以
+被保存到文件中)。
+如果某个类要实现 NetJavaShape，就必须全部实现 NetJavaShape 接口中定义的方法和它的父
+接口中定义的方法。
+
+3.抽象类的使用：
+
+3.1.抽象类的定义
+
+抽象类是介与接口和类之间的定义：抽象类中，可以定义己实现的方法，也可以定义像接口中
+没有实现的方法---继承的子类就必须实现。如下是一个抽象类的定义：
+
+public abstract class ABSShape {
+
+//抽象方法定义：继承的子类必须实现
+
+public abstract void draw();
+
+KOWLOON 内部资料
+
+44
+
+软件项目开发讲义
+
+//可以定义己实现的方法
+
+public void setColor(int c){
+
+this.color=c;
+
+}
+
+public int getColor(){
+
+return this.color;
+
+}
+
+private int color;
+
+}
+
+如上，抽象类定义时，类前必须加上 abstract 关键字。抽象类中定义的方法，如没有实现，
+前面就必须加上 abstract 关键字，即抽象方法。子类继承抽象类时，使用 extends 关键字，
+在字类中，必须实现抽象类中的 abstract 方法。子类只能同时继承一个抽象类，这于接口的
+
+implements 不同。
+
+3.2.抽象类的使用：
+
+直观的看，抽象类介于类和接口之间，可以有实现的，也可以有未实现的方法，抽象类也不
+能直接创建对象。抽象类的做用常用做“适配器”----如果无论一个接口中定义有多少方法，子
+类都必须实现。例如 jdk 中有一个 java.awt.event.MouseListener 类：
+
+public interface MouseListener extends EventListener {
+
+/**
+* Invoked when the mouse button has been clicked (pressed
+* and released) on a component.
+*/
+public void mouseClicked(MouseEvent e);
+/**
+* Invoked when a mouse button has been pressed on a component.
+*/
+public void mousePressed(MouseEvent e);
+/**
+* Invoked when a mouse button has been released on a component.
+*/
+public void mouseReleased(MouseEvent e);
+/**
+* Invoked when the mouse enters a component.
+*/
+public void mouseEntered(MouseEvent e);
+
+/**
+* Invoked when the mouse exits a component.
+*/
+public void mouseExited(MouseEvent e);
+
+KOWLOON 内部资料
+
+45
+
+软件项目开发讲义
+
+}
+
+这个接口中定义了非常多的方法，可是当我们实现时，通常是只需要实现其中的某一个方法
+而己，如果我们自己的类直接 implements 这个接口，其它方法就必须写一遍---写成空方法。
+Java 的设计者己考虑到这点，所以提供了一个 abstract 类：java.awt.event.MouseAdapter
+
+这 个 类 实 现 了 所 有 鼠 标 监 听 器 接 口 (MouseListener, MouseWheelListener
+MouseMotionListener)，只是定义为 abstract 类：
+
+public abstract class MouseAdapter implements MouseListener,
+
+MouseWheelListener, MouseMotionListener {
+
+public void mouseClicked(MouseEvent e) {}
+
+public void mousePressed(MouseEvent e) {}
+
+public void mouseReleased(MouseEvent e) {}
+
+public void mouseEntered(MouseEvent e) {}
+
+public void mouseExited(MouseEvent e) {}
+
+public void mouseWheelMoved(MouseWheelEvent e){}
+
+public void mouseDragged(MouseEvent e){}
+
+public void mouseMoved(MouseEvent e){}
+
+}
+
+当我们要编写某一种鼠标监听器实现类时，只需要我们自己的类 extends MouseAdapter 类，重
+写只需要使用的某一个方法即可，就不再需要重写所的接口中定义的方法。
+
+总结和任务
+
+1.实践：完成本节所有示例代码的编写验证；
+2. 实践：编写程序示例“多态机制”；
+3. 实践：编程验证接口的应用，（如通过 swing 的简单事件机制实现）。
+4.总结:整理总结出一般类，接口，抽象类之间的不同点?
+
+KOWLOON 内部资料
+
+46
+
+软件项目开发讲义
+
+5．总结:方法重写(overWrite)和重载(overLoad)有什么区别？
+
+6. 总结:什么是自动转型？什么是多态？
+
+7.广泛查找资料，说明你对 OOP 思想（抽象，继承，多态，封装）的理解：
+
+KOWLOON 内部资料
+
+47
+
+软件项目开发讲义
+
+小故事：埃里森在耶鲁大学的演讲：
+
+耶鲁的毕业生们，我很抱歉---如果你们不喜欢这样的开场白。我想请你们为我做一件事。
+请你---好好看一看周围，看一看站在你左边的同学，看一看站在你右边的同学。请你设想这样的
+情况：从现在起 5 年之后，10 年之后，或 30 年之后，今天站在你左边的这个人会是一个失败者；
+右边的这个人，同样，也是个失败者。而你，站在中间的家伙，你以为会怎样？一样是失败者。
+失败的经历。失败的优等生。
+说实话，今天我站在这里，并没有看到一千个毕业生的灿烂未来。我没有看到一千个行业的
+一千名卓越领导者，我只看到了一千个失败者。你们感到沮丧，这是可以理解的。为什么，我，
+埃里森，一个退学生，竟然在美国最具声望的学府里这样厚颜地散布异端？我来告诉你原因。因
+为，我，埃里森，这个行星上第二富有的人，是个退学生，而你不是。因为比尔盖茨，这个行星
+上最富有的人---就目前而言---是个退学生，而你不是。因为艾伦(苹果电脑 CEO)，这个行星上
+第三富有的人，也退了学，而你没有。再来一点证据吧，因为戴尔，这个行星上第九富有的人---
+他的排位还在不断上升，也是个退学生。而你，不是。
+你们非常沮丧，这是可以理解的。你们将来需要这些有用的工作习惯。你将来需要这种“治
+疗”。你需要它们，因为你没辍学，所以你永远不会成为世界上最富有的人。哦，当然，你可以，
+也许，以你的方式进步到第 10 位，第 11 位，就像 Steve。不过，我没有告诉你他在为谁工作，
+是吧？根据记载，他是研究生时辍的学，开化得稍晚了些。
+现在，我猜想你们中间很多人，也许是绝大多数人，正在琢磨，"能做什么？我究竟有没有
+前途？"当然没有。太晚了，你们已经吸收了太多东西，以为自己懂得太多。你们再也不是 19 岁
+了。你们有了``内置``的帽子，哦，我指的可不是你们脑袋上的学位帽。嗯……你们已经非常沮
+丧啦。这是可以理解的。所以，现在可能是讨论实质的时候啦---绝不是为了你们，2000 年毕业
+生。你们已经被报销，不予考虑了。我想，
+
+KOWLOON 内部资料
+
+48
+
+软件项目开发讲义
+
+第五章 画图板程序开发
+
+本章目标：
+
+完成本章后，你将能够：
+1.明确 Swing 常用组件的继承体系；
+2.熟练实现并使用事件机制处理应用
+3.完成画板小程序开发。
+
+KOWLOON 内部资料
+
+49
+
+软件项目开发讲义
+
+1.swing 继承结构：
+
+首要明白的，就是所谓用户界面，在 java 里依旧是一个一个的类，(主要是 javax.swing 包
+里的类)，组成一个界面的表现，则是这些类的对象之间相互调用的结果，你可以很容易在 Eclipse
+里看到 javax.swing.JButton 类的源代码，而当一个 JButton 类的对象加入到一个 Jframe(窗体)
+对象上面时，就表现的是一个按钮；
+继承的体系结构在 java 里无处不在，在前面的 I/O 体系中，我们己经看到，在一个较高的抽
+象层面定义一个顶层类（父类）来规范所有子类的方法属性，就会使得对这些子类的使用有一个
+
+KOWLOON 内部资料
+
+50
+
+软件项目开发讲义
+
+3.swing
+
+KOWLOON 内部资料
+
+51
+
+软件项目开发讲义
+
+*/
+public void actionPerformed(ActionEvent e);
+
+我们只要编写一个类实现这个接口---实现其中的 actionPerformed 方法即可，这个方法只有
+一个 ActionEvent(事件对象)类型的参数；这个 ActionEvent 对象有许多方法可以得到事件源的
+相关信息，ActionEvent 对象的 getSource()返回一个 Object 类型的对象，指向了发出这个事件
+的事件源，如是点击了一个 JButton，就可以将这个 Object 强制转型为 JButton 类型，即可得到
+事件源对象；getActionCommand()方法可以得到事件源上的标签做为一个 String 类型，比如是一
+个菜单，就可得到菜单的标题。
+
+3.4.编写简单
+
+KOWLOON 内部资料
+
+52
+
+软件项目开发讲义
+
+//创建监听器对象
+
+MyButtonListener mbl=new MyButtonListener();
+
+//将监听器加给按钮：
+
+bu_login.addActionListener(mbl);
+
+现在，执行程序，点击一下按钮，看到效果了吗？
+
+3.5.通过内部类简化事件处理方式：
+
+在上例中，我们虽然实现了按钮的事件监听，假如现在要求改一下：当点击按钮时，要将 JLabel
+标签上的文字改为输入框中的文字，像上面那样定义单独的类做为事件监听器就不合适了，虽然
+可以通过构造器将要操作的对象都传入进去，但如果界面上组件很多，就太麻烦了，这就需要：
+最好是事件的处理过程能在 JFrameTest 类本身中完成，请看如下代码：
+//内部类事件实现测试
+
+public class JFrameTest {
+
+//程序入口
+
+public static void main(String[] args) {
+JFrameTest tf=new JFrameTest();
+tf.showFrame();
+
+}
+
+//显示一个加有多个组件的窗体界面
+
+public void showFrame(){
+javax.swing.JFrame frame=new javax.swing.JFrame();
+frame.setTitle("内部类事件处理示例");
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+frame.setLayout(fl);
+la_name=new javax.swing.JLabel("名字: ");//创建一个标签元素
+jta_name=new javax.swing.JTextField(4); //创建一个指定长度的文本框
+
+//在放置元素组件前，要创建并给窗体加上流式布局管理器对象：
+
+//创建一个按钮
+
+//通过内部类创建按钮监听器：
+
+javax.swing.JButton bu_login=new javax.swing.JButton("登陆");
+bu_login.addActionListener(new java.awt.event.ActionListener(){
+//必须是重写ActionListener中的方法，
+public void actionPerformed(ActionEvent e){
+
+//当事件发生时，这个方法就会被调用：
+
+//调用本类内部的事件处理方法:
+
+processEvent();
+
+}
+
+}
+
+KOWLOON 内部资料
+
+53
+
+软件项目开发讲义
+
+);
+
+//将这三个组件加到窗体上：
+
+frame.add(la_name);
+frame.add(jta_name);
+frame.add(bu_login);
+frame.setSize(200,100); //设置窗体大小
+frame.setDefaultCloseOperation(3); //窗体关闭时程序退出
+frame.setVisible(true); //让窗体显示出来,这句要放到最后面
+}
+
+//事件发生时，调用处理的方法
+
+private void processEvent(){
+String s=jta_name.getText();//得到输入框中的内容
+la_name.setText(s); //将标签上的文字改变
+jta_name.setText("");//清空输入框
+}
+
+//将Label定义为属性，其对象就可以其它方法中使用：
+
+javax.swing.JLabel la_name;
+javax.swing.JTextField jta_name;
+
+private
+private
+
+}
+
+上例中，关键的就是这段代码：
+//通过内部类创建按钮监听器：
+
+bu_login.addActionListener(new java.awt.event.ActionListener(){
+//必须是重写ActionListener中的方法，
+public void actionPerformed(ActionEvent e){
+
+//当事件发生时，这个方法就会被调用：
+
+//调用本类内部的事件处理方法:
+
+processEvent();
+
+}
+
+}
+);
+
+首先，这种写法较特别----你只有多写几遍啦！感到不解的是，为什么可以 new 一个接口呢？
+接口不是不能直接创建对象吗？因为这是在内部类中。
+要 特 别 注 意 的 是 ， 这 是 一 句 声 明 代 码 ， 所 以 我 们 看 到 最 后 ， 是 一 个 分 号 结 尾 的 ； 在
+ActionListener(){内部，必须写写的方法是 actionPerformed，这个方法的定义必须和接口中一
+致！返回值，方法名，参数；当事件发生时，这个方法会被调用，最终调用到的其实是我们写在
+JFrameTest 类内部的 processEvent 方法。
+在本例中，我们之所以将 la_name，jta_name 定义为类中的属性，就是为了在 processEvent
+中调用，这两个属性的对象，会在 showFrame()方法中初始化。如果在 showFrame 中的 la_name
+前，再加上 javax.swing.JLabel，那么运行时，就会抛出空指针异常，试下，想想为什么？
+
+将以上的例程都动手编写一遍，确认理解了事件的机制，在下面我们会完成一个较为简单
+的画图板的应用程序。
+
+KOWLOON 内部资料
+
+54
+
+软件项目开发讲义
+
+3.6.swing 组件扩展学习方法：
+
+1.使用一个 Swing 组件时，要注意查看它的构造器的说明，查看构造器中接受什么样的参数。
+比如一个 JcomboBox 接受一个 Object[]参数构造一个在界面上展示的 JcomboBox，Object[]中的
+每一个元素将成为界面上 JcomboBox 的每一个条目，数组中的元素可以是字符串，也可以是一个
+javax.swing.ImageIcon 对象---JcomboBox 中将会显示一个一个的图标。
+2.Swing 组件是可重叠的，即一个组件上面可以放另外一个组件。容器类组件上可以放元素
+
+KOWLOON 内部资料
+
+55
+
+软件项目开发讲义
+
+JDK 中 swing 组件种类繁多，只有多使用，多编写才能用的好，下面是一个综合示例，展
+示了一些常用组件，程序运行界面如下：
+
+实现的代码如下：
+
+**
+
+* 程序主窗体:通过继承JFrame的方式创建窗体对象
+
+* @author KOWLOON
+*/
+public class TestSwing extends javax.swing.JFrame{
+
+//自己的调用父类的构造器，传入的参数为窗体标题
+
+public TestSwing(String title){
+super(title);
+
+}
+
+//程序入口
+
+public static void main(String[] args) {
+TestSwing tf=new TestSwing("KOWLOON—swing组件示例");
+tf.init();
+
+tf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+//调置窗体关闭时，退出程序
+
+//调置窗体可以改变大小
+
+tf.setResizable(true);
+
+}
+/**
+
+*/
+
+* 窗体初始化方法窗体创建成功后，即添加其上的相关组件
+
+private void init(){
+
+//设置总是在项层
+
+this.setAlwaysOnTop(true);
+
+// 创建一个居中的,间隔3个单位的布局管理器
+
+FlowLayout fl=new FlowLayout(FlowLayout.LEFT,10,10);
+this.setLayout(fl);
+//创建一个Jtree对象:
+
+KOWLOON 内部资料
+
+56
+
+软件项目开发讲义
+
+"};
+
+this.add(lableSrc);
+String[] comBoxString=new String[]{"我是谁","我从哪里来","我要去哪里
+final javax.swing.JComboBox jc=new
+javax.swing.JComboBox(comBoxString);
+final javax.swing.JList jl=new javax.swing.JList(comBoxString);
+jc.addActionListener(new java.awt.event.ActionListener(){
+public void actionPerformed(ActionEvent e){
+String selectString=(String)jc.getSelectedItem();
+lableSrc.setText(selectString);
+}
+
+});
+
+//创建一个Jpanel对象,它属与容器类组件
+
+javax.swing.JPanel jp=new javax.swing.JPanel(fl);
+jp.setSize(100, 100);
+jp.setBackground(java.awt.Color.BLUE);
+this.add(jp);
+jp.add(new JButton("panel上的"));
+this.add(jc);
+this.add(jl);
+
+//创建一个3行5列的空表格对象
+
+javax.swing.JTable tab_demo=new javax.swing.JTable(3,5);
+this.add(tab_demo);
+this.setSize(300,400);
+this.setVisible(true);//设置可见性
+}
+
+}
+
+请根据本节讲解，自己拓展学会另外二种 swing 组件的用法；并尝使使用除 ActionListener
+以外的事件监听器的用法。
+
+4.
+
+KOWLOON 内部资料
+
+57
+
+软件项目开发讲义
+
+4.2.
+
+KOWLOON 内部资料
+
+58
+
+软件项目开发讲义
+
+//鼠标释放时的点的坐标
+
+public void mouseReleased(MouseEvent e) {
+
+//记录第二次点击的坐标：
+
+x2=e.getX();
+y2=e.getY();
+
+//现在，两次点的坐标都得到了，在画布上画线，调用画布对象的方法：
+
+g.drawLine(x1, y1, x2, y2);
+
+}
+
+});
+jf.setDefaultCloseOperation(3); //关闭时退出程序
+jf.setVisible(true);
+
+//取得界面上的画布对象：一定要在界面setVisible后取得！
+
+g= jf.getGraphics();
+
+private int x1,y1,x2,y2; //记录鼠标两次点击的坐标
+private java.awt.Graphics g; //从界面对象上得到的画布对象
+
+}
+
+}
+
+运行程序，看是否可以如下来画？
+
+注意：以上代码的关键就在于 onReleased 方法中的实现，画线很简单，只要调用从 JFrame
+对象上得到的 Graphics 对象中的方法即可，请自行查看测试调用 Graphics 中的其它方法，
+比如画圆，画方形？
+总是画黑颜色不好看吧，这简单，只要在调用 Graphics 绘制方法前，调用它的 setColor 方
+法设置你要的颜色即可！如下代码即可画出绿线条：
+
+. . .
+g.setColor(java.awt.Color.GREEN); //设置画形为绿色
+g.drawLine(x1, y1, x2, y2);
+
+. . .
+
+OK,请完成如上练习；
+但有一个问题是存在的：如果我们是一个小组在做开发，要在界面上画上数十种不同的形状，
+线，圆，三角形…，而做为 TeamLeader 的你，想给每个人分配几种不同的形状绘制任务让大家分
+头去做，那怎么办？
+
+KOWLOON 内部资料
+
+59
+
+软件项目开发讲义
+
+4.3.抽取“形状”
+
+KOWLOON 内部资料
+
+60
+
+软件项目开发讲义
+
+public void draw(java.awt.Graphics g) {
+g.setColor(color); // 设颜色
+g.drawLine(x1, y1, x2, y2);
+
+}
+
+}
+
+KOWLOON 内部资料
+
+61
+
+软件项目开发讲义
+
+javax.swing.JButton bu_color = new javax.swing.JButton("选颜色
+
+// 设置按钮的事件监听器：
+
+bu_color.addActionListener(new java.awt.event.ActionListener()
+
+public void actionPerformed(ActionEvent e) {
+showColorSelecter();// 调用弹出颜色选择器的方法
+
+}
+
+});
+jf.add(bu_color);
+jf.setDefaultCloseOperation(3); // 关闭时退出程序
+jf.setVisible(true);
+
+// 取得界面上的画布对象：一定要在界面setVisible后取得！
+
+g = jf.getGraphics();
+
+");
+
+{
+
+}
+
+// 当点击颜色选择按钮时，显示颜色选择器，并得到用户选中的颜色:
+
+private void showColorSelecter() {
+
+// 弹出颜色选择器:弹出在那个组件上，标题，初始化颜色三个参数要指定
+
+// 这是JColorChooser中的一个public static方法，可直接调
+this.color = javax.swing.JColorChooser.showDialog(null, "请选择
+颜色",java.awt.Color.black);
+}
+private java.awt.Color color = java.awt.Color.BLACK; // 默认的颜色为
+
+private int x1, y1, x2, y2; // 记录鼠标两次点击的坐标
+private java.awt.Graphics g; // 从界面对象上得到的画布对象
+
+黑色
+
+}
+
+请完成如上功能：自己定义接口，并实现一种形状的绘制,还可让用户自定义颜色；
+最后一个问题就是：当你的组员实现了多种形状的绘制时，用户在使用这个程序时，应可以
+让用户自己在界面上选择画哪种形状，而不是每次都要我们修改程序！
+现在，我们只需要给界面上添加上对应的选择框组件即可。
+
+4.4.
+
+KOWLOON 内部资料
+
+62
+
+软件项目开发讲义
+
+public class SampleDraw {
+
+public static void main(String[] args) {
+SampleDraw sd = new SampleDraw();
+sd.showUI();
+
+}
+
+// 显示主界面
+
+public void showUI() {
+
+javax.swing.JFrame jf = new javax.swing.JFrame();
+jf.setTitle("KOWLOON画板v0.3");// 设定标题
+jf.setSize(500, 300); // 设
+jf.setResizable(false); // 界面不可改变大小
+java.awt.FlowLayout fl = new java.awt.FlowLayout();// 布局管理
+
+jf.setLayout(fl);
+
+// 加上自定义的鼠标事件监听器:鼠标释放时调用方法
+
+jf.addMouseListener(new java.awt.event.MouseAdapter() {
+
+// 只需要重写需要的方法即可，因为父类不是接口：
+// 鼠标按下时的点的坐标
+
+public void mousePressed(MouseEvent e) {
+
+// 记录第一次点击的x,y:通过事件对象e得到
+
+x1 = e.getX();
+y1 = e.getY();
+
+}
+
+// 鼠标释放时的点的坐标
+
+public void mouseReleased(MouseEvent e) {
+
+// 记录第二次点击的坐标：
+
+x2 = e.getX();
+y2 = e.getY();
+
+器
+
+");
+
+// 看用户选中的是要画什么形状,根据用户选择,创则不同的对象:
+
+String command = shapGroup.getSelection().getActionCommand();
+
+// 默认为画线:
+
+NetJavaShape shape = new ImpLine(x1, y1, x2, y2 ,color);
+if (command.equals("Line")) {// 选中的是线
+shape = new ImpLine(x1, y1, x2, y2,color);
+} else if (command.equals("Ract")) {
+shape = new ImpRact(x1, y1, x2, y2,color);
+} else if (command.equals("Oval")) {
+shape = new ImpFillOval(x1, y1, x2, y2,color);
+
+// 调用shape对象绘制的方法，传入画布对象，坐标点和颜色对象;
+// 具体的shape对象就知道如何绘制出自己
+
+shape.draw(g);
+
+}
+
+}
+
+});
+
+// 选择颜色的按钮，点击后，弹出颜色选择器：
+
+javax.swing.JButton bu_color = new javax.swing.JButton("选颜色
+
+KOWLOON 内部资料
+
+63
+
+}
+
+});
+jf.add(bu_color);
+
+// 创建三个单选按钮:
+
+javax.swing.JRadioButton jr_line = new
+javax.swing.JRadioButton("Line");
+jr_line.setActionCommand("Line");
+javax.swing.JRadioButton jr_ract = new
+javax.swing.JRadioButton("Ract");
+jr_ract.setActionCommand("Ract");
+javax.swing.JRadioButton jr_oval = new
+javax.swing.JRadioButton("Oval");
+jr_oval.setActionCommand("Oval");
+
+// 加入到组中：
+
+this.shapGroup.add(jr_line);
+this.shapGroup.add(jr_ract);
+this.shapGroup.add(jr_oval);
+
+// 将选择组加到界面上:
+
+jf.add(jr_line);
+jf.add(jr_ract);
+jf.add(jr_oval);
+jf.setDefaultCloseOperation(3); // 关闭时退出程序
+jf.setVisible(true);
+
+// 取得界面上的画布对象：一定要在界面setVisible后取得！
+
+g = jf.getGraphics();
+
+软件项目开发讲义
+
+// 设置按钮的事件监听器：
+
+bu_color.addActionListener(new java.awt.event.ActionListener() {
+public void actionPerformed(ActionEvent e) {
+showColorSelecter();// 调用弹出颜色选择器的方法
+
+}
+
+// 当点击颜色选择按钮时，显示颜色选择器，并得到用户选中的颜色:
+
+private void showColorSelecter() {
+
+// 弹出颜色选择器:弹出在那个组件上，标题，初始化颜色三个参数要指定
+
+// 这是JColorChooser中的一个public static方法，可直接调
+this.color = javax.swing.JColorChooser.showDialog(null, "请选
+择颜色",java.awt.Color.black);
+}
+
+// 形状选择组对象，用来加入形状选择按钮：
+
+private javax.swing.ButtonGroup shapGroup = new
+javax.swing.ButtonGroup();
+private java.awt.Color color = java.awt.Color.BLACK; // 默认的颜色为黑
+
+色
+
+}
+
+private int x1, y1, x2, y2; // 记录鼠标两次点击的坐标
+private java.awt.Graphics g; // 从界面对象上得到的画布对象
+
+请自己编写另外两种形状的实现类，运行程序，应如下所示：
+
+KOWLOON 内部资料
+
+64
+
+软件项目开发讲义
+
+至此，一个简单画板就完成了---要明确我们的目标，我们并不是要做一个画图程序，而是通过
+这个 demo,进一步了解 OOP 中继承，封装的用法。
+再仔细想一下，这个程序从构架的角度看，还是有巨大缺陷的：如果我们每新增一个形状的实
+现类，就要重要修改 SampleDraw 中代码---哪怕是最简单的修改。
+我们能不能做到，新增绘制形状时，不需要修改 SampleDraw 中的一行代码?!只需要将新实现
+的形状类放到指定的目录下，当程序启动时，有多少个形状类，界面上自然就出现多少个可供用
+户选中的选框，并能实现其功能？
+
+总结和任务
+
+1.实践：完成本节示例代码的编写；
+2.实践：测试更多其它的简单 swing 组件使用；
+3.实践：完成简单画板编写，并说明为什么要定义接口
+4.总结：明晰阐述 Swing API(组件)的分类和继承体系；
+
+5.总结：明晰阐述 Swing 组件的事件实现机制；
+
+KOWLOON 内部资料
+
+65
+
+软件项目开发讲义
+
+第六章 常用关键字
+
+本章目标：
+
+完成本章后，你将能够：
+
+1.理解 public,private,static,final,super 等关键字用法
+
+2.能自己扩展学习其它关键字的用法
+
+KOWLOON 内部资料
+
+66
+
+软件项目开发讲义
+
+1.可见性修饰关键字:
+
+1.1.public 关键字:
+
+public 关键字可以放在类前，表示这个类可以被其它包中的类的对象所访问，是公开性最高
+的一个关键字；public 限定的类在一个文件中只允许有一个！且类名必须与文件名相同。
+如果放在方法前，表示方法可以被其它包中的类调用；
+放在属性前面，就可以直接通过 对象.属性 格式来访问对象的属性，根据对象的封装原则，
+属性不应由外部直接访问，所以属性一般定义为 private 类型，即只能在类的内部访问。例如类
+中有如下定义：
+
+public class Student {
+
+//公开的属性
+
+public String name;
+
+}
+
+则可以如下访问：
+
+Student st=new Student();
+st.name="直接给名字！";
+
+在 interface 中定义的属性，方法即便不写 public，也默认是；abstract class 中声明为
+abstract 的方法，也默认是 public 的。子类继承（实现）父类中的方法如果是 public 型的，则
+不能将其重写为小于 public 范围的关键字。
+
+1.2.private 关键字：
+
+如果说 public 是最为公开的限定符，private 则是控制可见性（可调用性）范围最小的限定符。
+在方法前面加上 private，则方法就只能由类内部的方法或构造器调用，通常，属性都是以
+private 限定的。一般的类前面，不需要加上 private 限定。
+在类继承时，父类中的 private 方法将不能被子类继承。
+private 关键字有时会加在构造器前面---在某些特别情况下，我们不希望别人创建某个类的
+对象时。
+一般情况下，我们在定义类，方法，属性，构造器的可见性是，不采用 private 就采用 public，
+即要么彻底公开，要么严密封闭。
+设计类中的方法时，以什么样的原则确定方法是 public 还是 private 的呢？这要求我们在定
+义类时，必须想要好，当别人---即便是自己用，在使用这个类时，只需要使用类中的哪些方法！
+只有必须使用的，才定义为 public，即需要换位思考，从使用者的角度考虑。
+
+1.3.protected 关键字
+
+protected 限定符界与 public 和 private 之间，protected 限定的方法，子类可以继承，同包内
+可以访问，如在不同的包内，则不可以访问。通常情况下，这个限定符非常少用。
+
+KOWLOON 内部资料
+
+67
+
+软件项目开发讲义
+
+2.static 关键字
+
+2.1.static 方法
+
+第一个 java 程序我们就看到的是 main 方法前面的 static 关键字，现在到解释清楚它的时
+候了；使用 static 限定的方法称为静态方法或类方法。与非 static 方法的区别是：非 static
+方法的调用必须通过创建该类的对象调用。static 方法则不需要，直接使用 类名.静态方法名()
+调用即可，如代码示例：
+
+public class ManagerTools {
+
+public static void main(String args[]){
+
+//调用静态方法：
+
+ManagerTools.work();
+
+//调用非静态方法，就必须创建对象
+
+ManagerTools mt=new ManagerTools();
+mt.workNoStatic();
+
+}
+
+//静态方法
+
+public static void work(){
+
+System.out.println("静态方法工作中");
+
+}
+
+}
+
+//非静态方法
+
+public void workNoStatic(){
+System.out.println("非---静态方法工作中");
+
+}
+
+Static 方法中，可以直接调用 static 方法，但如果要调用非 static 方法，就必须创建对象，
+通过对象调用。
+static 方法，我们也称为类方法，因为不需要对象即可创建---思考下为什么 main 方法必须
+定义为 static 类型？
+
+2.2.static 属性：
+
+static 属性又称之为类属性，可以不创建类的对象而直接调用；另外一个特征就是，类的
+某一个对象的 static 属性值被改变后，这个类所有对象的 static 属性值都会被改变。
+
+public class ManagerTools {
+
+public static void main(String args[]){
+
+//调用静态方法：
+
+ManagerTools.work();
+
+//调用非静态方法，就必须创建对象
+
+ManagerTools mt=new ManagerTools();
+
+KOWLOON 内部资料
+
+68
+
+}
+
+}
+
+}
+
+//静态方法
+
+public static void work(){
+
+System.out.println("静态方法工作中");
+
+//非静态方法
+
+public void workNoStatic(){
+System.out.println("非---静态方法工作中");
+
+软件项目开发讲义
+
+mt.workNoStatic();
+ManagerTools.count=10;
+//创建5个ManagerTools的对象
+for(int i=0;i<5;i++){
+ManagerTools m=new ManagerTools();
+m.count=i;
+
+}
+
+//所有对象的count值都会是4
+
+System.out.println("count属性是 "+mt.count);
+
+//静态属性
+
+private static int count=0;
+
+private String name="默认名字";
+
+}
+
+因为 static 属性的这一特定，所以在定义属性时，是否为 static 一定要慎重考虑；static
+属性可以直接在任何方法中调用，但 static 方法中，则只能直接调用 static 属性；非 static
+属性，就必须通过创建对象调用。
+
+3.super 关键字
+
+可以将 super 与 this 相比较，super 指的是当前类的父类的对象，请看代码示例：首先定义学生
+类：
+
+public class Student {
+
+public Student(){
+this("默认名字");
+
+}
+
+public Student(String name){
+this.name=name;
+
+}
+/**
+
+* 学习几小时
+
+* @param hour:学习时长
+*/
+public String study(int hour){
+
+KOWLOON 内部资料
+
+69
+
+软件项目开发讲义
+
+//学习时间长，学分就高
+
+scro+=hour/3;
+return name+"学习(Student中)，学分是 "+scro;
+}
+public String getName() {
+
+return name;
+
+}
+public void setName(String name) {
+this.name = name;
+
+public int getScro() {
+
+return scro;
+
+void setScro(int scro) {
+this.scro = scro;
+
+}
+
+}
+
+}
+
+}
+
+//学分
+
+private int scro;
+
+//姓名
+private String name;
+}
+
+然后我们定义一个 Student 的子类，并在其中使用 super 关键字：
+
+public class UNStudent extends Student {
+
+public UNStudent(){
+
+//在子类构造器中调用父类的构造器
+
+super("未知大学生");
+
+}
+/**
+
+* 重写从父类中继承来的方法：
+
+*/
+public String study(int hour){
+
+//调用父类中的方法
+
+String sus=super.study(hour);
+String myResult=" 这是我的学习结果";
+return "父类中的方法调用结果是:"+sus+myResult;
+
+public static void main(String[] args){
+UNStudent uns=new UNStudent();
+String result=uns.study(10);
+System.out.println("执行结果是: "+result);
+
+}
+
+KOWLOON 内部资料
+
+70
+
+软件项目开发讲义
+
+}
+
+通过执行结果的分析，我们可以看可，
+
+KOWLOON 内部资料
+
+71
+
+软件项目开发讲义
+
+6.其它关键字：
+以上初步讲了一些常用关键字的用法，在 java 语言中，还有其它很多关键字，但并不常用，如
+下表：
+
+abstract
+
+case
+
+const
+
+default
+
+extend
+
+float
+
+implements
+
+interface
+
+new
+
+protected
+
+static
+
+synchronized
+
+throw
+
+transient
+
+while
+
+null
+
+boolean
+
+catch
+
+continue
+
+do
+
+false
+
+for
+
+import
+
+long
+
+null
+
+public
+
+strictfp
+
+short
+
+throws
+
+return
+
+assert
+
+break
+
+char
+
+char
+
+double
+
+final
+
+goto
+
+int
+
+enum
+
+package
+
+package
+
+super
+
+super
+
+true
+
+void
+
+true
+
+byte
+
+class
+
+class
+
+else
+
+finally
+
+if
+
+instanceof
+
+native
+
+private
+
+private
+
+switch
+
+this
+
+try
+
+volatile
+
+false
+
+请试试看，你能说明多少关键字的用法？多求助于 google 哦。
+
+总结和任务
+
+1. 实践：完成本节示例代码验证编写
+2．总结：明确表述 static 关键字用法
+
+3. 总结：说明 final 关键字的用法；
+
+KOWLOON 内部资料
+
+72
+
+软件项目开发讲义
+
+4.总结：public private 的区别和适用场景；
+
+5.其它关键字用法总结：
+
+KOWLOON 内部资料
+
+73
+
+软件项目开发讲义
+
+第七章 数组与基本数据结构
+
+本章目标：
+
+完成本章后，你将能够：
+1.熟练使用数组；
+2.掌握常用排序算法
+3.完成自定义队列开发；
+
+KOWLOON 内部资料
+
+74
+
+软件项目开发讲义
+
+1.数组的使用:
+
+1.1.数组基本用法:
+
+数组是 java 中最基本的一种数据结构，数组可以理解为是一个容器---在数组中可以放其它东
+东；数组一但定义，它的长度就是固定的。请看如下代码：
+//数组使用测试
+
+public class ArrayTest {
+
+public static void main(String[] args) {
+
+//定义长度为10的int型数组:
+//数组定义格式为: 类型[] 数组变量名=new 类型[长度];
+
+int[] ia=new int[10];
+
+//循环，给数组中每个元素赋值：
+
+for(int i=0;i<ia.length;i++){
+ia[i]=i*100;
+
+//遍历数组：取出数组中的值打印出来:
+
+for(int t=0;t<ia.length;t++){
+int value=ia[t];
+System.out.println(t+"号位置的值是 "+value);
+
+}
+
+}
+
+}
+
+}
+
+使用数组要注意的的是：数组的长度是固定的，数组是有序的，数组中每个元素都有一个唯一
+的索引位置，这个索引值从 0 起，最大为数组长度-1；如果数组长度为 10，则最后一个元素的索
+引位置就是 9。
+取得数组的长度，可以通过 数组名.length 得到；
+取得数组某一位置的值，可以通过 数组名[索引值] 得到。
+在上例中，数组的最后一个原素的索引位置是 9，如果我们在取值是传入的索引大于 9，程序
+就会报“数组越界”的错误：
+
+public static void main(String[] args) {
+
+//定义长度为10的int型数组:
+//数组定义格式为: 类型[] 数组变量名=new 类型[长度];
+
+int[] ia=new int[10];
+for(int i=0;i<ia.length;i++){//循环，给数组中每个元素赋值
+ia[i]=i*100;
+
+}
+ia[10]=10000; //越界取值，会出错！
+
+}
+
+执行上面的代码，会出现如下错误：
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 10
+at dynamiclist.ArrayTest.main(ArrayTest.java:17)
+
+KOWLOON 内部资料
+
+75
+
+软件项目开发讲义
+
+1.2.数组定义的其它方式：
+
+数组定义时可以有三种方式，
+一种如上例，定义是指定数组长度，这样会使用内存空间创建数组对象，但数组中每个位置
+的元素会是其默认值：如是原始类型，则为 0，如是引用类型，则为 null;
+第二种是在创建数组时就给数组中的原素赋值；
+第三种仅定义一个数组变量名，然后再来赋值，看代码示例：
+//仅定义了一个int型的数组变量，并没有指向数组对象，这时ia的值是null;
+
+int[] ia;
+
+ia=new int[5];
+
+//将数组变量名指向一个数组对象，数组中每个位置的默认值为0;
+
+//字符串数组，定义时组数组中原素赋值：
+
+String[] sa=new String[]{"Net","Java","Star"};
+
+//上句代码相当于以下代码：
+
+String[] temsa=new String[3];
+temsa[0]="Net";
+temsa[1]="Java";
+temsa[2]="Star";
+
+//将字符串数组中的元素打印出：
+
+for(int i=0;i<temsa.length;i++){
+System.out.println(temsa[i]);
+
+}
+
+一定要理解的是，数组也是一种对象，数组对象本身的类型就是数组类型，定义数组时，一
+定要指明数组中所装元素的类型。本例中，要注意的是，当我们仅定义了一个数组变量时，是不
+能使用这个数组的，如下代码会出错：
+
+public static void main(String[] args) {
+
+//仅定义了一个int型的数组变量，并没有指向数组对象，这时ia的值是null;
+
+int[] ia=null;
+
+//循环，给数组中每个元素赋值：
+
+for(int i=0;i<ia.length;i++){
+ia[i]=i*100;
+
+}
+
+}
+
+执行时会报错如下：
+
+Exception in thread "main" java.lang.NullPointerException
+at dynamiclist.ArrayTest.main(ArrayTest.java:12)
+
+这就是我们最为常见的“空指针异常“，当在一个”空“的对象名子上调用对象的方法或对
+象属性出，就会出这个错。
+即虽然定义了变量的类型和变量的名字，但这个变量并没有指向一个具体存在的对象，那么
+这个变量的默认值是 null，调用其方法或属性时，就会抛错。
+
+KOWLOON 内部资料
+
+76
+
+软件项目开发讲义
+
+1.3.数组的排序：
+
+排序是一类常用的算法实现，例如对一个 int 型数组中随机的值进行排序，有多种算法，请看
+如下代码：
+
+KOWLOON 内部资料
+
+77
+
+软件项目开发讲义
+
+//数组排序测试
+
+public class SortArray {
+
+//程序入口：测试冒泡,选择,插入,希尔四种排序方式
+
+public static void main(String[] args) {
+
+//取得要排序的原数组
+
+int[] srcA=createSrcArray(5);
+System.out.println("***冒泡排序前原始数组中顺序的值如下：");
+
+printArray(srcA);
+
+System.out.println("----冒泡排序的结果：");
+int[] tem=maoPao(srcA);
+
+printArray(tem);
+
+srcA=createSrcArray(6);
+
+System.out.println("***选择排序前原始数组中顺序的值如下：");
+
+printArray(srcA);
+
+System.out.println("----选择排序的结果：");
+tem=xuanZe(srcA);
+
+printArray(tem);
+
+srcA=createSrcArray(7);
+
+System.out.println("***插入排序前原始数组中顺序的值如下：");
+
+printArray(srcA);
+
+System.out.println("----插入排序的结果：");
+tem=caRu(srcA);
+
+printArray(tem);
+
+srcA=createSrcArray(8);
+
+System.out.println("***shell排序前原始数组中顺序的值如下：");
+
+printArray(srcA);
+
+System.out.println("----shell排序的结果：");
+tem=caRu(srcA);
+
+printArray(tem);
+
+}
+
+//生成一个乱序的，指定长度的原始数组：
+
+public static int[] createSrcArray(int len){
+
+//初始化要排序的数组中的值
+
+int[] base=new int[len];
+for(int i=0;i<base.length;i++){
+
+//创建一个随机对象
+
+java.util.Random ran=new java.util.Random();
+
+//调用随机对象，每次循环时生成一个0~100间随机数
+
+int value=ran.nextInt(100);
+
+//给数组中指定位置填上随机值：
+
+base[i]=value;
+
+}
+
+return base;
+
+KOWLOON 内部资料
+
+78
+
+软件项目开发讲义
+
+}
+
+//打印出数组中的原素
+
+public static void printArray(int[] ia){
+
+//如果要打印的数组为null,则不打印，
+
+if(null==ia){
+
+return ;
+
+}
+for(int i=0;i<ia.length;i++){
+System.out.print("
+"+ia[i]);
+
+}
+System.out.println("");
+
+// 冒泡排序
+
+public static int[]
+
+maoPao(int[] x) {
+for (int i = 0; i < x.length; i++) {
+for (int j = i + 1; j < x.length; j++) {
+if (x[i] > x[j]) {
+int temp = x[i];
+x[i] = x[j];
+x[j] = temp;
+
+}
+
+}
+
+}
+
+return x;
+
+}
+
+}
+
+}
+
+// 选择排序
+
+public static int[] xuanZe(int[] x) {
+
+for (int i = 0; i < x.length; i++) {
+int lowerIndex = i;
+
+// 找出最小的一个索引
+
+for (int j = i + 1; j < x.length; j++) {
+if (x[j] < x[lowerIndex]) {
+lowerIndex = j;
+
+}
+
+}
+// 交换
+int temp = x[i];
+x[i] = x[lowerIndex];
+x[lowerIndex] = temp;
+
+}
+
+return x;
+
+// 插入排序
+
+KOWLOON 内部资料
+
+79
+
+软件项目开发讲义
+
+public static int[] caRu(int[] x) {
+
+for (int i = 1; i < x.length; i++) {
+for (int j = i; j > 0; j--) {
+if (x[j] < x[j - 1]) {
+int temp = x[j];
+x[j] = x[j - 1];
+x[j - 1] = temp;
+
+}
+
+}
+
+}
+
+return x;
+
+}
+
+// 希尔排序
+
+public static int[] shell(int[] x) {
+
+// 分组
+for (int increment = x.length / 2; increment > 0; increment /= 2) {
+
+// 每个组内排序
+
+for (int i = increment; i < x.length; i++) {
+int temp = x[i];
+int j = 0;
+for (j = i; j >= increment; j -= increment) {
+if (temp < x[j - increment]) {
+x[j] = x[j - increment];
+
+} else {
+break;
+
+}
+
+}
+x[j] = temp;
+
+}
+
+return x;
+
+}
+
+}
+
+}
+
+以上代码比较长，你抄一遍也没关系，只是不要抄错，关键是：请你用自己的语言描述出这几
+种排序方法的实现特点。
+
+1.4.多维数组：
+
+Java 编程语言没有象其它语言那样提供多维数组。因为一个数组可被声明为具有任何基础类
+型，所以你可以创建数组的数组(和数组的数组的数组，等等)。一个二维数组(JAVA 中没有二维
+数组的概念，二维数组其实就是数组的数组，即数组的元素是一个数组)如下例所示：
+int twoDim [][] = new int [2][5];
+这句话创建了一个二维数组，我们分析其内部的数据存储构：这个二维数组 towDim 其实只是
+
+KOWLOON 内部资料
+
+twoDim[0]
+
+80
+
+软件项目开发讲义
+
+一个数组，长度为 2，只是这个数组的每个元素又是一个长度为 5 的 int 型数组，如下结构：
+
+twoDim 数组对象
+
+[
+
+[1,2,3,4,5]
+
+[1.2,3,4,5]
+
+]
+
+twoDim[1]
+
+twoDim[0][3]
+
+twoDim[1][1]
+
+如下代码示例：
+
+public static void main(String[] args) {
+
+//定义一个int型的二维数组：
+
+int ia[][] =new int[5][8];
+
+//给数组中每一个元素赋值：
+
+for(int i=0;i<ia.length;i++){
+
+//数组中的每一个元素其实是一个一维数组
+
+for(int t=0;t<ia[i].length;t++){
+java.util.Random ran=new java.util.Random();
+//生成一个300~500间的随机数
+int value=ran.nextInt(300)+200;
+
+//赋给数组中元素的值：
+
+ia[i][t]=value;
+
+}
+
+}
+
+}
+
+print2DimArray(ia); //调用打印方法打印
+
+//遍历打印出数组中每个位置的值：
+
+public static void print2DimArray(int[][] ia){
+for(int i=0;i<ia.length;i++){
+
+//数组中的每一个元素其实是一个一维数组
+
+System.out.println("第 "+i+" 维的数据：");
+for(int t=0;t<ia[i].length;t++){
+int value=ia[i][t];
+System.out.print(i+" "+t+": "+value+" ");
+
+}
+System.out.println();
+
+}
+
+}
+
+}
+
+依此类推，你可以定义出需要的多维数组；另外，你可以试下，要你对上面这个二维数组中的
+数据进行排序，怎么实现？
+
+KOWLOON 内部资料
+
+81
+
+软件项目开发讲义
+
+2.使用数组管理学生信息
+
+2.1.程序需求：
+
+KOWLOON 内部资料
+
+82
+
+软件项目开发讲义
+
+}
+
+所要管理的学生数据很简单，只要输入每个学生的姓名和学分即可，现在编写运行主类，在其
+中实现学生信息的录入：
+
+/**
+*
+
+KOWLOON 内部资料
+
+83
+
+软件项目开发讲义
+
+3.
+
+KOWLOON 内部资料
+
+84
+
+软件项目开发讲义
+
+/**
+
+* 实现的简单队列
+
+* @author KOWLOON
+*/
+
+public class STList implements NetJavaList {
+
+//向队列中加入一个学生对象
+
+public void add(Student st){
+
+//1.新建一个数组,长度是原数组长度+1;
+
+Student[] destA=new Student[srcA.length+1];
+
+//2.将要加入的对象放入新数组的最后一位置:
+
+destA[srcA.length]=st;
+
+//3.将原数组中的东东放到新数组中
+
+for(int t=0;t<srcA.length;t++){
+destA[t]=srcA[t];
+
+//指向新建的数组,就OK!
+
+srcA=destA;
+
+* 取得队列中指定位值的一个对象
+
+* @param index
+
+* @return :是一个学生对象
+*/
+public Student get(int index){
+Student st=srcA[index];
+
+return st;
+
+}
+
+}
+/**
+
+}
+
+/**
+
+* 得到队列的长度,即队列中元素的个数
+
+* @return 数组中元素的个数
+*/
+
+public int size(){
+
+return srcA.length;
+
+//队列内部初始用来装学生对象的数组,长度为0
+
+private Student[] srcA=new Student[0];
+
+}
+
+}
+
+现在，只要创建这个类的对象，就有了一个可自动增长的“队列“对象啦！测试一下：
+
+public class ManagerT {
+
+//程序入口
+
+public static void main(String[] args) {
+
+//创建队列对象
+
+NetJavaList njl=new STList();
+for(int i=0;i<5;i++){
+Student st=new Student("name"+i,i+10);
+
+KOWLOON 内部资料
+
+85
+
+软件项目开发讲义
+
+//加入队列:
+
+njl.add(st);
+
+}
+
+}
+
+//打印队列:
+
+printStudent(njl);
+
+/**打印队列中每个学生对象的信息*/
+
+public static void printStudent(NetJavaList sl){
+System.out.println(sl.size()+" 个学生信息如下: ");
+for(int t=0;t<sl.size();t++){
+Student st=sl.get(t);
+st.showInfo();
+
+}
+
+}
+
+}
+
+请完成如上编码测试，并理解自定义队列的实现思路。这个队列还不是很完美，我们接下来进一
+步优化！
+
+3.3.泛型
+
+上面所实现的队列最大的缺点就是：只能放入 Student 类（或其子类）的对象；这就太麻烦
+了，难道我们还要为每个对象创建一个队列吗？No,我们使用 jdk5 中新的“泛型”语法解决这个
+问题，简单的说，就是在创建队列时，指定队列中所存放对象的类型，首先，要改变接口的定义，
+如下代码所示：
+
+/**
+
+* 自定义泛型队列的接口实现
+
+* @author KOWLOON
+*/
+
+public interface NetJavaList<E> {
+
+//向队列中加入一个对象
+
+public void add(E e);
+
+//取得队列中指定位置的一个对象
+
+public E get(int index);
+
+//得到队列的长度,即队列中元素的个数
+
+public int size();
+
+}
+
+/**
+
+注意，在定义接口时，多了个尖括号，里面还有个 E，这就是奥密所在，请看新的实现类：
+
+* 实现的泛型队列
+
+* @author KOWLOON
+*/
+public class STList<E> implements NetJavaList<E> {
+
+//向队列中加入一个对象
+
+public void add(E e){
+
+//1.新建一个数组,长度是原数组长度+1;
+
+KOWLOON 内部资料
+
+86
+
+软件项目开发讲义
+
+Object[] destA=new Object[srcA.length+1];
+
+//2.将要加入的对象放入新数组的最后一位置:
+
+destA[srcA.length]=e;
+
+//3.将原数组中的东东放到新数组中:
+
+KOWLOON 内部资料
+
+87
+
+重新设计我们的自定义队列，就必须考虑到到性能和功能上的优化，请看如下代码模板：
+
+软件项目开发讲义
+
+3.4.优化思路
+
+/**
+
+* 简单优化的队列
+
+* @author KOWLOON
+*/
+public class SampleList<E> {
+
+//使用默认参数构造队列
+
+public SampleList() {
+}
+
+//创建时指定队列的初始化大小
+
+public SampleList(int initCount) {
+}
+
+//创建时指定队列的初始化大小，和每次增长比率
+
+public SampleList(int initCount, int incresCount) {
+}
+
+// 向队列中加入一个对象
+
+public void add(E e) {
+
+// 向队列中指定位置插入一个对象
+
+public void insert(E e, int index) {
+}
+
+public E get(int index) {
+
+return null;
+
+// 取得队列中指定位值的一个对象，如果指定了类型，则转为指定类型返回
+
+// delete队列中某个位置的对象并返回，delete后，队列长度-1
+
+public E delete(int index) {
+
+return null;
+
+}
+
+}
+
+}
+
+}
+
+}
+
+// 将另一个队列中的所有对象加到队列后面
+
+public void addAll(SampleList<E> list) {
+}
+
+// 得到队列的长度,即队列中元素的个数
+
+public int size() {
+return 0;
+
+请根据以上代码模板，重新定义一个功能更为完备，性能较优化的队列类，并测试之。
+
+总结和任务
+
+1.实践：完成通学数组进行学生信息管理的小程序
+2.实践：数组的几种排序方法
+3.实践：完成一个简单的自定义队列实现。
+
+KOWLOON 内部资料
+
+88
+
+软件项目开发讲义
+
+4.扩展提高：按照本节提示，完成队列的优化实现。
+5.总结：数组的特征和使用时的注意事项
+
+6.总结：描述至少二种排序方案的思路：
+
+KOWLOON 内部资料
+
+89
+
+软件项目开发讲义
+
+第八章 java 集合框架
+
+本章目标：
+
+完成本章后，你将能够：
+1.明确 java 常用集合的继承体系；
+
+2.熟练使用 Set,List,Map 接口的实现类。
+
+KOWLOON 内部资料
+
+90
+
+软件项目开发讲义
+
+1.集合框架总体结构
+
+Java 中集合类定义主要是 java.util.*包下面，常用的集合
+
+KOWLOON 内部资料
+
+91
+
+软件项目开发讲义
+
+3.java.util.Set
+
+KOWLOON 内部资料
+
+92
+
+软件项目开发讲义
+
+4.java.util.List 接口的用法
+
+相对与无序的 Set，List 接口提供了多个实现的子类，提供有序的访问集合中元素的方法，
+这里有序访问的意思可理解为，可根据 List 中对象放入时的次序来查找对象。List 了类除了实
+现 Collection 中的方法外，还有如下几个特有的方法：
+boolean
+addAll(int
+index,
+向一个 List 列表中插入一个对象 ，index 必须小与 getSize()
+Collection<? extends E>
+c)
+返回的值。
+E get(int index)
+取得 list 列表中指定位置的一个对象，如果 index 值大与
+getSize()返回的值，调用将抛出异常。
+List 接口一个常用的实现类是 java.util.Vector 和 java.util.ArrayList，示例代码如下：
+
+KOWLOON 内部资料
+
+93
+
+软件项目开发讲义
+
+import java.util.ArrayList;
+import java.util.List;
+//List测试
+
+public class ListTest {
+
+//程序入口
+
+public static void main(String[] args) {
+ListTest st=new ListTest();
+List<Student> list=st.getUserList(5);
+System.out.println("List中共有元素: "+list.size());
+
+//取出list中的某个位置的元素：
+
+Student sd=list.get(3);
+sd.showInfo();
+
+//输出列表中所有Student对象信息：
+
+st.printList(list);
+
+* 打印出List中对象的内容
+
+* @param list
+
+*/
+public void printList(List<Student> list){
+for(int i=0;i<list.size();i++){
+//我们己知List中放的是UserInfo对象
+Student us=list.get(i);;
+us.showInfo();
+
+}
+/**
+
+}
+
+}
+
+/**
+
+* 取得指定数量Student对象的一个List集合
+
+* @param userCount:要创建的用户个数
+
+* @return
+
+*/
+public java.util.List<Student> getUserList(int userCount){
+List userList =new ArrayList();
+for(int i=0;i<userCount;i++){
+Student ui=new Student("用户_"+((char)(65+i)),i+1);
+userList.add(ui);
+
+}
+return userList;
+
+}
+
+}
+
+KOWLOON 内部资料
+
+94
+
+软件项目开发讲义
+
+5.java.util.Map 接口应用：
+
+现实生活中，我们常会看到这样的一种集合：IP 地址与主机名，身份证号与个人，
+
+KOWLOON 内部资料
+
+95
+
+软件项目开发讲义
+
+System.out.println("取出的key为"+key+"对象的信息是: ");
+Student st=map.get(key);
+st.showInfo();
+
+}
+
+/**
+
+* 创建用户与名字关系的Map对象
+* @return:用户名字与用户对象关联的Map对象
+
+*/
+public Map<String,Student> createUserTable(){
+Map userMap=new java.util.HashMap();
+for(int i=0;i<6;i++){
+Student us=new Student("我是第"+(i+1)+"个",i);
+userMap.put(""+i,us);
+
+}
+return userMap;
+
+}
+/**
+* 遍历Map
+* @param um:Map对象
+*/
+public void printMap(Map<String,Student> um){
+//得到Map中所有Key的集合
+java.util.Set<String> set=um.keySet();
+java.util.Iterator<String> it=set.iterator();
+//迭代key
+while(it.hasNext()){
+String key=it.next();
+//取出key对应的value
+Student uf=um.get(key);
+uf.showInfo();
+
+}
+
+}
+
+}
+
+总结和任务
+
+1.实践：完成对 Set，List，Map 接口实现类示例代码的编写；
+2．总结：描述它们的继承体系结构；
+
+KOWLOON 内部资料
+
+96
+
+软件项目开发讲义
+
+3．总结：说明三种集合间的异同点和适用场景。
+
+KOWLOON 内部资料
+
+97
+
+软件项目开发讲义
+
+第九章
+
+KOWLOON 内部资料
+
+98
+
+软件项目开发讲义
+
+1.画板的重绘
+
+到现在为止，我们已经可以开发一个画图板程序了。但是细心的学生会发现，当我们将画板
+窗体最小化或者改变窗体大小的时候，我们先前画的东西就全部没有了。这是因为当窗体在屏幕
+上显示的时候，首先是将窗体对象的数据从内存中取出来放到缓存中，再在屏幕上进行绘制。当
+窗体发生改变的时候，程序会重新从内存中获取更新后的数据绘制。
+
+KOWLOON 内部资料
+
+99
+
+软件项目开发讲义
+
+2.重绘画过的形状
+
+2.1 创建保存形状的队列
+如何将我们画过的形状保存起来呢？这里就需要用到我们前面学过的队列。在决定用哪种数
+据结构之前，先要分析数据的特点。在我们这里，需要保存所画的所有的形状，然后我们也不知
+道需要保存多少个形状，而是画几个就保存几个，所以我们只能用到队列去保存：
+//定义一个队列用来保存画过的形状
+
+private List<NetJavaShape> shapes = new ArrayList<NetJavaShape>();
+
+2.2 将所画的形状保存到队列中
+然后在绘制形状的时候，每绘制一个形状，就将绘制过的形状保存到队列中。
+// 看用户选中的是要画什么形状,根据用户选择,创则不同的对象:
+
+String command =
+shapGroup.getSelection().getActionCommand();
+
+// 默认为画线:
+
+NetJavaShape shape = new ImpLine(x1, y1, x2, y2, (byte) 0,color);
+if (command.equals("Line")) {// 选中的是线
+shape = new ImpLine(x1, y1, x2, y2, (byte) 0, color);
+
+} else if (command.equals("Ract")) {
+shape = new ImpRact(x1, y1, x2, y2, (byte) 1, color);
+} else if (command.equals("FillOval")) {
+shape = new ImpFillOval(x1, y1, x2, y2, (byte) 1, color);
+
+}
+
+// 调用shape对象绘制的方法，传入画布对象，坐标点和颜色对象;
+// 具体的shape对象就知道如何绘制出自己
+
+shape.draw(g);
+
+//将画过的形状保存到队列中
+
+shapes.add(shape);
+
+2.3 重绘队列中的形状
+
+当窗体发生改变的时候，就会在重绘的方法中将队列中的所有形状重新绘制出来：
+
+//…
+
+//遍历形状队列
+
+for(int i=0;i<shapes.size();i++){
+NetJavaShape shape = shapes.get(i);
+shape.draw(g);
+
+}
+
+//…
+
+具体代码如下：
+
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+
+KOWLOON 内部资料
+
+100
+
+软件项目开发讲义
+
+import java.util.ArrayList;
+import java.util.List;
+/**
+
+* 简单画版实现 v0.3
+
+* @author KOWLOON
+*/
+public class SampleDraw extends javax.swing.JFrame{
+
+//定义一个队列用来保存画过的形状
+
+private List<NetJavaShape> shapes = new ArrayList<NetJavaShape>();
+public static void main(String[] args) {
+SampleDraw sd = new SampleDraw();
+sd.showUI();
+
+}
+
+// 显示主界面
+
+public void showUI() {
+
+this.setTitle("KOWLOON画板v0.1");// 设定标题
+this.setSize(500, 300); // 设
+this.setResizable(false); // 界面不可改变大小
+java.awt.FlowLayout fl = new java.awt.FlowLayout();// 布局管理器
+this.setLayout(fl);
+
+// 加上自定义的鼠标事件监听器:鼠标释放时调用方法
+
+this.addMouseListener(new java.awt.event.MouseAdapter() {
+
+// 只需要重写需要的方法即可，因为父类不是接口：
+// 鼠标按下时的点的坐标
+
+public void mousePressed(MouseEvent e) {
+
+// 记录第一次点击的x,y:通过事件对象e得到
+
+x1 = e.getX();
+y1 = e.getY();
+
+}
+
+// 鼠标释放时的点的坐标
+
+public void mouseReleased(MouseEvent e) {
+
+// 记录第二次点击的坐标：
+
+x2 = e.getX();
+y2 = e.getY();
+
+// 看用户选中的是要画什么形状,根据用户选择,创则不同的对象:
+
+String command =
+shapGroup.getSelection().getActionCommand();
+
+// 默认为画线:
+
+NetJavaShape shape = new ImpLine(x1, y1, x2, y2, (byte) 0,
+color);
+if (command.equals("Line")) {// 选中的是线
+shape = new ImpLine(x1, y1, x2, y2, (byte) 0, color);
+
+} else if (command.equals("Ract")) {
+shape = new ImpRact(x1, y1, x2, y2, (byte) 1, color);
+} else if (command.equals("Oval")) {
+shape = new ImpFillOval(x1, y1, x2, y2, (byte) 1, color);
+
+KOWLOON 内部资料
+
+101
+
+软件项目开发讲义
+
+}
+
+// 调用shape对象绘制的方法，传入画布对象，坐标点和颜色对象;
+// 具体的shape对象就知道如何绘制出自己
+
+shape.draw(g);
+
+//将画过的形状保存到队列中
+
+shapes.add(shape);
+
+}
+
+});
+
+// 选择颜色的按钮，点击后，弹出颜色选择器：
+
+// 设置按钮的事件监听器：
+
+javax.swing.JButton bu_color = new javax.swing.JButton("选颜色");
+bu_color.addActionListener(new java.awt.event.ActionListener() {
+public void actionPerformed(ActionEvent e) {
+showColorSelecter();// 调用弹出颜色选择器的方法
+
+}
+
+});
+this.add(bu_color);
+
+// 创建三个单选按钮:
+
+javax.swing.JRadioButton jr_line = new
+javax.swing.JRadioButton("Line");
+jr_line.setActionCommand("Line");
+javax.swing.JRadioButton jr_ract = new
+javax.swing.JRadioButton("Ract");
+jr_ract.setActionCommand("Ract");
+javax.swing.JRadioButton jr_oval = new
+javax.swing.JRadioButton("Oval");
+jr_oval.setActionCommand("Oval");
+
+// 加入到组中：
+
+this.shapGroup.add(jr_line);
+this.shapGroup.add(jr_ract);
+this.shapGroup.add(jr_oval);
+
+// 将选择组加到界面上:
+
+this.add(jr_line);
+this.add(jr_ract);
+this.add(jr_oval);
+this.setDefaultCloseOperation(3); // 关闭时退出程序
+this.setVisible(true);
+
+// 取得界面上的画布对象：一定要在界面setVisible后取得！
+
+g = this.getGraphics();
+
+}
+
+色",
+
+// 当点击颜色选择按钮时，显示颜色选择器，并得到用户选中的颜色:
+
+private void showColorSelecter() {
+
+// 弹出颜色选择器:弹出在那个组件上，标题，初始化颜色三个参数要指定
+
+// 这是JColorChooser中的一个public static方法，可直接调
+this.color = javax.swing.JColorChooser.showDialog(null, "请选择颜
+
+java.awt.Color.black);
+
+KOWLOON 内部资料
+
+102
+
+软件项目开发讲义
+
+}
+/**
+
+* 重写父类的绘制窗体的方法
+
+*/
+public void paint(Graphics g){
+
+//一定要先调用父类的paint方法，用来绘制窗体
+
+super.paint(g);
+
+drawShapes();
+
+//在这里可以调用自己的方法来绘制窗体之外的其他东东
+
+}
+/**
+
+}
+
+}
+
+* 绘制画过的形状的方法
+
+*/
+private void drawShapes(){
+
+//遍历形状队列
+
+for(int i=0;i<shapes.size();i++){
+NetJavaShape shape = shapes.get(i);
+shape.draw(g);
+
+// 形状选择组对象，用来加入形状选择按钮：
+
+private javax.swing.ButtonGroup shapGroup = new
+javax.swing.ButtonGroup();
+private java.awt.Color color = java.awt.Color.BLACK; // 默认的颜色为黑
+
+private int x1, y1, x2, y2; // 记录鼠标两次点击的坐标
+private java.awt.Graphics g; // 从界面对象上得到的画布对象
+
+色
+
+}
+
+3.画板的优化思路
+
+到这里我们的画图板终于像模像样了，但这还远远不够。脚下的路才刚刚开始……
+我们还有更多的事情要做：
+1. 界面是不是还很丑陋，我们能不能做得更漂亮些，比如我们可以模仿 Windows XP/Win7
+
+KOWLOON 内部资料
+
+103
+
+软件项目开发讲义
+
+总结和任务
+
+1. 完成画图板的重绘。
+
+2. 总结：画图板项目的总结
+
+KOWLOON 内部资料
+
+104
+
+软件项目开发讲义
+
+第十章 五子棋开发
+
+本章目标：
+
+完成本章后，你将能够：
+1．巩固 swing 程序的开发
+2．常用数据结构的使用，算法的理解
+3．五子棋项目的开发
+
+KOWLOON 内部资料
+
+105
+
+软件项目开发讲义
+
+1 五子棋开发思路分析
+
+五子棋的开发首先需要我们在界面上绘制一个表格，因为棋盘是不变的，所以我们可以在重
+写 paint(Graphics g)方法的时候，同时将表格绘制出来。
+然后就是每点击一次鼠标，就在里鼠标最近的表格的交叉点上放一个棋子。放棋子其实就是
+
+以表格的交叉点为圆心绘制一个实心的圆。Graphics 类有一个方法 fillOval(int x,int y,int width,int
+
+height),只要在鼠标发生点击事件的时候就调用这个方法，就可以绘制一个棋子，不同的棋子只需
+要将画布设置成不同的颜色即可。
+现在剩下的就是当一方棋子达到五颗子的时候，就需要判断输赢了。判断输赢的算法在后面
+再来详解。先来看一下五子棋的界面：
+
+2.简单五子棋的开发
+
+2.1 五子棋棋盘的开发
+首先还是和画图板一样需要先有一个界面，我们可以定义一个 FiveChessUI 类继承 JFrame.然
+
+后再重写 paint(Graphics g)方法，来绘制棋盘：
+
+import java.awt.Graphics;
+import javax.swing.JFrame;
+/**
+* 五子棋v0.1
+* @author KOWLOON
+*/
+
+public class FiveChessUI extends JFrame {
+
+public static void main(String args[]){
+FiveChessUI fcUI = new FiveChessUI();
+fcUI.initUI();
+
+}
+/**
+
+KOWLOON 内部资料
+
+106
+
+软件项目开发讲义
+
+* 初始化五子棋窗体的方法
+
+*/
+
+public void initUI(){
+
+this.setTitle("KOWLOON五子棋v0.1");// 设定标题
+this.setSize(600, 600); // 设
+this.setResizable(false); // 界面不可改变大小
+this.setDefaultCloseOperation(3);
+this.setVisible(true);
+
+}
+/**
+
+}
+/**
+
+* 重写绘制窗体的方法
+
+*/
+public void paint(Graphics g){
+super.paint(g);
+
+//在重绘窗体的同时绘制棋盘
+
+drawChessTable(g);
+
+* 绘制棋盘的方法
+
+*/
+public void drawChessTable(Graphics g){
+
+//画棋盘横线
+
+//画棋盘竖线
+
+for(int i=0;i<11;i++)
+g.drawLine(50, 50*(i+1), 550, 50*(i+1));
+
+for(int j=0;j<11;j++)
+g.drawLine( 50*(j+1), 50, 50*(j+1), 550);
+
+}
+
+}
+
+/**
+
+* 五子棋相关配置的类
+
+* @author KOWLOON
+*/
+
+如果是这样写的话，当我们想要改变表格的大小和单元格的个数的时候，就需要重新计算，
+这种将数值直接硬编码到程序中显然缺乏灵活性，所以我们可以先定义一个接口将需要的数值先
+定义成常量，在调用的时候再只需要使用常量变量就行了：
+
+public interface Config {
+public static final int X0 = 50;//表格左上角起点的X值
+public static final int Y0 = 50;//表格左上角起点的y值
+public static final int ROWS = 11;// 横向线的条数
+public static final int COLUMNS = 11;// 纵向线的条数
+
+public static final int CHESS_SIZE = 40;// 棋子的直径
+
+public static final int SIZE = 50;// 单元格的大小
+
+}
+
+这样，在绘制棋盘的时候，我们就可以使用已经定义好的常量，当我们需要修改表格的样式
+
+KOWLOON 内部资料
+
+107
+
+时，只要修改配置类中常量的值，使用起来就方便得多了：
+
+软件项目开发讲义
+
+/**
+
+* 绘制棋盘的方法
+
+*/
+public void drawChessTable(Graphics g) {
+
+// 画棋盘横线
+
+for (int i = 0; i < Config.ROWS; i++) {
+g.drawLine(Config.X0, Config.Y0 + i * Config.SIZE, Config.X0+
+(Config.COLUMNS - 1) * Config.SIZE, Config.Y0 + i* Config.SIZE);
+}
+
+// 画棋盘竖线
+
+for (int j = 0; j < Config.COLUMNS; j++) {
+g.drawLine(Config.X0 + j * Config.SIZE, Config.Y0, Config.X0 + j
+* Config.SIZE, Config.Y0 + (Config.ROWS - 1) *
+
+Config.SIZE);
+}
+
+}
+
+2.2 在棋盘上绘制棋子
+当鼠标在棋盘上点击一下的时候，就需要在棋盘上放一颗棋子，这样我们需要给窗体添加一
+个鼠标监听器，用来监听鼠标事件。
+
+import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+/**
+
+* 五子棋的鼠标监听器类
+
+* @author KOWLOON
+*/
+public class ChessListener extends MouseAdapter {
+private Graphics g;
+public ChessListener(Graphics g) {
+this.g = g;
+
+}
+public void mouseReleased(MouseEvent e) {
+
+// 得到鼠标事件发生的时候光标的位置
+
+int x1 = e.getX();
+int y1 = e.getY();
+
+//以选中的点为圆心画圆
+
+g.fillOval(x1-Config.CHESS_SIZE/2, y1-Config.CHESS_SIZE/2,
+
+Config.CHESS_SIZE, Config.CHESS_SIZE);
+
+}
+
+}
+
+然后将鼠标监听器加给窗体，这样我们点击一下窗体就能够在窗体上以鼠标的光标为圆心绘
+制一个棋子，但这还不是我们需要的，我们希望的是当鼠标点击的位置在表格的交叉点上的时候，
+就以表格的交叉点为圆心绘制一个棋子，然后黑子和白子交替放。
+所以我们需要在得到光标的位置之后先要判断是不是在表格的交叉点上，另外还需要定义一
+个计数器，用来记录是放黑子还是白子：
+
+KOWLOON 内部资料
+
+108
+
+软件项目开发讲义
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+/**
+
+* 五子棋的鼠标监听器类
+
+* @author KOWLOON
+*/
+public class ChessListener extends MouseAdapter {
+private Graphics g;
+private int count = 0;// 计数器
+public ChessListener(Graphics g) {
+this.g = g;
+
+}
+public void mouseReleased(MouseEvent e) {
+
+// 得到鼠标事件发生的时候光标的位置
+
+int x1 = e.getX();
+int y1 = e.getY();
+// 按行遍历棋盘,坐标(i,j)
+for (int j = 0; j < Config.ROWS; j++) {
+for (int i = 0; i < Config.COLUMNS; i++) {
+
+// 得到交叉点的坐标(x,y)
+
+int x = Config.X0 + Config.SIZE * i;// 横坐标
+int y = Config.Y0 + Config.SIZE * j;// 纵坐标
+// 与圆心的误差为size/3
+if (x1 > x - Config.SIZE / 3 && x1 < x + Config.SIZE / 3
+&& y1 > y - Config.SIZE / 3 && y1 < y + Config.SIZE / 3)
+
+{
+
+if (count == 0) {
+g.setColor(Color.BLACK);
+count++;
+
+} else {
+
+g.setColor(Color.WHITE);
+count--;
+
+}
+
+// 以交叉点为圆心画圆
+
+g.fillOval(x - Config.CHESS_SIZE / 2, y -
+
+/ 2, Config.CHESS_SIZE, Config.CHESS_SIZE);
+
+return;
+
+Config.CHESS_SIZE
+
+}
+
+}
+
+}
+
+}
+
+}
+
+还有一个问题就是当我们点击一个已经有了棋子的位置的时候，我们还是照样可以放一颗棋
+
+KOWLOON 内部资料
+
+109
+
+软件项目开发讲义
+
+子，所以我们需要再定义一个二维数组，用来标记棋盘上可以放棋子的位置。数组的所有初始值
+都为 0，当放一颗黑子的时候，我们就将对应位置的元素的值改为 1，当为白子的时候，我们就将
+对应位置的元素的值改为-1。这样，我们在放棋子之前，只要判断选择的交叉点所对应在二维数
+组中的元素不为 0，就不能再放棋子。
+//定义一个二维数组，用来标记棋盘上的位置
+
+private int[][] chesses = new int[Config.ROWS][Config.COLUMNS];
+
+鼠标监听器中的方法实现：
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+/**
+
+* 五子棋的鼠标监听器类
+
+* @author KOWLOON
+*/
+public class ChessListener extends MouseAdapter {
+private Graphics g;
+private int count = 0;// 计数器
+private int[][] chesses;
+public ChessListener(Graphics g, int[][] chesses) {
+this.g = g;
+this.chesses = chesses;
+
+}
+public void mouseReleased(MouseEvent e) {
+
+// 得到鼠标事件发生的时候光标的位置
+
+int x1 = e.getX();
+int y1 = e.getY();
+// 按行遍历棋盘,坐标(i,j)
+for (int j = 0; j < Config.ROWS; j++) {
+for (int i = 0; i < Config.COLUMNS; i++) {
+
+// 得到交叉点的坐标(x,y)
+
+int x = Config.X0 + Config.SIZE * i;// 横坐标
+int y = Config.Y0 + Config.SIZE * j;// 纵坐标
+// 与圆心的误差为size/3
+if (x1 > x - Config.SIZE / 3 && x1 < x + Config.SIZE / 3
+&& y1 > y - Config.SIZE / 3 && y1 < y + Config.SIZE / 3)
+
+{
+
+if (chesses[i][j] == 0) {//如果选择的位置没有棋子
+if (count == 0) {
+chesses[i][j]=1;//如果是黑子，就为1
+g.setColor(Color.BLACK);
+count++;
+
+} else {
+
+chesses[i][j]=-1;//如果是白子，就为-1
+g.setColor(Color.WHITE);
+count--;
+
+KOWLOON 内部资料
+
+110
+
+}
+
+return;
+
+// 以交叉点为圆心画圆
+
+g.fillOval(x - Config.CHESS_SIZE / 2, y
+
+- Config.CHESS_SIZE / 2, Config.CHESS_SIZE,
+Config.CHESS_SIZE);
+
+软件项目开发讲义
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+2.3 五子棋算法分析
+
+现在已经能够正确的放棋子了，我们需要做的就是如何判断输赢。可以将判断方向分为四个
+方向，即：水平向右，竖直向下，斜向右下，斜向左下。前面我们用一个二维数组来存放数据表
+达棋盘交点处的状态，是否有棋子，是什么棋子。将数组全部初始化为 0，而鼠标点击棋盘后会
+将对应交点数组里的数改变。以改变为 1 表示放置的是黑子，以改变为-1 表示放置的是白子。所
+以我们只需要判断在四个方向上是否有 5 个连续的 1 或者-1：
+//检查横向是否有5个连续的棋子
+
+public int checkRow(int x,int y){
+
+int count=0;//定义一个棋子个数计数器
+for(int i=x+1;i<chesses.length;i++){//往右
+if(chesses[i][y]==chesses[x][y]){
+count++;
+
+}
+
+else
+
+break;//有一颗不同，则退出判断
+
+}
+for(int i=x;i>=0;i--){//往左
+if(chesses[i][y]==chesses[x][y]){
+count++;
+
+}
+
+else
+break;
+
+}
+
+return count;
+
+}
+
+五子棋到这里，我想剩下的事情都应该交给你去做了吧。如果大家把算法都写出来了，就请
+接着往下看。
+
+KOWLOON 内部资料
+
+111
+
+软件项目开发讲义
+
+3.仿 QQ 五子棋的开发
+
+（摘自湖南大学周圣韬的五子棋项目）
+虽然我们的五子棋已经基本成型，但还是感觉比较丑陋，我们看到一些网络游戏中的五子棋，
+做得非常漂亮，我们现在能不能做到呢？当然能。接下来，我们就要模仿 QQ 游戏中的五子棋，
+给我们的五子棋整整容。
+首先，我们需要一个好看的棋盘，这需要我们事先准备一张图片，然后创建一个图片对象：
+//创建一个图片对象
+
+public static javax.swing.ImageIcon ChessboardImgIcon = new
+javax.swing.ImageIcon("img/Chessboard.jpg");
+
+然后在绘制棋盘的时候，不再是绘制表格，而是将图片绘制出来：
+// 画棋盘
+
+g.drawImage(ChessboardImgIcon.getImage(), 130, 120, null);
+
+同样绘制棋子也是相同的做法，实现准备黑子白子两张图片对象。然后在绘制棋子的时候不
+再是画圆，而是通过调用 drawImage()方法，将棋子图片绘制在棋盘上。
+接下来，聪明的你一定知道该怎么做，那就动手吧！
+4.五子棋接下来的扩展
+如果你已经做到了这里，那么恭喜你，接下来才真正是你大显身手的时候，我们还可以有很
+多地方需要扩展和完善的：
+1. 五子棋的人机对战，我们前面还只是做了人与人的对战，如果能够我们下一颗子，电脑
+下一颗子，岂不妙哉！
+2. 当不小心放错子的时候，能够允许选择悔棋；
+3. 实现一个网络版的五子棋，能够让你和远在别处的朋友一起玩玩五子棋。
+
+KOWLOON 内部资料
+
+112
+
+软件项目开发讲义
+
+总结和任务
+
+1．完成五子棋的开发。
+
+2．总结：五子棋项目的总结
+
+KOWLOON 内部资料
+
+113
+
+软件项目开发讲义
+
+第十一章 Java 文件操作与异常机制
+
+本章目标：
+
+完成本章后，你将能够：
+1.掌握使用 File 对象创建目录，删除文件，查找文件的方法；
+2.理解递归算法应用；
+3.理解 java 的异常机制和 Exception,throws,throw,Throwable 用法。
+4.完成文件搜索小程序开发
+
+KOWLOON 内部资料
+
+114
+
+软件项目开发讲义
+
+1. File 类用法详解
+
+File 类位与 java.io 包中，可以通过 File 对象的方法创建文件对象、删除文件、列表目录下的
+
+KOWLOON 内部资料
+
+115
+
+软件项目开发讲义
+
+boolean createNewFile():根据 File 对象的名字在磁盘上创建一个新的真实文件;如己存在同
+名文件则覆盖，如存在同名目录，则抛出异常信息，创建失败；
+
+1. 代码测试：
+
+package cn.netjava.fileSearch;
+import java.io.*;
+/**
+* File类常用用法测试
+* @authorKOWLOON
+*/
+public class FileTest {
+//程序主方法
+public static void main(String args[]){
+FileTest ft=new FileTest();
+ft.listRoots();
+ft.testCreateAndDelete("测试文件");
+
+}
+/**
+* 列出机器上的根目录
+*/
+public void
+listRoots(){
+//直接调用File类的static方法
+File[] lf=File.listRoots();
+System.out.println("磁盘上目录个数是: "+lf.length);
+for(int i=0;i<lf.length;i++){
+System.out.println("第"+i+"个目录:"+lf[i].getAbsolutePath());
+}
+
+}
+
+/**
+* 测试文件创建与delete
+* @param fileName
+*/
+public void testCreateAndDelete(String fileName){
+//通过传入的名字构造File对象
+File temFile=new File(fileName);
+//判断文件是否存在
+if(temFile.exists()){
+//如果是一个目录
+if(temFile.isDirectory()){
+System.out.println("这是一个目录："+temFile.getAbsolutePath());
+}
+//如果是文件
+if(temFile.isFile()){
+//打印出文件长度
+prinFileAttr(temFile);
+
+KOWLOON 内部资料
+
+116
+
+软件项目开发讲义
+
+//删除文件
+temFile.delete();
+String theName=temFile.getName();
+String absPath=temFile.getAbsolutePath();
+System.out.println("文件己删除，名字是"+theName+" 绝对路径是："+absPath);
+}
+}else{
+try{
+temFile.createNewFile();
+System.out.println("文件己创建！"+temFile.getAbsolutePath());
+//打出文件长度
+prinFileAttr(temFile);
+}catch(Exception ef){
+System.out.println("创建文件失败");
+
+}
+
+}
+
+}
+
+/**
+* 打印出文件的相关属性:长度,文件名,父目录名,是否隐藏文件
+* @param fileName:文件的绝对路径
+*/
+public void prinFileAttr(File temf){
+System.out.println("文件长度是: "+temf.length());
+
+}
+
+如果你运气好，将会输出如下结果：
+
+磁盘上目录个数是: 4
+
+第 0 个目录:C:\
+第 1 个目录:D:\
+第 2 个目录:E:\
+第 3 个目录:F:\
+文件己创建！E:\workspace\netjavaOne\测试文件
+
+并在你的当前目录，也就是你 Eclipse 的 workSpace 下 netjavaOne 这个项目目录下创建了一
+个名字为“测试文件”的真实文件，如果你再次运行，输出的结果将会不同，请测试 File 类的
+其它方法。
+
+2.递归算法:目录遍历
+
+2.1．递归算法理解：
+
+如你非科班出身，有必要解释递归指的是一种计算方法或者说方法调用的规则：在 java 中
+体现的就是方法调用方法自己，比如我们要计算从 1 到某个数的累加值，可以定义如下方法：
+
+/**
+
+* 计算1累到到某个数字的和
+
+KOWLOON 内部资料
+
+117
+
+软件项目开发讲义
+
+* @param i:要累加到的数字
+
+* @return : 累加的结果
+public int sum(int i){
+
+*/
+
+if(i>0)
+return i+sum(i-1);
+
+return 0;
+
+}
+
+如命题所提，计算从１到某数的累加，是限定了累加计算的条件是最小值不能小与 0，虽最
+大值没有限定，我们还是按照常现限定在一个 int 型范围内。根据初中所学的代数知识，我们很
+容易写如下代数程式：
+假定通过 sum(i)求值，i 为累加最大值，是一个大与 0 的数
+如果 i=1,sum(1)=1;
+如果 i=2,sum(2)=sum(2)+sumb(2-1)=3;
+如果 i=5,
+sum(5)=sum(5) + sum(5-1)
+=sum(5) + sum(5-1) + sum(4-1)
+=sum(5) + sum(5-1) + sum(4-1) + sum(3-1)
+=sum(5) + sum(5-1) + sum(4-1) + sum(3-1)+sum(2-1
+=5 +
+4 +
+3 +
+2 +
+1
+=15;
+编写代码的一个原则就是“拿不准就穷举“，我们第一次计算时肯定不会写出前面那个聪明
+的方法，而是像后面这样一步一步计算，但是我们发现了其中的规则：每一第的算法是相同的即
+每一步都是 n+n-1；结束条件（最小累加数大于零）是己知的；编程的一个重要能力就是抓住规
+则，计算累加到 5 我们可以这样一步一步写，但如是要求计算到 1000,这样写一天未必写完，但
+通过这个推理过程，我们找到了累加的规则，就编写出前面的 java 代码实现。
+在上例中，方法调用是根据参数的累减向下层展开；调用到最后一层，再返回调用结果。不
+要被“方法调用自己”这个说法或写法搞迷糊，你完全可以认为在 sum 中调用的 sum 是另外一个
+方法，只是方法名相同而己，更由与方法内的算法想同！所以不需要重新编写方法代码，调用自
+己就是了。
+
+//得到指定个数的空格
+
+private String getSpace(int t){
+
+KOWLOON 内部资料
+
+118
+
+/**
+
+*/
+
+* 计算1累到到某个数字的和
+
+* @param i:要累加到的数字
+
+* @return : 累加的结果
+
+public int sum(int i){
+
+if(i>0){
+System.out.println("
+数:"+getSpace(i)+i);
+int t=i+sum(i-1);
+System.out.println("
+果:"+getSpace(i)+t);
+
+return t;
+
+}
+
+return 0;
+
+}
+
+凋
+
+凋
+
+用
+
+用
+
+次
+
+结
+
+5
+4
+3
+
+测试累加到 5 的输出：
+凋用次数:
+凋用次数:
+凋用次数:
+凋用次数: 2
+凋用次数: 1
+凋用结果: 1
+凋用结果: 3
+凋用结果:
+凋用结果:
+凋用结果:
+累加到 5 的结果是: 15
+
+6
+10
+15
+
+可以看出，递归调用一直调用方
+法到计算条件不成立时，再按原
+来调用的路径，返回每次调用计
+算的结果。
+
+软件项目开发讲义
+
+String s="";
+for(int i=0;i<t;i++){
+s+=" ";
+
+}
+
+}
+
+return s;
+
+递归算法常用于处理一些无法穷举的计算，这些计算有一个共同点就是计算数据或对象的变
+化是有规律的，即算法相同，否则就不会是方法调用自己；计算的结束有一个可衡量的标准，即
+递归的退出条件，否则就是死循环！导致内存溢出。现在我们马上就开始应用递归原理解决程序
+中的问题。
+对于递归的理解，可以上升到一个哲学的高度：解决问题时，要找问题的规律！没有规律时，
+我们穷举，或通过笨办法实现。一但找到规律，就实现了从解决特殊问题到一般问题的跳跃；真
+正的高手，就是能利用原理去解决具体的问题。
+
+2.2.使用递归算法搜索文件：
+
+在第一节的示例中己经讲到，可以通过 File 对象的 listFiles 方法将目录下的文件对象做
+为文件数组的元素返回，现在假设我们的任务是，要找印出某个目录下面所有的文件名字和文件
+夹名字，我们可做如下分析：
+对与一个给定名字的目录，我们并不知道这个目录下有多少级目录和每级目录的文件个数，但
+我们可以列出其下的文件对象，并判断这些文件对象那个是文件，那个是目录；如是文件就打印
+名字，就是目录，哈哈，回到这段文字的开头重读！是不是同样的方法定义？一直到最后一个是
+空目录则返回数组长度为 0 或最后一个是文件，则返回数组为 null 值。这个过程完全符合递归算
+法的要求，我们即可编写如下代码：
+import java.io.*;
+/**
+* 打印某个目录下所有文件和目录的名字
+* @author KOWLOON
+*/
+public class FileDisplay {
+// 程序主方法
+public static void main(String args[]) throws Exception{
+FileDisplay fd=new FileDisplay();
+String dirName="src";
+int count=fd.printDir("src");
+System.out.println(dirName+"目录下共找到文件个数是: "+count);
+
+}
+//打印的目录下文件名字,并返回文件个数
+public int printDir(String dirName){
+int fileCount=0;
+File dirFile=new File(dirName);
+File[] subFile=dirFile.listFiles();//列表目录
+if(null==subFile||subFile.length==0){ //是空目录或文件
+return 0;
+
+}
+//遍历一级子目录
+
+KOWLOON 内部资料
+
+119
+
+软件项目开发讲义
+
+for(int i=0;i<subFile.length;i++){
+if(subFile[i].isDirectory()){
+String subDir=subFile[i].getAbsolutePath();
+System.out.println("目录: "+subDir);
+fileCount+=printDir(subDir); //还是目录,调用同样的方法进行计算
+
+}
+if(subFile[i].isFile()){
+fileCount++;
+String fileName=subFile[i].getAbsolutePath();
+System.out.println("文件: "+fileName);
+
+}
+
+}
+return fileCount;
+
+}
+
+}
+
+可以看到，对 printDir 方法，我们使用的递归调用，最后输出的结果如下部分示例：
+. . .
+目录: E:\workspace\netjavaOne\src\cn\netjava\test070823
+文件: E:\workspace\netjavaOne\src\cn\netjava\test070823\BadRace.java
+文件: E:\workspace\netjavaOne\src\cn\netjava\test070823\Coder.java
+文件: E:\workspace\netjavaOne\src\cn\netjava\test070823\JoinTest.java
+文件: E:\workspace\netjavaOne\src\cn\netjava\test070823\TestTimer.java
+文件: E:\workspace\netjavaOne\src\cn\netjava\test070823\ThreadPoolTest.java
+src 目录下共找到文件个数是: 27
+
+3.java 异常机理解
+
+3.1.什么是异常
+
+在使用 File 类的方法时，如创建文件时可能会出现一种情况：要创建的文件指向了 U 盘中一
+个路径，当程序运行时，有人将 U 盘拔掉了！这时我们的程序执行就会出错，即抛出异常。异常
+
+KOWLOON 内部资料
+
+120
+
+软件项目开发讲义
+
+当程序出现 异常时，我们可以在代 码中得到一个 Exception 对象，如上 例中的代码中
+的”try…catch”部分，我们稍做改动为，并将输入的文件名字改为“test\测试文件”，即一个
+不存在的目录路径：
+try{
+//创建了文件
+temFile.createNewFile();
+System.out.println("文件己创建！"+temFile.getAbsolutePath());
+//打出文件长度
+prinFileAttr(temFile);
+}catch(Exception ef){
+ef.printStackTrace();//让异常对象打印出出错原因
+System.out.println("创建文件失败: "+ef); //打印出简短出错信息
+
+}
+System.out.println("执行完毕！");
+}
+
+执行结果将是：
+
+….
+(1)java.io.IOException:
+
+这是因为，在我们当前目录下并不存在 test 这个目录，而程序要在 test 目录下创建文件！
+上图中(1)段是程序得到的 Excepiton 对象 ef 打印到控制台的方法调用链（从 jvm 堆栈）信息；
+(2)是打印出异常的简短信息；(3)短表示，程序虽出现异常，但还是执行到了最后。但并未打印
+出“文件己创建！”字样！这表明程序并未执行到这一行 。
+
+KOWLOON 内部资料
+
+121
+
+软件项目开发讲义
+
+3.3．try catch 处理机制
+
+Java 具有代码级的强制性异常检测机制，即许多常见的可预料的异常可能都必须编写代码处
+理，否则就无法编译通过，如下图示，如果我们将代码中的 try ，catch 部分注解掉，在 Eclipse
+中，将会提示我们代码语法错误“Unhandled Exception type IOException“，即这行代码可能
+会抛出 IOException，而我们未对此使用 try cathc 块处理。
+
+如果一段代码可能会抛出异常---编译器检测或程序员认为会，就需要将这些代码放在 try
+catch 块中，如下代码示例；这很好理解：try 指“尝试”执行可能出现异常的代码，如果成功，
+则乎略备用方案，即(B)区的代码；但如失败，代码会 catch(捕获)到一个异常对象，放弃(A)计
+划，开始执行(B)计划！
+
+try{
+
+可能抛出异常的代码. . .
+//如果没有问题出理，执行如下面的代码
+(A)其它计算代码…
+
+}catch(Exception ef){
+
+//如果出现异常后执行的代码:
+(B)出了异常情况的计算代码. . .
+
+}
+
+try catch 结构的异常处理提供了这样一种机制：如果代码执行成功，程序流程正常，(B)
+块的代码将不会执行；如果执行时(A)代码前的语句出现异常，(A)代码将不会执行，程序跳转到(B)
+代码块开始执行，同时，可(B)代码块中可以得到 Exception 类型变量 ef 对这个异常对象的引用，
+可以调用 ef. printStackTrace()；方法打印出异常的详细细信息；这为程序从错误中恢复提供
+了可行的手段。
+需要注意的是：
+try catch 块中变量做用域：try 块中定义的变量符合我们前面所讲的变量做用范围的规则，
+即变量只能在限定自己最近的一对大括号内使用；即 try catch 块内一对大括号中定义的变量不
+能在后面的代码块内使用；
+方法返回值：如果方法有定义的返回值，这个方法就有可以在正常执行时有一个返回值，或
+在 catch 到异常时有个返回值---不能仅仅只在 try 块中 return 一个返回值。
+要注意的是，并不是所有的异常都强制需要 try catch,在 java 中，异常分为强制检测和非
+强制检测二种：
+
+KOWLOON 内部资料
+
+122
+
+软件项目开发讲义
+
+非强制检测在编译时，不需要 try catch，但如因程序员编码时逻辑错误，在运行时就会抛
+出，如下代码：
+
+int[] ia=new int[10];
+ia[10]=100;
+
+这 段 代 码 在 运 行 时 ， 就 会 抛 出 Exception
+
+in
+thread
+java.lang.ArrayIndexOutOfBoundsException: 10 ，即数组越界的异常。
+
+"main"
+
+再如：
+
+String s="123abc";
+int sa=Integer.parseInt(s);//转为 int 型
+
+运行时会抛出：
+
+java.lang.NumberFormatException: For input string: "123abc"
+
+因为要将 s 解析为 int 时，s 中的字符必须是 0~9 之间的。
+
+3.4.异常信息的分析与程序调试：
+
+事 实 上 ， 一 个 软 件 与 其 说 是 编 写 出 来 ， 不 如 说 是 调 试 出 来 的 ； 我 们 通 常 大 量 的 使 用
+System.out.println…插入在程序中，以输出当时变量值或其它信息，供我们判断程序的执行情
+况，这是一种最常用的方法。
+当程序出现异常进，通过调用 Exception 对象的 printStackTrace()方法可以获取更详尽的
+出错信息：
+
+(1)java.io.IOException:
+
+KOWLOON 内部资料
+
+123
+
+软件项目开发讲义
+
+由上可以看出，这个异常是在我们的FileTest类的testCreateAndDelete方法的第 52 行代码抛
+出的，即”temFile.createNewFile();”这行代码，只要根据方法的调用向上回溯，并根据异常
+描述信息，我们很会就会发现引起文件不能创建的原因。因此，异常确实是程序员的好朋友，向
+你坦白报告错误详情；提高编程能力的一个很重要的方法就是仔细观察异常信息详情。
+异常信息会沿着方法调用的路径向回传递，直到我们程序的入口点main方法，像上面打印出
+的异常信息输出的层级结构；异常向上传递如下图示：
+
+3.5.异常是在哪里抛出的？
+
+这时我们一定会疑惑，一个 Exception 对象到底什么时候会被抛出？答案就是在方法定义时，
+请查看 File 类的 createNewFile()方法源代码：
+
+. . .
+*
+
+* @since 1.2
+
+*/
+public boolean createNewFile() throws IOException {
+SecurityManager security = System.getSecurityManager();
+if (security != null) security.checkWrite(path);
+return fs.createFileExclusively(path);
+}
+
+在定义方法时，可以使用 throws 关键字声明方法可能会抛出异常；当另外一个方法调用了
+一个声明为可能抛出异常的方法时，要么将调用这个方法的代码放入 try catch 块中；要么将调
+用方法也声明为抛出异常，极端的形式是每个方法都声明为抛出异常，在调用中都不使用 try
+catch 块，直到 main 方法也声明为抛出异常！一但出错，这个异常将提交给 JVM，JVM 默认在控
+制台打印出异常信息后退出程序。
+因此，如果不想在刚才的代码中编写 try 块，就必须对调用方法做如下声明：
+
+public void testCreateAndDelete(String fileName)
+throws Exception{
+
+结果就是 main 方法中要么 try catch,要么也是 throws。
+在方法体中，可以 new 一个 Exception 对象抛出，即自定义异常，例如：
+//如果是一个目录
+
+if(temFile.isDirectory()){
+System.out.println("这是一个目录："+temFile.getAbsolutePath());
+throw new Exception("这是一个自定义异常抛出！不能是一个目录!");
+}
+
+如果方法体中使用 throw 关键字抛出了一个 Exception 类型（或其子类）的对象，在方法的
+声明中就必须使用 throws 关键字声明，throws 后面异常类名字必须是 throw 抛出异常对象的类
+型或其父类类型---向上转型永远是自动的，因为。
+
+KOWLOON 内部资料
+
+124
+
+软件项目开发讲义
+
+总结和任务
+
+1．实践：完成本节示例代码编写
+2.
+
+KOWLOON 内部资料
+
+125
+
+软件项目开发讲义
+
+第十二章 IO 体系结构和基础应用
+
+本章目标：
+
+完成本章后，你将能够：
+1.理解流的概念和分类；
+2.掌握阻文件复制的实现；理解缓冲原理；
+3.掌握对象序列化技术；
+4.掌握原始字节流的读写特点；
+5.完成画图板的保存。
+
+KOWLOON 内部资料
+
+126
+
+软件项目开发讲义
+
+1.流的基础概念：
+
+1.1.stream(流)的概念：
+
+java 中输入输出相关的类都是 java.io 包中，java 将输入和输出抽象为叫做流的概念，
+并提供了相应的实现类；流是程序和外界进行数据交换的通道在 OOP 中的表现，可以将流对象
+理解从一个水管，它从一个地方输入流据，向另外一个地方输出数据：输入流是我们在程序中
+从某个地方（文件、网络）读取数据时使用；输出流是我们将数据发送到某个地方（文件、网
+络、控制台）时使用。
+
+1.2.流的继承体系：
+
+在 java 中，为了对不同来源和性质的流对象调用
+
+KOWLOON 内部资料
+
+127
+
+软件项目开发讲义
+
+2.2. InputStream 的继承树
+
+InputStream 是一个抽象类，它有多种适用与不同用途的具体实现类，InputStream 的继承如下图
+示：
+
+InputStream 中定义了如下几个重要的方法：
+int available():流中可读取的有效字节长度(以多少个 byte 计)，如具体的 InputStream 对象源
+是一个文件，则表示文件中可读取的字节长度；
+void close():流对象使用完后要关闭，就像水龙头，用完了要关，否则会占用一些系
+
+KOWLOON 内部资料
+
+128
+
+软件项目开发讲义
+
+FileInputStream(File
+file) ：通过一个文件对象做参数构造输入流对象；
+FileInputStream(String
+name)：传入一个字符串(文件路径名)构造连结到指定文件的输入流；
+如下代码示例：创建一个从文件得到的输入流对象，从文件中读取出所有内容做为字符串返回：
+
+package cn.netjava.iotest;
+import java.io.*;
+/**
+* 输入输出流测试
+* @author www.NetJava.cn
+*/
+public class BaseIO {
+//程序主方法
+public static void main(String args[])throws Exception{
+BaseIO bi=new BaseIO();
+//读取我们当前正在编写的这个java源文件
+String fileName="src\\cn\\netjava\\iotest\\BaseIO.java";
+String result=bi.readFile2String(fileName);
+System.out.println(result);
+
+}
+
+/**
+* 读取指定文件名的内容,做为字行串返回
+* @param fileName:文件名
+* @return :读到的内容做为字符串返回
+* @throws IOException:可能会抛出IO异常
+*/
+public String readFile2String(String fileName)throws java.io.IOException{
+//构造输入流对象,做为一个Inpustream对象使用
+//因为创建的对象是Inpustream的子类的对象,我们用父类型变量引用,
+
+KOWLOON 内部资料
+
+129
+
+软件项目开发讲义
+
+* @param fileName:文件名
+* @return :读到的内容做为字符串返回
+* @throws IOException:可能会抛出IO异常
+*/
+public String readFileOneByOne(String fileName)throws java.io.IOException{
+java.io.InputStream ins=new java.io.FileInputStream(fileName);
+int i=-1;
+byte[] contentByte=new byte[ins.available()];
+//读取到第几个byte
+int count=0;
+//每次读取一个字节，如返回为-1则表示读完了
+while((i=ins.read())!=-1){
+//将读到的1个byte数字入到数组中
+contentByte[count]=(byte)i;
+count++;
+
+}
+//将byte数组转换为字符串
+String s=new String(contentByte);
+return s;
+
+}
+
+这两种读法并无高下之分，需要根据具体情况使用。
+
+2.4.OutPustStream 抽象类及基子类
+
+有了 InputStream 的经验，与其相对的 OutputStream 就容易掌握了，OutputStream 同样是
+
+KOWLOON 内部资料
+
+130
+
+软件项目开发讲义
+
+OutputStream 定义了如下方法调用：
+void close() ：和输入流中的作同一样，输出完了，调用这个方法关闭流
+void flush() ：将输出流有可还还保存在(JVM)内存中的数据强制输出到目标中（文件或网络上）
+void write(byte[]
+b) ：将 byte 数组中的内容输出到流中；
+void write(byte[]
+b, int
+off, int
+len) ：将数组中的一部分写出到流中
+void write(int
+b) ：向流中写入一个 byte 值(注意，此处虽定义为 int 型，但是写入是做为一
+个字节，即 8 位写入的)，如果要写入一个 int 型，则要用后面的 DataOutput 对象的 writeInt()
+方法将一个 int 做为 4 个 byte，即 32 位写入。
+
+2.5.使用 FileOutputStream 写数据到文件
+
+FileOutputStream 是 OutputStream 的 子 类 ， 我 们 可 以 利 用 它 将 数 据 写 入 到 文 件 中 ， 与
+FileInputStream 相对应，它也有如下几个常用构造器：
+FileOutputStream(File
+file) ： 构 造 输 出 到 指 定 文 件 file 对 象 的 输 出 流 .
+FileOutputStream(File file, boolean append) ：append 表示输出到文件中的数据是否接在
+文件中已有的数据后面；
+FileOutputStream(String
+name) 和 FileOutputStream(String
+name, boolean
+面两个构造器性质相同，只是用一个字符串文件路径指向的文件构造流对象；
+如下示例：我们可以将从 FileInputStream 中读取到的数据写入到一个文件中，即简单的文件复
+制程序：
+
+append)与前
+
+import java.io.*;
+/**
+* 输入输出流测试
+* @author www.NetJava.cn
+*/
+public class BaseIO {
+//程序主方法
+public static void main(String args[])throws Exception{
+BaseIO bi=new BaseIO();
+//读取我们当前正在编写的这个java源文件
+String srcName="src\\cn\\netjava\\iotest\\BaseIO.java";
+//要复制到的目标文件
+String bakName="src\\cn\\netjava\\iotest\\BaseIO.java.bak";
+
+KOWLOON 内部资料
+
+131
+
+软件项目开发讲义
+
+boolean result=bi.copyFile(srcName,bakName);
+System.out.println("复制结果："+result);
+
+}
+/**
+* 简单文件复制方法
+* @param
+srcFile:源文件名
+* @param
+destFile:目标文件名
+* @throws IOExcepton :IO异常
+* @return:是否cp成功
+*/
+public boolean
+copyFile(String srcFile,String destFile)throws IOException{
+//创建从源文件来的输入流
+InputStream ins=new FileInputStream(srcFile);
+//缓冲输出流对象:如果文件中己有内容则覆盖原来内容
+OutputStream out=new FileOutputStream(destFile);
+int i=0;
+//从输入流中读取一个字节
+while((i=ins.read())!=-1){
+//将这个字节写入到输出流
+out.write(i);
+
+}
+ins.close();
+//清空输出流的缓存并关闭
+out.flush();
+out.close();
+return true;
+
+}
+
+}
+
+注意：当使用输出流将数据输出到文件时，如果目标文件己存在，且 FileOutputStream 构造
+器中 append 为 true，则输出的内容会附加到己存在文件的末尾；否则或使用没有这个参数的构
+造器，都将覆盖己存在的文件；如果目标文件不存在，不论是否有 append 参数，都将自动创建一
+个文件；如果程序中的目标文件名字符串中有多级目录，但磁般上并不存在这个目录，程序运行
+将会报“找不到路径的错误“。
+可以看到，流的使用就是这么简单，短短几行代码就完成了文件的复制（读入，写出）；但问题不
+是这么简单，我们复制的这个文件长度很小，请你测试一下用以上方法复制一个大与 20M 的文件，
+你会发现速度是简直是相当的慢---该我们介绍缓冲流了：
+
+3.缓冲流的使用
+
+3.1.缓冲流的概念
+
+缓冲流如我们前面所是，是一种过滤流，常用的是 BufferedInputStream/BufferedOutputStream，
+这两个类分别是 InputStream 和 OutputStream 的子类，可用来为 InputStream 和 OutputStream
+的其它子类流提供高性能的读写包装；
+关于“缓冲”简单的理解为：使用流读写数据时，一般是一个字节（字符流则是一个字符）的
+
+KOWLOON 内部资料
+
+132
+
+软件项目开发讲义
+
+KOWLOON 内部资料
+
+133
+
+软件项目开发讲义
+
+OutputStream out=new FileOutputStream(dest);
+BufferedOutputStream bos=new BufferedOutputStream(out);
+int i=0;
+while((i=bis.read())!=-1){
+//从缓冲输入中读，写出到缓冲输出
+bos.write(i);
+
+}
+ins.close();
+out.flush();
+out.close();
+return true;
+
+}
+
+可以将其和不使用缓冲时复制文件所用的时间做下对比，在我的机器上复制一个 30M 的文件，
+两种方法相差有十倍之巨！
+
+4.对象的串行化：
+
+4.1.对象序列化的用途：
+
+串行化又叫做对象序列化，是可以通过流对象保存 java 对象的一种方法；对象序列化是 java 语
+言的一种强大功能；这种技术是一些软件工具所必须实现的功能：比如你在编辑一张图片，现在
+要存盘但下次又要取出修改，程序中的图片不是一张一般的 jpeg 或 gif 图片，而是附加了许多属
+性信息（如 phoshop 中的图层）的一个程序内部的对象！通过对象的串行化，这个问题就非常容
+易解决；再如游戏玩家在休息时需要保存游戏中角色的状态，这也需要用到对象序列化技术。
+
+4.2. 将对象保存到文件:
+
+在 java 中要实现序列化的对象的类，必须实现 java.io.serializable 接口；通过查看源代
+码可以发现这个接口中没有任何方法，实现它的类仅仅是给 jVM 提供了一个可序列化的标记而己。
+当一个对象被串行化时，只有对象的数据被保存；方法和构造函数不属于串行化流。如果一个数
+据变量是一个对象引用，那么这个对象的数据成员也会被串行化。树或者对象数据的结构，包括
+这些子对象，构成了对象图。
+对 象 类 所 表 示 的 数 据 在 不 断 地 改 变 ， 所 以 它 们 不 会 被 串 行 化 ； 例 如 ，
+java.io.FileInputStream 、java.io.FileOutputStream 和 java.lang.Thread 等流。如果一个
+可串行化对象包含某个不可串行化元素的引用，那么整个串行化操作就会失败，而且会抛出一个
+NotSerializableException。
+在有些情况下，为了保密需要，类不允许自己对象的某个属性被序列化，就可以在这个属性前
+面加上 transient 关键字，加上 transient 关键字的属性在对象的保存时不会生效，读取时也不
+会得到数据；
+3.对象读写示例：
+对象读写一般需使用 java.io. ObjectInputStream 类的 void writeObject(Object
+obj)方法
+向流中写入一个对象和 java.io. ObjectOutputStream 类的 Object readObject()读取一个对象，
+
+KOWLOON 内部资料
+
+134
+
+软件项目开发讲义
+
+这两个类的构造器分别使用一个 InputStream 和 OutputStream 类型的对象做参数：
+ObjectInputStream(InputStream in)
+ObjectOutputStream(OutputStream out)
+这样，我们可用文件输入输出流构造对象输出输出流对象，就可将某个对象保存到文件中。
+如下代码示例：
+
+/**
+
+* 将一个对象写入到流中，再从流中读取出画
+* @param fileName:绿写入的文件名
+* @return ;是否写入成功
+* @throws Exception
+*/
+public boolean writeReadObject(String fileName)throws Exception{
+//Customer类是一个实现Serializable接口的类
+//我们在此保存并读取它的一个对象
+Customer customer=new Customer();
+customer.setName("这个对象保存是设置属性的名字");
+FileOutputStream fos=new FileOutputStream(fileName);
+//构造对象输出流
+ObjectOutputStream out=new ObjectOutputStream(fos);
+//保存对象
+out.writeObject(customer);
+out.flush();
+out.close();
+//读取对象
+FileInputStream fis=new FileInputStream(fileName);
+ObjectInputStream input=new ObjectInputStream(fis);
+//需要强制转型,从流中读到的是一个Object类型的
+Customer inCus=(Customer)input.readObject();
+System.out.println("读取对象："+inCus.getName());
+return true;
+
+}
+
+5.原始数据类型读写流：
+DataInputStream 和 DataOutputStream 这两种流主要用来读写指定的数据类型，比如我们
+要从流中读取一个 8 个字节的 Long 型值，再读一个 4 个字节的 int 型值，用这两种流就非常方便；
+在应用中，许多基与 TCP/IP 的通信协议都是调计为按指写数据类型读取的，有了前面对流的使用
+经验，这两种流就容易掌握了，请看代码：
+
+/**
+
+* 向文件中按数据类型的长度写入数据并读取
+* @throws Exception
+*/
+public void dataTypeStream() throws Exception {
+String fileName = "msg.conent";
+FileOutputStream fos = new FileOutputStream(fileName);
+DataOutputStream dos = new DataOutputStream(fos);
+
+KOWLOON 内部资料
+
+135
+
+软件项目开发讲义
+
+//按类型写入
+dos.writeBoolean(true);
+dos.writeByte((byte) 123);
+dos.writeChar('J');
+dos.writeDouble(3.141592654);
+dos.writeFloat(2.7182f);
+dos.writeInt(1234567890);
+dos.writeLong(998877665544332211L);
+dos.writeShort((short) 11223);
+//按类型读取
+DataInputStream dis = new DataInputStream(
+new FileInputStream(fileName));
+System.out.println("\t " + dis.readBoolean());
+System.out.println("\t " + dis.readByte());
+System.out.println("\t " + dis.readChar());
+System.out.println("\t " + dis.readDouble());
+System.out.println("\t " + dis.readFloat());
+System.out.println("\t " + dis.readInt());
+System.out.println("\t " + dis.readLong());
+System.out.println("\t " + dis.readShort());
+
+}
+
+6.画板数据保存成文件
+
+6.1.文件格式
+对于硬盘机或任何电脑存储来说，有效的信息只有 0 和 1 两种。所以电脑必须设计有
+相应的方式进行信息 -位元的转换。对于不同的信息有不同的存储格式。
+比如有的储存图片，有的储存程序，有的储存文字信息。每一类信息，都可以一种或多种文
+件格式保存在电脑存储中。每一种文件格式通常会有一种或多种扩展名可以用来识别，但也可能
+没有扩展名。扩展名只是为了方便应用程序识别文件格式，和文件本身的存储格式没有关系。
+通俗来讲，不同的文件格式就是将文件的信息用不同的顺序和表达写到存储器中。下面以我
+们前面做过的画图板为例来讲解如何将数据保存到文件中。
+
+6.2.文件保存思路
+要将数据保存到文件中，首先我们要定义自己的文件格式。一般文件由两部分组成，一部分
+是文件头信息；还有一部分就是文件的数据信息。所以我们可以定义如下的文件格式：
+文件头信息。
+只包含一个信息，就是总的形状的个数：
+
+信息
+
+总形状个数
+
+数据类型
+
+int
+
+文件数据信息：
+包含不同形状的信息。比如，形状类型、绘制形状的关键数据等
+
+信息
+
+形状类型
+
+关键数据
+
+KOWLOON 内部资料
+
+136
+
+软件项目开发讲义
+
+数据类型
+
+byte
+
+不同的形状会有不同
+
+不同的形状所需要的关键数据会有差别，如直线只需要起始和结束的两个点的坐标；矩形和
+圆形只需要左上角点的坐标和矩形的宽和高；三角形需要三个点的坐标等。
+
+直线：
+
+矩形：
+
+圆形：
+
+三角形：
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+int
+
+所以在保存时我们首先只需要将重绘时用来保存形状对象的队列按照我们定义的文件格式写
+入到文件就行了：
+
+public void saveFile(String path, java.util.ArrayList<Shape> shapes) {
+
+try {
+
+// 文件输出流
+
+java.io.FileOutputStream fos = new java.io.FileOutputStream(path);
+
+// 将文件输出流包装成可写基本类型的流
+
+java.io.DataOutputStream dos = new java.io.DataOutputStream(fos);
+dos.writeInt(shapes.size());// 先写入队列中图形个数
+
+// 读取队列
+
+for (int i = 0; i < shapes.size(); i++) {
+
+// 取出一种形状
+
+Shape shape = shapes.get(i);
+byte type = shape.type;
+dos.writeByte(type);//写形状的类型
+if (type == 0) {//根据type判断类型如果是直线
+LineShape line = (LineShape) shape; //强制转型成直线类
+
+//写直线形状的数据
+
+int x1 = line.x1;
+int y1 = line.y1;
+int x2 = line.x2;
+int y2 = line.y2;
+dos.writeInt(x1);
+dos.writeInt(y1);
+dos.writeInt(x2);
+dos.writeInt(y2);
+} else if (type == 1) {// 如果是圆形
+OvalShape oval = (OvalShape) shape;
+int x1 = oval.x1;
+int y1 = oval.y1;
+int x2 = oval.x2;
+int y2 = oval.y2;
+dos.writeInt(x1);
+dos.writeInt(y1);
+dos.writeInt(x2);
+dos.writeInt(y2);
+} else if (type == 2) {// 矩形
+
+KOWLOON 内部资料
+
+137
+
+软件项目开发讲义
+
+RectShape rect = (RectShape) shape;
+int x1 = rect.x1;
+int y1 = rect.y1;
+int x2 = rect.x2;
+int y2 = rect.y2;
+dos.writeInt(x1);
+dos.writeInt(y1);
+dos.writeInt(x2);
+dos.writeInt(y2);
+
+}
+
+}
+dos.flush();
+fos.close();// 关闭输出流
+} catch (Exception ef) {
+ef.printStackTrace();
+
+}
+
+}
+
+文件的打开就是将数据从存储器中取出来，要注意的地方是我们是按照什么顺序写出去的，
+就按照相同的顺序读取进来，然后每次读取一个形状就将读取到的数据重新包装成对象，保存到
+一个队列中去：
+
+//读文件，将文件中的内容存入队列shapes，并返回
+
+public java.util.ArrayList<Shape> readFile(String path) {
+
+//创建一个队列用来保存从文件中读取到的数据
+
+java.util.ArrayList<Shape> shapes = new java.util.ArrayList<Shape>();
+
+try {
+
+// 创建文件对象的输入流
+
+java.io.FileInputStream fis = new java.io.FileInputStream(path);
+
+// 将文件输入流包装成可读基本类型的流
+
+java.io.DataInputStream dis = new java.io.DataInputStream(fis);
+
+// 先读取长度，即总共的形状个数
+
+int len = dis.readInt();
+
+//根据读取到的长度，我们就知道需要循环多少次才能将所有的形状读完
+
+for (int i = 0; i < len; i++) {
+byte type = dis.readByte();// 读图形类型
+if (type == 0) {
+
+//如果type是0，表示接下来要读取的是直线的数据，所以创建直线对象
+
+LineShape line = new LineShape();
+
+//将读取的数据设置为直线的属性值
+
+line.type = type;
+line.x1 = dis.readInt();
+line.y1 = dis.readInt();
+line.x2 = dis.readInt();
+line.y2 = dis.readInt();
+
+// 将直线存入队列
+
+shapes.add(line);
+} else if (type == 1) {// 圆
+
+KOWLOON 内部资料
+
+138
+
+软件项目开发讲义
+
+OvalShape oval = new OvalShape();
+oval.type = type;
+oval.color=new java.awt.Color(r,g,b);
+oval.x1 = dis.readInt();
+oval.y1 = dis.readInt();
+oval.x2 = dis.readInt();
+oval.y2 = dis.readInt();
+
+// 将圆存入队列
+
+shapes.add(oval);
+} else if (type == 2) {// 矩形
+RectShape rect = new RectShape();
+rect.type = type;
+rect.color=new java.awt.Color(r,g,b);
+rect.x1 = dis.readInt();
+rect.y1 = dis.readInt();
+rect.x2 = dis.readInt();
+rect.y2 = dis.readInt();
+
+// 将矩形存入队列
+
+shapes.add(rect);
+
+}
+
+}
+} catch (Exception ef) {
+ef.printStackTrace();
+
+}
+return shapes;
+
+}
+
+后给按钮加上一个 ActionListener：
+
+// 动作监听器al
+
+这样保存和打开文件的基本代码就完成了，我们只要在窗体上增加保存和打开两个按钮，然
+
+java.awt.event.ActionListener al = new java.awt.event.ActionListener() {
+
+// 另外写一个动作监听器一样，所以把动作监听器合并写在一个里面
+
+public void actionPerformed(ActionEvent e) {
+
+// 得到动作命令
+
+String command = e.getActionCommand();
+if ("保存".equals(command)) {
+System.out.println("保存");
+//创建FileTest对象
+FileTest ft=new FileTest();
+ft.saveFile("D:\\aa.as", shapes);
+} else if ("打开".equals(command)) {
+//创建FileTest对象
+FileTest ft=new FileTest();
+
+//将读的内容存入shapes队列
+
+shapes = ft.readFile("D:\\aa.as");
+//刷新，把shapes的画出来
+updateDraw();
+
+KOWLOON 内部资料
+
+139
+
+软件项目开发讲义
+
+};
+
+//将读取文件的队列传给Draw的队列，可以继续画
+
+}
+
+}
+
+//每个按钮加监听器
+
+btnSave.addActionListener(al);
+btnOpen.addActionListener(al);
+
+画图板的文件保存到这里就完成了，当然这个文件格式是我们自己定义的，按照这种方式保
+存的图片用我们常用的图片查看器是打不开的，那是因为那些图片查看器不知道我们保存文件的
+格式。如果你完成了自定义文件格式的保存，接下来我们就来完成一个用别人已经定义好的格式
+来保存我们的图片。
+
+7.BMP 格式文件解析
+
+（本小节由湖南大学周圣韬贡献）
+BMP 是一种与硬件设备无关的图像文件格式，使用非常广。它采用位映射存储格式，除了图
+像深度可选以外，不采用其他任何压缩，因此， BMP 文件所占用的空间很大。 BMP 文件的图
+像深度可选 lbit 、 4bit 、 8bit 及 24bit 。 BMP 文件存储数据时，图像的扫描方式是按从左
+到右、从下到上的顺序。由于 BMP 文件格式是 Windows 环境中交换与图有关的数据的一种标
+准，因此在 Windows 环境中运行的图形图像软件都支持 BMP 图像格式。
+
+要解析文件，就必须知道他的文件结构：
+
+6.3.1 BMP 文件结构
+
+典型的 BMP 图像文件由四部分组成：
+1 . 位图文件 头数据结构 ，它包含 BMP 图像文件的类型、显示内容等信息；
+2 .位图信息数据结构 ，它包含有 BMP 图像的宽、高、压缩方法，以及定义颜色等信息；
+3. 调色板 ，这个部分是可选的，有些位图需要调色板，有些位图，比如真彩色图（24 位
+的 BMP ）就不需要调色板；
+4. 位图数据 ，这部分的内容根据 BMP 位图使用的位数不同而不同，在 24 位图中直
+接使用 RGB ，而其他的小于 24 位的使用调色板中颜色索引值。
+
+6.3.2 对应的数据结构
+
+① BMP 文件头 (14 字节 )
+
+BMP 文件头数据结构含有 BMP 文件的类型、文件大小和位图起始位置等信息。其结构定
+义如下:
+
+int bfType; // 位图文件的类型，必须为 ' B '' M '两个字母 (0-1字节 )
+int bfSize; // 位图文件的大小，以字节为单位 (2-5 字节 )
+int usignedshort bfReserved1; // 位图文件保留字，必须为 0(6-7 字节 )
+int usignedshort bfReserved2; // 位图文件保留字，必须为 0(8-9 字节 )
+int bfOffBits; // 位图数据的起始位置，以相对于位图 (10-13 字节 )
+
+int bfOffBits;// 文件头的偏移量表示，以字节为单位
+
+② 位图信息头(40 字节 )
+BMP 位图信息头数据用于说明位图的尺寸等信息。
+
+int Size; // 本结构所占用字节数 (14-17 字节 )
+int image_width; // 位图的宽度，以像素为单位 (18-21 字节 )
+int image_heigh; // 位图的高度，以像素为单位 (22-25 字节 )
+
+KOWLOON 内部资料
+
+140
+
+软件项目开发讲义
+
+int Planes; // 目标设备的级别，必须为 1(26-27 字节 )
+int biBitCount;// 每个像素所需的位数，必须是 1(双色),(28-29 字节) 4(16
+色 ) ， 8(256 色 ) 或 24(// 真彩色 ) 之一
+int biCompression; // 位图压缩类型，必须是 0( 不压缩 ),(30-33 字节 )
+1(BI_RLE8 压缩类型 ) 或// 2(BI_RLE4 压缩类型 ) 之一
+int SizeImage; // 位图的大小，以字节为单位 (34-37 字节 )
+int biXPelsPerMeter; // 位图水平分辨率，每米像素数 (38-41 字节 )
+int biYPelsPerMeter; // 位图垂直分辨率，每米像素数 (42-45 字节 )
+int biClrUsed;// 位图实际使用的颜色表中的颜色数 (46-49 字节 )
+int biClrImportant;// 位图显示过程中重要的颜色数 (50-53 字节 )
+
+③ 颜色表
+颜色表用于说明位图中的颜色，它有若干个表项，每一个表项是一个 RGBQUAD 类型的结
+构，定义一种颜色。
+
+class RGBQUAD {
+byte rgbBlue;// 蓝色的亮度 ( 值范围为 0-255)
+byte rgbGreen; // 绿色的亮度 ( 值范围为 0-255)
+byte rgbRed; // 红色的亮度 ( 值范围为 0-255)
+byte rgbReserved;// 保留，必须为 0
+
+}
+
+}
+
+颜色表中 RGBQUAD 结构数据的个数有 biBitCount 来确定。当 biBitCount=1,4,8 时，分别
+有 2,16,256 个表项 ; 当 biBitCount=24 时，没有颜色表项。
+
+位图信息头和颜色表组成位图信息，BITMAPINFO 结构定义如下 :
+
+class BITMAPINFO {
+BITMAPINFOHEADER bmiHeader; // 位图信息头
+RGBQUAD bmiColors[1]; // 颜色表
+
+④ 位图数据
+位图数据记录了位图的每一个像素值，记录顺序是在扫描行内是从左到右, 扫描行之间是从
+下到上。位图的一个像素值所占的字节数:
+
+当 biBitCount=1 时， 8 个像素占 1 个字节 ;
+当 biBitCount=4 时， 2 个像素占 1 个字节 ;
+当 biBitCount=8 时， 1 个像素占 1 个字节 ;
+当 biBitCount=24 时 ,1 个像素占 3 个字节 ;
+
+Windows 规定一个扫描行所占的字节数必须是 4 的倍数 ( 即以 long 为单位 ), 不足的以 0
+
+KOWLOON 内部资料
+
+141
+
+软件项目开发讲义
+
+// 创建文件输入流
+
+java.io.FileInputStream fis = new java.io.FileInputStream(path);
+
+// 将文件流包装成一个可以写基本数据类型的输出流
+
+java.io.DataInputStream dis = new java.io.DataInputStream(fis);
+
+② 读入 BMP 头文件的基本信息
+
+int bflen=14;
+byte bf[]=new byte[bflen];
+dis.read(bf,0,bflen); //读取 14 字节 BMP 文件头
+
+③ 读入位图信息头
+
+int bilen=40;
+byte bi[]=new byte[bilen];
+dis.read(bi,0,bilen);//读取40字节BMP信息头
+
+// 获取一些重要数据
+
+image_width=ChangeInt(bi,7); //源图宽度
+image_heigh=ChangeInt(bi,11); //源图高度
+int nbitcount=(((int)bi[15]&0xff)<<8) | (int)bi[14]&0xff;
+int nsizeimage=ChangeInt(bi,23); //源图大小
+
+//位数
+
+由位图信息头中我们也可以看出来，要显示图片，重要的信息也就只有几个，其他都是一些不
+重要的，我们直接忽略掉。
+因为这里是直接读取 40 位的信息头，所以要将一些 byte 转为 int 即 ChangeInt。即 4 个
+
+byte --> 1 个 int。
+
+//转成int
+public int ChangeInt(byte[] bi,int start){
+return (((int)bi[start]&0xff)<<24)
+| (((int)bi[start-1]&0xff)<<16)
+| (((int)bi[start-2]&0xff)<<8)
+| (int)bi[start-3]&0xff;
+
+}
+
+因为 24 为的没有颜色表，所以我们直接读位图数据 。最后，最关键的就是，读取位图数据：
+
+public void showRGB24(DataInputStream dis) throws IOException{
+this.setTitle(path);
+
+//弹出一个图片的窗口一个大小
+
+this.setSize(image_width, image_heigh);
+this.setResizable(false);
+this.setVisible(true);
+g=this.getGraphics();
+if(!(image_width*3 % 4==0)){//图片的宽度不为0
+skip_width =4-image_width*3%4;
+
+}//判断是否后面有补0 的情况
+//装载RGB颜色的数据数组
+
+imageR = new int[image_heigh][image_width];
+
+KOWLOON 内部资料
+
+142
+
+软件项目开发讲义
+
+imageG = new int[image_heigh][image_width];
+imageB = new int[image_heigh][image_width];
+
+//按行读取 如果H,W为正则倒着来
+
+for (int h=image_heigh-1;h>=0;h--){
+for (int w=0;w<image_width;w++){
+
+// 读入三原色
+
+int blue = dis.read();
+int green = dis.read();
+int red = dis.read();
+imageB[h][w]=blue;
+imageG[h][w]=green;
+imageR[h][w]=red;
+if(w==0){//跳过补0项
+System.out.println(dis.skipBytes(skip_width));
+
+}
+
+}
+
+}
+repaint();
+
+}
+
+}
+
+}
+
+关键就是在于 位图是否有补 0。有则要跳过，没有就直接读，不然显示出来的 BMP 图像会
+倾斜。即注释掉下面这句话得到的效果：
+
+if(w==0){//跳过补0项
+System.out.println(dis.skipBytes(skip_width));
+
+④ 最后 paint()中显示就可以看见图片了
+
+public void paint(java.awt.Graphics g){
+for (int h=0;h<image_heigh;h++){
+for (int w=0;w<image_width;w++){
+g.setColor(new
+java.awt.Color(imageR[h][w],imageG[h][w],imageB[h][w]));
+g.fillOval(w, h, 1, 1);
+}
+
+}
+
+BMP 格式的文件我们还只是做了解析，也就是说我们现在可以写一个小程序去打开一个 BMP
+格式的文件了，那如何将我们自己的画图板上画的图形保存成一个 BMP 格式的图片呢？这个问
+题留待大家自己去解决，相信聪明的你一定能够完成，那就动手吧！
+
+KOWLOON 内部资料
+
+143
+
+软件项目开发讲义
+
+总结和任务
+
+1.实践：编写代码，复制一个大于 200M 的文件，比较使用缓冲和不使用缓冲的时间差；
+2.提高：结合 JTree 组件中节点的增删和对象序列化技术，将增删的结果保存到文件，当程序启
+动时再恢复；
+3.实践：测试对原始数据类型到文件的读写。
+4.总结：说明 I/O 体系结构常用的 API。
+
+5. 总结：说明对文件格式的理解。
+
+6. 完成画图板的保存
+
+KOWLOON 内部资料
+
+144
+
+软件项目开发讲义
+
+第十三章 高级 Swing 组之菜单应用
+
+本章目标：
+
+完成本章后，你将能够：
+1. 掌握菜单基本用法；
+2. 初步理解菜单组件中应用的 Command 设计模式；
+
+KOWLOON 内部资料
+
+145
+
+软件项目开发讲义
+
+1.菜单的基本概念：
+
+Menu(菜单)是窗体程序最常用的一种组件，在 Swing 体系中，有二种菜单：
+一种是基于菜单条的，一般加在 JFrame 组件上；
+一种是 JpopupMenu：可以其它 swing 组件是单击右键的弹出式菜单。
+本节我们示例讲创建窗体对象上的菜单条，菜单条上的菜单由三部分组成：
+javax.swing.JmenuBar 类：放置菜单的菜单条,可过 new JmenuBar()构造一个菜单条对象
+javax.swing.JMenu : 菜单目录对象, new JMenu(“文件”),构造一个菜单条目对象
+javax.swing.JmenuItem: 菜单条条目类， new JmenuItem(“菜单条目 1”),构造一个菜单
+条目对象
+以上三者的关系是：JMenu 必须放在一个 JmenuBar 上，JMenu 的子项可以是一个 Jmenu 或
+JmenuItem，JmenuItem 做为一个子菜单项，必须放在一个 JMenu 上做为其子项，他们的关系图示
+如下：
+
+JMen2
+
+JMen3
+
+JMenuBar
+
+JMen1
+JmenuItme1
+JMen2
+
+JmenuItme21
+
+以上说明，无非是让你先有个结构性的理解：这东东很简单，就像小时玩的搭积木游戏一样：
+
+2.窗体上的菜单使用示例：
+
+没啥说的了，看代码：
+
+public class MenuTest {
+
+//程序入口
+
+public static void main(String[] args) {
+MenuTest tf=new MenuTest();
+tf.showUI();
+
+}
+
+//显示一个加有多个组件的窗体界面
+
+public void showUI(){
+
+//在放置元素组件前，要创建并给窗体加上流式布局管理器对象：
+
+javax.swing.JFrame frame=new javax.swing.JFrame();
+frame.setTitle("菜单添加示例");
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+frame.setLayout(fl);
+frame.setSize(200,100);//设置窗体大小
+
+//窗体关闭时程序退出
+
+frame.setDefaultCloseOperation(3);
+frame.setJMenuBar(createMB());
+
+//让窗体显示出来,这句要放到最后面
+
+frame.setVisible(true);
+
+KOWLOON 内部资料
+
+146
+
+软件项目开发讲义
+
+}
+
+//这个方法调用后，创建一个带有菜单的菜单条，就加到到JFrame上显示：
+
+private javax.swing.JMenuBar createMB(){
+
+javax.swing.JMenuBar mb=new javax.swing.JMenuBar();
+
+//创建菜单条：
+
+//1.创建文件菜单：
+
+javax.swing.JMenu m_file=new javax.swing.JMenu("文件");
+
+//1.1创建文件菜单下的菜单项：
+
+javax.swing.JMenuItem mi_open=new javax.swing.JMenuItem("打开");
+javax.swing.JMenuItem mi_new=new javax.swing.JMenuItem("新建");
+javax.swing.JMenuItem mi_exit=new javax.swing.JMenuItem("退出");
+
+//1.2将菜单项加到文件菜单上:
+
+m_file.add(mi_open);
+m_file.add(mi_new);
+m_file.add(mi_exit);
+
+//2.创建功能菜单
+
+javax.swing.JMenu m_oper=new javax.swing.JMenu("数据管理");
+
+//2.1创建功能菜单下的菜单项：
+
+javax.swing.JMenuItem mi_add=new javax.swing.JMenuItem("新增");
+javax.swing.JMenuItem mi_modi=new javax.swing.JMenuItem("新建修改");
+javax.swing.JMenuItem mi_delete=new javax.swing.JMenuItem("删除");
+javax.swing.JRadioButton mi_radi=new javax.swing.JRadioButton("总在
+最前");
+javax.swing.JMenuItem mi_about=new javax.swing.JMenuItem("关于");
+
+//2.2将上述菜单项加到功能菜单上:
+
+m_oper.add(mi_add);
+m_oper.add(mi_modi);
+m_oper.add(mi_delete);
+m_oper.add(mi_about);
+m_oper.addSeparator();//加上一个分割条
+m_oper.add(mi_radi);
+
+//3.将文件和功能菜单加到菜单条上：
+
+mb.add(m_file);
+mb.add(m_oper);
+
+return mb;
+
+}
+
+}
+
+程序运行结果如下图示：
+
+KOWLOON 内部资料
+
+147
+
+软件项目开发讲义
+
+光有菜单肯定是不行滴，菜单可以调用其 addActionListener 方法加入事件监听器，当菜单
+被点击时，其事件监听器对象中实现的方法就会被调用。
+
+3.
+
+KOWLOON 内部资料
+
+148
+
+软件项目开发讲义
+
+MenuTest tf=new MenuTest();
+tf.showUI();
+
+}
+
+//处理菜单事件的方法
+
+private void processMenuEvent(ActionEvent e){
+
+//得到事件源上的命令关键字：
+
+//创建内部窗体对象并设定其属性
+
+String command=e.getActionCommand();
+if(command.equals("open")){//点击了打开菜单
+javax.swing.JInternalFrame jin=new
+javax.swing.JInternalFrame();
+jin.setTitle("我是内部窗体");
+jin.setSize(200, 100);
+jin.setVisible(true);
+jin.setMaximizable(true);
+
+//加到界面上
+
+jdp.add(jin);
+
+}else if(command.equals("new")){
+
+//弹出一个对话框：
+
+javax.swing.JOptionPane.showInputDialog("要创建什么？");
+}else if(command.equals("exit")){
+
+//程序退出
+
+System.exit(0);
+
+}
+
+}
+
+//显示一个加有多个组件的窗体界面
+
+public void showUI(){
+
+//在放置元素组件前，要创建并给窗体加上流式布局管理器对象：
+
+javax.swing.JFrame frame=new javax.swing.JFrame();
+frame.setTitle("菜单事件处理和内部窗体示例");
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+frame.setLayout(fl);
+frame.setSize(300,200);//设置窗体大小
+
+//窗体关闭时程序退出
+
+frame.setDefaultCloseOperation(3);
+frame.setJMenuBar(createMB());
+//将JDesktopPane对象中到窗体中，
+frame.setContentPane(jdp);
+
+//让窗体显示出来,这句要放到最后面
+
+frame.setVisible(true);
+}
+
+//创建菜单条对象
+
+KOWLOON 内部资料
+
+149
+
+软件项目开发讲义
+
+private javax.swing.JMenuBar createMB(){
+
+javax.swing.JMenuBar mb=new javax.swing.JMenuBar();
+
+//创建菜单条：
+
+//1.创建文件菜单：
+
+javax.swing.JMenu m_file=new javax.swing.JMenu("文件");
+
+//1.1创建文件菜单下的菜单项：
+
+javax.swing.JMenuItem mi_open=new javax.swing.JMenuItem("打开");
+mi_open.setActionCommand("open");//设置菜单的命令关键字
+javax.swing.JMenuItem mi_new=new javax.swing.JMenuItem("新建");
+mi_new.setActionCommand("new");
+javax.swing.JMenuItem mi_exit=new javax.swing.JMenuItem("退出");
+mi_exit.setActionCommand("exit");
+
+//创建内部料的菜单事件监听器对象：
+
+java.awt.event.ActionListener ac_listener=new
+java.awt.event.ActionListener(){
+public void actionPerformed(ActionEvent e){
+//
+
+KOWLOON 内部资料
+
+150
+
+软件项目开发讲义
+
+}
+
+}
+
+实现的代码如下示：
+
+import java.awt.event.ActionEvent;
+
+//添加JTree组件和弹出菜单示例：
+
+public class PopMenuTest{
+
+//程序入口
+
+public static void main(String[] args) {
+PopMenuTest pt=new PopMenuTest();
+pt.showUI();
+
+public void showUI(){
+
+javax.swing.JFrame frame=new javax.swing.JFrame();
+frame.setTitle("添加JTree组件和弹出菜单示");
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+frame.setLayout(fl);
+frame.setSize(300,200);
+
+//创建一个默认的JTree组件对象
+
+javax.swing.JTree tree=new javax.swing.JTree();
+
+//将弹出菜单对象设到树上：
+
+javax.swing.JPopupMenu pop=createPopMenu();
+tree.setComponentPopupMenu(pop);
+
+//将默认树加到界面上
+
+frame.add(tree);
+
+//窗体关闭时程序退出
+
+frame.setDefaultCloseOperation(3);
+frame.setVisible(true);
+
+//创建弹出菜单
+
+private javax.swing.JPopupMenu createPopMenu(){
+
+//创建弹出菜单对象
+
+javax.swing.JPopupMenu popMenu=new javax.swing.JPopupMenu();
+
+//1创建文件菜单下的菜单项：
+
+javax.swing.JMenuItem mi_open=new javax.swing.JMenuItem("添加");
+mi_open.setActionCommand("add");//设置菜单的命令关键字
+javax.swing.JMenuItem mi_new=new javax.swing.JMenuItem("删除");
+mi_new.setActionCommand("del");
+
+KOWLOON 内部资料
+
+151
+
+软件项目开发讲义
+
+javax.swing.JMenuItem mi_exit=new javax.swing.JMenuItem("修改");
+mi_exit.setActionCommand("mod");
+
+//创建内部料的菜单事件监听器对象：
+
+java.awt.event.ActionListener ac_listener=new
+java.awt.event.ActionListener(){
+public void actionPerformed(ActionEvent e){
+//
+
+KOWLOON 内部资料
+
+152
+
+软件项目开发讲义
+
+第十四章 连连看游戏开发
+
+本章目标：
+
+完成本章后，你将能够：
+1. 掌握表格组件的基本用法；
+2. 理解数据结构与界面分离的设计原理
+3. 完成连连看游戏开发
+
+KOWLOON 内部资料
+
+153
+
+软件项目开发讲义
+
+1.JTable 与 TableModel
+
+1.1．TableModel 与 JTable 的关系:
+
+要在界面上加上一个简单的 JTable 对象：只需要通过
+JTable table=new JTable(3,5);
+这段代码即可创建一个三行五列的表格用以显示在界面上；在具体的应用中，我们肯定是
+要让 JTable 显示我们自己定义的数据，比如将上例中的 UserInfo 对象或 UserBlog 对象显示到表
+格中，那就必须定制 JTable 对象所要使用的 javax.swing.table.TableModel 对象，在开始前，
+我们先理解 javax.swing.table.TableModel 和 JTable 之间的关系：模特与衣服之间的关系：
+JTable 对象
+
+简单的说， JTable 只是一个界
+面，主要负责显示功能，但 JTable
+对象具体显示多少行多少列，甚示每行每列中显示什么类型的数据，JTable 中的单元格是否可编
+辑，编辑之后怎么办…关于数据提供和数据操作的实现，都是由这个 JTable 对象的 TableModel
+对象所负责的；反向而言，当 JTable 对象界面的数据被改动时，JTable 会自动调用自己模型中
+的方法将改动反映到模型中。
+说了这么多，我们来看 TableModel 到底是什么东东----它是一个接口定义,源码说明如下：
+
+//通过调用JTable对象的setModel方法，传入实现了TableModel接口类的对象
+
+public interface TableModel{
+
+public int getRowCount();//决定表格上显示多少行
+public int getColumnCount();//表格上显示多少列
+public String getColumnName(int columnIndex);
+
+//得到某一列的列名，columnIndex:列的序号，从0开始
+
+//得到某一列的数据类型，columnIndex:列的序号，从0开始
+
+public
+
+KOWLOON 内部资料
+
+154
+
+软件项目开发讲义
+
+1.2.TableModel 实践：
+
+首先，我们编写一个 TableModel 的实现类如下：
+
+import javax.swing.event.TableModelListener;
+/**自定义的tableModel实现类*/
+public class MyTableModelV1 implements javax.swing.table.TableModel{
+//多少行:
+public int getRowCount(){
+return 10;
+
+}
+
+//多少列
+
+public int getColumnCount(){
+return 5;
+
+}
+
+//取得列名
+
+public String getColumnName(int columnIndex){
+return " 第"+columnIndex+"列名";
+
+}
+
+//每一列的数据类型:我们这里显示的都是String型
+
+public Class<?> getColumnClass(int columnIndex){
+return String.class;
+
+}
+
+//指定的单元格是否可从界面上编辑
+
+public boolean isCellEditable(int rowIndex, int columnIndex){
+if(columnIndex==0){
+return false;
+
+}
+return true;
+
+}
+
+//取得指定单元格的值
+
+public Object getValueAt(int rowIndex, int columnIndex){
+return rowIndex+"--"+columnIndex;
+
+}
+
+//从表格界面上改变了某个单元格的值后会调用这个方法
+
+public void setValueAt(Object aValue, int rowIndex, int columnIndex){
+String s="Change at: "+rowIndex+"--- "+columnIndex+" newValue: "+aValue;
+System.out.println(s);
+
+}
+
+//这两个接口方法暂无用
+
+public void addTableModelListener(TableModelListener l){}
+public void removeTableModelListener(TableModelListener l){}
+
+}
+
+使用这个 TableModel 对象的 JTable 将显示 10 行 5 列，每个单元格将返回 getValueAt 方法返回
+的字符串，当我们在使用它的表格界面上编辑表格数据（第一列不可编辑，Model 中限定了），
+就会调用 setValue 方法将编辑过后的值打印出来。
+
+KOWLOON 内部资料
+
+155
+
+软件项目开发讲义
+
+用以显示这个 Model 的 Jtable 和界面代码如下：
+
+//TableModel应用测试
+public class TestJTable {
+
+//程序入口
+
+public static void main(String[] args) {
+javax.swing.JFrame jf=new javax.swing.JFrame("表格测试");
+jf.setSize(300,400);
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+jf.setLayout(fl);
+
+//1.创建一个默认的简单表格对像:
+
+javax.swing.JTable table=new javax.swing.JTable();
+//2.创建我们自定义的TableModel对象
+MyTableModelV1
+tm=new MyTableModelV1();
+//3.将其设置为Table的Model
+table.setModel(tm);
+jf.add(table);
+jf.setDefaultCloseOperation(3);
+jf.setVisible(true);
+
+}
+
+}
+
+要让某个 JTable 对象按照我们自己实现的 TableModel 显示数据，只需要创建我们实现的
+TableModel 的对象：
+
+MyTableModelV1
+
+tm=new MyTableModelV1();
+
+然后调用 JTable 对象的 setModel 方法，传入自定义的 TableModel 对象即可，我们可以看到程
+序界面运行时如下：
+
+1.3.使用 JTable+TableModel 展示 java 中的数据对象：
+
+具体请看示例，将多个 UserInfo 对象列表的数据显示到 JTable 中，首先，我们需要编
+写自己的 TableModel 类，即实现了 javax.swing.table.JtableModel 接口的类，这个实现类使用
+装有 UserInfo 的 List 对象，负责将列表中的用户对象信息提供给 Jtable 对象显示：
+
+import java.util.List;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.TableModel;
+
+KOWLOON 内部资料
+
+156
+
+软件项目开发讲义
+
+/**
+* 用以在JTable中显示UserInfo对象的TableModel实现类
+* @author: KOWLOON
+*/
+public class UserInfoTableModel implements TableModel{
+private List<UserInfo> userList; //要显示的UserInfo对象列表
+public UserInfoTableModel(List<UserInfo> userList){
+this.userList=userList;
+
+//创建模型对象时，必须传入要显示的UserInfo对象列表
+
+return 3;
+
+}
+
+public
+
+//指定某列的类型:暂时都是字符串类型，
+
+}
+
+//得到行数:列表中有几个UserInfo对象，就显示几行
+
+public int getRowCount(){
+return userList.size();
+
+}
+//得到列数,UserInfo对象的每个属性是一列，id,name,age,共3列
+public int getColumnCount(){
+
+KOWLOON 内部资料
+
+157
+
+软件项目开发讲义
+
+//取每一列的列名
+
+public String getColumnName(int columnIndex){
+if(columnIndex==0){//第一列是UserInfo对象的id值
+
+}else if(columnIndex==1){//第二列是name属性值
+
+}else if(columnIndex==2){//第二列是age值
+
+}else{//除非设计时逻辑错误，否则不会到这里
+
+return "序 号";
+
+return "姓 名";
+
+return "年 令";
+
+return "出错!";
+
+}
+
+//添加和移除监听器的方法暂不用，写为空的
+
+public void addTableModelListener(TableModelListener l){}
+public void removeTableModelListener(TableModelListener l){}
+}
+
+接下来，我们创建界面和 JTable 对象，使用我们新编写的 UserInfoTableModel 对象显示
+用户数据。
+
+}
+
+}
+
+}
+
+}
+
+/**
+* JTable和TableModel使用示例 v1
+* @author: KOWLOON
+*/
+public class UserTableUIV1 {
+
+//程序入口
+
+public static void main(String[] args) {
+UserTableUIV1 lu=new UserTableUIV1();
+lu.setupUI();
+
+//显示主界面
+
+public void setupUI(){
+
+javax.swing.JFrame jf=new javax.swing.JFrame("JTable-TableModel示例");
+jf.setSize(300,200);
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+jf.setLayout(fl);
+
+//创建一个表格对象
+
+final javax.swing.JTable table=new javax.swing.JTable();
+
+//得到要显示的用户列表对象：
+
+List<UserInfo> userList=getUserList();
+
+//创建我们实现的TableModel对象,创建时要传入用户列表对象
+
+UserInfoTableModel tm=new UserInfoTableModel(userList);
+table.setModel(tm);//将模型设给表格
+jf.add(table);
+jf.setDefaultCloseOperation(3);
+jf.setVisible(true);
+
+//模拟生成用户对象列表
+
+KOWLOON 内部资料
+
+158
+
+软件项目开发讲义
+
+private List<UserInfo> getUserList(){
+List<UserInfo> uList=new ArrayList();
+for(int i=0;i<100;i++){
+UserInfo user=new UserInfo();
+user.setId(i+1);
+user.setAge(20+i);
+user.setName("用户"+i);
+uList.add(user);
+
+}
+
+return uList;
+
+}
+
+}
+
+OK,运行程序，看到了吗？
+
+关于 JTable 和 TableModel 对象，一定要体会的就是“衣服”和“模特”之间的关系，呵呵；
+当我们在界面上修改了 JTable 中的值，模型对象中的方法就会被调用。
+但这个 JTable 看起来一点也不漂亮，表格的标题头也没显示出来，接下来，我们美化一下，现
+在美化 JTable，与模型，即数据模型没关系，就像要改衣服，不用动模特一样：
+
+2.JTable 展示方式的美化:
+
+2.1.设置表格的宽度和高度:
+
+如下代码示例：
+//设每一列的宽度
+
+for(int i=0;i<table.getColumnCount();i++){
+table.getColumnModel().getColumn(i).setPreferredWidth(40);
+}
+table.setRowHeight(20);//设定每一列的高度
+
+2.2.要显示表头：
+
+要将 Jtable 放到滚动板(javax.swing.JscrollPane)上，并设定其大小：
+效果图如下：
+
+KOWLOON 内部资料
+
+159
+
+软件项目开发讲义
+
+使用如下代码段，：
+//将表格对象放到滚动面板对象上
+
+javax.swing.JScrollPane scrollPane = new JScrollPane(table);
+
+//设定表格在面板上的大小
+
+table.setPreferredScrollableViewportSize(new Dimension(200, 70));
+//超出大小后，JScrollPane自动出现滚动条
+scrollPane.setAutoscrolls(true);
+jf.add(scrollPane);//将 scrollPane 对象加到界面上
+
+2.3.新加列，将列设为下拉框：
+
+代码示例：
+
+table.addColumn(new TableColumn(3));
+
+//创建下拉框对象，并设定其中的值
+
+JComboBox c = new JComboBox();
+c.addItem("长沙");
+c.addItem("株州");
+c.addItem("湘潭");
+c.setSelectedIndex(0);
+
+//将下拉框设为表格的单元格：
+
+table.getColumnModel().getColumn(3).setCellEditor(new
+DefaultCellEditor(c));
+
+效果图如下：
+
+2.4.表格排序:
+
+排序要实现的功能是，当单击表头时，所在列会自动排序，代码段如下：
+
+RowSorter<javax.swing.table.TableModel> sorter = new
+TableRowSorter<TableModel>(table.getModel());
+table.setRowSorter(sorter);
+
+KOWLOON 内部资料
+
+160
+
+软件项目开发讲义
+
+3. JTable 事件响应和项目设想
+
+JTable 事件响应是非常简单，如下代码片断所示，我们可以给表格加上一个鼠标事件监听
+器，当鼠标单击表格（上的某一个单元格）时，弹出单元格所在的行表和单元格中的值：
+//给table加上一个鼠标事件监听器对象
+
+table.addMouseListener(new java.awt.event.MouseAdapter(){
+public void mouseClicked(MouseEvent e) {//仅当鼠标单击时响应
+int r= table.getSelectedRow();
+int c= table.getSelectedColumn();
+
+//得到选中的行列的索引值
+
+//得到选中的单元格的值，表格中都是字符串
+
+Object value= table.getValueAt(r, c);
+String info=r+"行"+c+"列 值 : "+value.toString();
+javax.swing.JOptionPane.showMessageDialog(null,info);
+}
+
+});
+
+效果如下图示：
+
+表格某个单元格的值被编辑后，当焦点移出时，表格会自动调用自己的模型的 setValueAt
+方法，传入改变后的值和行列索引，这个功能也可被利用来做事件响应。
+JTable 和 JTree 是 Swing 界面应用中两种常用的高级组件，如果我们能将 JTree 和 JTable
+的应用组合起来，完善我们的《日志管理系统》，使用 JTree 导航，使用 JTable 展示数据，如下
+图示：
+
+那就是一个较为完善的系统啦.试试你的研发能力？
+
+KOWLOON 内部资料
+
+161
+
+软件项目开发讲义
+
+4.一个游戏：《java 连连看》
+
+4.1.需求分析：
+
+4.2.编写 TableModel
+
+KOWLOON 内部资料
+
+162
+
+软件项目开发讲义
+
+public class LLKModel
+
+implements TableModel{
+
+//对应于表格每个单元格的图标文件名
+
+private String[][] data;
+
+//构造器
+
+public LLKModel(){
+
+//在构造器中完成结数组的初始化：数组中为图标文件名
+
+data=new String[12][12];
+for(int i=0;i<data.length;i++){
+for(int t=0;t<data[0].length;t++){
+
+//生成一个随机对象,随机取图片文件名字
+
+java.util.Random ran=new java.util.Random();
+int index= ran.nextInt(12)+1;
+
+//得到图片文件名字，并放入数组中
+
+String s="image/"+index+".gif";
+data[i][t]=s;
+
+}
+
+}
+
+}
+
+//得到行数
+
+public int getRowCount(){
+return data.length;
+
+}
+
+//得到列数
+
+public int getColumnCount(){
+return data[0].length;
+
+}
+
+//指定某列的类型
+
+public Class<?> getColumnClass(int columnIndex){
+
+//现在是图片啦！
+
+return javax.swing.ImageIcon.class;
+
+}
+
+//得到指定单元格的值
+
+public Object getValueAt(int rowIndex, int columnIndex){
+String imageFileName=data[rowIndex][columnIndex];
+
+//根据数组中的图片文件名，生成图标对象填表中的单元格
+
+javax.swing.ImageIcon ic=new javax.swing.ImageIcon(imageFileName);
+return ic;
+
+}
+
+//表格从界面上重新设定值时调用
+
+public void setValueAt(Object aValue, int rowIndex, int columnIndex){
+}
+
+//指定某单元格是否可编
+
+public boolean isCellEditable(int rowIndex, int columnIndex){
+return false;
+
+}
+
+//取列名，现不管
+
+public String getColumnName(int columnIndex){
+
+KOWLOON 内部资料
+
+163
+
+软件项目开发讲义
+
+return "未知";
+
+}
+
+//暂不用
+
+public void addTableModelListener(TableModelListener l){}
+public void removeTableModelListener(TableModelListener l){}
+
+当然，不要忘了，在你的项目下应有个 images 目录，下面放着名字为 1….12.gif 的图片文件。
+有了这个 Model，要显示出界面就容易啦：
+
+}
+
+/**
+
+* 简单连连看启动主类
+
+* @version 1.0
+* @author: KOWLOON
+*/
+public class LLKMainUI {
+
+//程序入口
+
+public static void main(String[] args) {
+LLKMainUI lu=new LLKMainUI();
+lu.setupUI();
+
+}
+
+//启动主界面
+
+public void setupUI(){
+
+//创建一个界面
+
+javax.swing.JFrame jf=new javax.swing.JFrame("KOWLOON连连看v0.1 ");
+jf.setSize(500,600);
+
+//加布局管理器
+
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+jf.setLayout(fl);
+
+//加上开始按钮（功能未实现）
+
+javax.swing.JButton bu_start=new javax.swing.JButton("Start");
+
+//创建按钮上的图标对象:
+
+javax.swing.ImageIcon ic=new javax.swing.ImageIcon("image/1.gif");
+bu_start.setIcon(ic);
+jf.add(bu_start);
+
+//创建一个表格对象
+
+javax.swing.JTable table=new javax.swing.JTable();
+
+//1.将我们自己的模型设给表格
+
+LLKModel tm=new LLKModel();
+table.setModel(tm);
+
+//
+//
+
+//2.模型对象同时做为一个监听器加给table:
+
+table.addMouseListener(tm );
+
+table.setRowHeight(40); //设表格高度
+
+//设表格宽度
+
+for(int i=0;i<table.getColumnCount();i++){
+table.getColumnModel().getColumn(i).setPreferredWidth(40);
+}
+
+KOWLOON 内部资料
+
+164
+
+软件项目开发讲义
+
+jf.add(table);
+jf.setDefaultCloseOperation(3);
+jf.setVisible(true);
+
+}
+
+}
+
+OK，运行这段程序，应看到我们在本节开始示意的代码啦？但怎么点它也不会连，不要急，这
+是因为我们没有编写代码；
+
+4.3.连连看事件监听：
+
+要判断用户点击二次的单元格中的东东是否相等且可连，就需要实现一个鼠标事件监听器，
+然后将它加个 JTable，当事件发生成，就可得到两次点击的单元格的索引-----
+
+KOWLOON 内部资料
+
+165
+
+软件项目开发讲义
+
+r2=r;
+c2=c;
+
+//以下应去实现算法，判断两次选中的是否同一图片，并且其间可相连
+//第一次选中的值
+
+String s1=data[r1][c1];
+
+//第二次选中的值
+
+String s2=data[r2][c2];
+
+//两次选中的东东在数组中是否相等：
+
+if(s1.equals(s2)){
+data[r1][c1]="灭了1";
+data[r2][c2]="灭了2";
+
+}
+
+}
+
+///其它处理........以上是简单算法，事实这里应是复杂的计算：是否可连且相等
+//更改了数据后，要刷新下界面。
+
+javax.swing.SwingUtilities.updateComponentTreeUI(table);
+}
+
+// . . .省略实现TableModel中的代码
+
+//记录两次点击的行列索引和点击次数
+
+private int r1,c1,r2,c2,clickCount=0;
+
+}
+
+现在，只要将 Model 对象 set 给 Table 对象后，再将它加为 Table 对象的监听器即如：
+LLKMainUI 类中代码段如下：
+
+//. . .
+
+//创建一个表格对象
+
+javax.swing.JTable table=new javax.swing.JTable();
+
+//1.将我们自己的模型设给表格
+
+LLKModel tm=new LLKModel();
+table.setModel(tm);
+
+//2.模型对象同时做为一个监听器加给table:
+
+table.addMouseListener(tm );
+//. . .
+
+现在，这个连连看可以做简单的判断啦，但它只判断相等就会清空，并未判断是否相连----
+这是一个相对较为得杂的算法，
+
+KOWLOON 内部资料
+
+166
+
+软件项目开发讲义
+
+总结和任务
+
+1.实践:完成本节示例代码的编写；
+2.实践:组合 JpopMenu、JTable、JTree 做为界面，完成对一种关联对象队列（集合）的管理。
+3.提高：编写简单连连看，考虑《连连看》的算法实现。
+3.总结：清晰说明 JTable 对象和它的 TableModel 之间的关系；
+
+4.总结：说明你所理解软件开发中，界面，数据（逻辑）分离的方法和思路。
+
+KOWLOON 内部资料
+
+167
+
+软件项目开发讲义
+
+第十五章 桌面管理系统之 JTree 应用
+
+本章目标：
+
+完成本章后，你将能够：
+1. 掌握 JTree 应用，树节点的操作；
+2. 使用 JTree 展数，管理对象。
+
+3. 完成桌面 MIS
+
+KOWLOON 内部资料
+
+168
+
+软件项目开发讲义
+
+1.JTree 的创建：
+
+在以上的示例中，我们都是创建默认的 Javax.swing.JTree 组件，本节就要示例，如何根据
+我们的需要创建自定义结构的 JTree 组件。首要明白的概念间：JTree 上的节点分为两种，即枝
+节点和叶节点，其下有叶节点的，就称做枝节点，或称叶节点的父节点。
+不 论 是 叶 节 点 ， 还 是 枝 节 点 ， 在 代 码 中 ， 都 是 表 现 为 一 个
+javax.swing.tree.DefaultMutableTreeNode 类的对象，DefaultMutableTreeNode 有一个方法，
+可以将其它的 DefaultMutableTreeNode 对象加为自己的子节点；还有一个 setUserObject(Object
+obj)和 getUserObject 方法，用来设定(或取得)节点内保存的对象。
+请看如下代码，创建一个简单的树：
+
+KOWLOON 内部资料
+
+169
+
+软件项目开发讲义
+
+//JTree应用示例
+public class TestJTree extends javax.swing.JFrame {
+
+//程序入口
+
+public static void main(String[] args) {
+TestJTree tj=new TestJTree();
+tj.init();
+
+}
+
+}
+
+//初始化界面内容
+
+public void init() {
+
+this.setTitle("KOWLOONJTree示例");
+this.setSize(300, 400);
+java.awt.FlowLayout fl = new java.awt.FlowLayout();
+this.setLayout(fl);
+
+// 将自己创建的树加到界面上:
+
+javax.swing.JTree tree = createTree();
+this.add(tree);
+this.setDefaultCloseOperation(3);
+this.setVisible(true);
+
+//创建一个自定义树
+
+public javax.swing.JTree createTree() {
+
+// 创建默认树
+
+javax.swing.JTree tree = new javax.swing.JTree();
+
+// 首先,创建一个根节点:
+
+javax.swing.tree.DefaultMutableTreeNode rootNode = new
+javax.swing.tree.DefaultMutableTreeNode();
+
+// 设定节点上的数据对象,节点显示标题则为设定对象的toString()值
+
+// 树下有5个组:
+
+rootNode.setUserObject("树的测试");
+for (int i = 0; i < 5; i++) {
+DefaultMutableTreeNode teamNode = new
+DefaultMutableTreeNode();
+teamNode.setUserObject("第" + i + "组");
+
+// 将组节点加到根节点上:
+
+rootNode.add(teamNode);
+for (int t = 0; t < 6; t++) {
+DefaultMutableTreeNode userNode = new
+DefaultMutableTreeNode();
+userNode.setUserObject("第" + t + "个用户");
+
+// 将用户节点加到组节点上:
+
+teamNode.add(userNode);
+
+}
+
+// 创建树的Model对象，创建时传入根节点：
+
+javax.swing.tree.DefaultTreeModel dm = new DefaultTreeModel(
+rootNode);
+
+KOWLOON 内部资料
+
+170
+
+软件项目开发讲义
+
+// 将模型设给树,树上显示的将上前面所加载的节点
+
+tree.setModel(dm);
+
+// 设定树上的图标
+
+// ImageIcon leafIcon = new ImageIcon("src/budy_init.gif");
+// DefaultTreeCellRenderer renderer = new
+DefaultTreeCellRenderer();
+// renderer.setLeafIcon(leafIcon);
+// tree.setCellRenderer(renderer);
+
+}
+
+return tree;
+
+}
+
+}
+
+JTree 创建时，关键的步骤就是：
+1.
+
+创建 DefaultMutableTreeNode 对象，设用其 setUserObject 设置节点的数据
+
+对象，这个节点的标签将显示为所设定（传入）的对象的 toString 方法返回值；
+
+给 DefaultMutableTreeNode 对 象 添 加 做 为 子 节 点 的
+DefaultMutableTreeNode 对象；
+将 第 一 个 ， 即 要 做 为 根 节 点 的 DefaultMutableTreeNode 对 象 用 来 构 造 一 个
+javax.swing.tree.DefaultTreeModel 对象。
+将新建的 DefaultTreeModel 对象 set 给 JTree 对象即可。
+
+2.
+
+3.
+
+4.
+
+比较简单吧，跟 JMenu 的应用方式差不了多少，就是一个一个的向上加。上例程序运行
+结果如下图：
+
+JTree 通常用来展示目录结构型的数据，
+
+KOWLOON 内部资料
+
+171
+
+软件项目开发讲义
+
+1.
+
+KOWLOON 内部资料
+
+172
+
+软件项目开发讲义
+
+学生对象与日志对象之间的关系，可以描述为：
+1.
+
+KOWLOON 内部资料
+
+173
+
+软件项目开发讲义
+
+List<UserInfo> userList=new ArrayList();
+for(int i=0;i<5;i++){//生成5个UserInfo对象
+UserInfo us=new UserInfo();
+us.setId(i);
+us.setAge(20+i);
+us.setName("第"+i+"个学生");
+int blogCount=new java.util.Random().nextInt(5)+5;//日志个数的随机数
+for(int t=0;t<blogCount;t++){//每个用户生成随机个数的日志对象
+UserBlog ub=new UserBlog();
+ub.setId(i*t);//每个UserBlog对象的唯一id;
+ub.setId_userInfo(i);//所属的用户id;
+ub.setTitle(us.getName()+"的第"+t+"篇日志");
+ub.setContent("这是我的日志内容,我将要写"+t+"行");
+java.util.Date now=new java.util.Date();
+java.text.SimpleDateFormat f=new
+java.text.SimpleDateFormat("yyyy年MM朋dd日hh:mm:ss");
+String timeStr=f.format(now);
+ub.setCreateTime(timeStr);
+ub.setUserinfo(us);//日志对象所属的用户对象
+
+//程序中生成创建日志的格式化时间
+
+//将这个日志对象装入所属用户对象的列表中:
+
+us.addBlog(ub);
+
+}
+
+//将生成的us对象放入到队列中
+
+userList.add(us);
+
+}
+return userList;
+
+}
+
+}
+
+UserDao 中只有一个方法，当这个方法调用时，生成模拟的用户对象和 blog 对象(在具体的应
+用中，这个方法应是从数据库或文件中提取数据，生成对象)。
+最后，我们编写界面代码：显示一个 JTree 对象，JTree 中的节点对应了 UserInfo 和 UserBlog
+对象：
+
+//JTree应用示例:
+
+KOWLOON 内部资料
+
+174
+
+软件项目开发讲义
+
+//创建用户列表后，就可以使用userList中的对象构造树：
+
+UserDao dao=new UserDao();
+userList=dao.getAllUser();
+
+// 将自己创建的树加到界面上:
+
+javax.swing.JTree tree = createTree();
+this.add(tree);
+this.setDefaultCloseOperation(3);
+this.setVisible(true);
+
+}
+
+//创建一个自定义树
+
+public javax.swing.JTree createTree() {
+
+// 创建默认树
+
+javax.swing.JTree tree = new javax.swing.JTree();
+
+// 首先,创建一个根节点:
+
+javax.swing.tree.DefaultMutableTreeNode rootNode = new
+javax.swing.tree.DefaultMutableTreeNode();
+
+// 设定节点上的数据对象,节点显示标题则为设定对象的toString()值
+
+//取得要加载到树上的用户对象列表
+
+rootNode.setUserObject("日志管理");
+for (int i = 0; i <userList.size(); i++) {
+DefaultMutableTreeNode teamNode = new
+DefaultMutableTreeNode();
+
+//得到列表中每一个用户对象,设为树节点对象
+
+UserInfo us=userList.get(i);
+teamNode.setUserObject(us);
+
+// 将组节点加到根节点上:
+
+rootNode.add(teamNode);
+
+//取得所属于这个用户的blog对象列表
+
+List<UserBlog> blogList=us.getBlogList();
+for (int t = 0; t <blogList.size(); t++) {
+DefaultMutableTreeNode userNode = new
+DefaultMutableTreeNode();
+UserBlog ub=blogList.get(t);//从队列中得到blog对象
+userNode.setUserObject(ub);
+
+// 将用户节点加到组节点上:
+
+teamNode.add(userNode);
+
+}
+
+// 创建树的Model对象，创建时传入根节点：
+
+javax.swing.tree.DefaultTreeModel dm = new DefaultTreeModel(rootNode);
+
+// 将模型设给树,树上显示的将上前面所加载的节点
+
+tree.setModel(dm);
+}
+
+return tree;
+
+}
+
+//用户对象列表:
+
+private List<UserInfo> userList;
+
+KOWLOON 内部资料
+
+175
+
+软件项目开发讲义
+
+}
+
+现在运行程序，看到界面如下图：
+
+树 节 点 上 和 标 签 显 示 的 不 是 我 们 想 要 的 东 东 --- 默 认 显 示 的 是 调 用 了 在 节 点 上
+setUserObject 传入的对象的 toString()方法的结果；要显示我们想要的结果，只需重写对象的
+toString()方法即可:
+UserInfo 重写 toString()方法，返回用户名字：
+UserBlog 中重写 toString()方法，返回 blog 标题，再运行程序：
+
+接下来，我们应该给 JTree 加上弹出菜单实现 Tree 上节点对应对象的删改功能。
+
+3.JTree 节点的选中和信息获取
+
+在弹出菜单示例的那一节，我们己知道如何给组件加上弹出菜单，在这个基础上，要实现的就
+是当菜单事件发生时，实现对应的功能操作：从树上移除，增加或显示选中节点所含的对象的数
+据；并更新内存中 UserInfo 对象列表中的数据。首先，我们实现能显示用户选中的节点的数据对
+象：
+
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+
+KOWLOON 内部资料
+
+176
+
+软件项目开发讲义
+
+import java.util.List;
+
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+
+//JTree应用示例:
+
+KOWLOON 内部资料
+
+177
+
+软件项目开发讲义
+
+DefaultMutableTreeNode userNode = new DefaultMutableTreeNode();
+UserBlog ub=blogList.get(t);//从队列中得到blog对象
+userNode.setUserObject(ub);
+teamNode.add(userNode); // 将用户节点加到组节点上
+
+}
+
+// 创建树的Model对象，创建时传入根节点：
+
+javax.swing.tree.DefaultTreeModel dm = new DefaultTreeModel(rootNode);
+
+// 将模型设给树,树上显示的将上前面所加载的节点
+
+tree.setModel(dm);
+}
+
+return tree;
+
+}
+
+//创建弹出菜单
+
+private javax.swing.JPopupMenu createPopMenu(){
+
+//创建弹出菜单对象
+
+javax.swing.JPopupMenu popMenu=new javax.swing.JPopupMenu();
+
+//1创建文件菜单下的菜单项：
+
+javax.swing.JMenuItem mi_open=new javax.swing.JMenuItem("添加");
+mi_open.setActionCommand("add");//设置菜单的命令关键字
+javax.swing.JMenuItem mi_new=new javax.swing.JMenuItem("删除");
+mi_new.setActionCommand("del");
+javax.swing.JMenuItem mi_exit=new javax.swing.JMenuItem("修改");
+mi_exit.setActionCommand("mod");
+
+//创建内部料的菜单事件监听器对象
+
+java.awt.event.ActionListener ac_listener=new
+java.awt.event.ActionListener(){
+public void actionPerformed(ActionEvent e){
+treeMenuAction(e);//
+
+KOWLOON 内部资料
+
+178
+
+软件项目开发讲义
+
+///得到选中的节点，每个节点都是DefaultMutableTreeNode对象
+DefaultMutableTreeNode
+selectNode=(DefaultMutableTreeNode)tp.getLastPathComponent();
+//取得选中节点内的对象,即setUserObject传入的对象
+Object userObject=selectNode.getUserObject();
+
+//判断是何种对象
+
+if(userObject instanceof UserInfo){//选中用户节点
+UserInfo user=(UserInfo)userObject;//强制转型
+String s="要执行的操作是 "+command;
+String info="用户信息:用户id:"+user.getId()+" 用户名 "+user.getName();
+javax.swing.JOptionPane.showMessageDialog(this,s+"\r\n"+info);
+}
+if(userObject instanceof UserBlog){//选中日志节点
+UserBlog blog=(UserBlog)userObject;//强制转型
+String s="要执行的操作是 "+command;
+String info="Blog信息:Blog id:"+blog.getId()+" 标题:"+blog.getTitle();
+javax.swing.JOptionPane.showMessageDialog(this,s+"\r\n"+info);
+}
+
+}else{
+
+javax.swing.JOptionPane.showMessageDialog(this,"请选中树上的节点！");
+}
+}
+javax.swing.JTree tree ;//界面上显示的树的名字
+private List<UserInfo> userList; //用户对象列表
+
+}
+
+以上代码，关键是在弹出菜单的事件处理中：当用户选中菜单时，得要选中的树上的节点，并
+取得这个节点所代表的对象，通过 instanceof 关键字比较，选中的是 UserInfo 对象的节点还是
+UserBlog 对象的节点；在本例中，仅是将用户要执行的操作命令和选中对象的部分数据显示出来
+而己，程序运行界面如下示：
+
+KOWLOON 内部资料
+
+179
+
+软件项目开发讲义
+
+接下来，我们就应真正的实现菜单上的功能：
+
+4.JTree
+
+KOWLOON 内部资料
+
+180
+
+软件项目开发讲义
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.List;
+
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+//JTree应用示例:
+
+KOWLOON 内部资料
+
+181
+
+软件项目开发讲义
+
+//取得要加载到树上的用户对象列表
+
+for (int i = 0; i <userList.size(); i++) {
+DefaultMutableTreeNode teamNode = new DefaultMutableTreeNode();
+UserInfo us=userList.get(i); //得到列表中每一个用户对象,设为树节点对象
+teamNode.setUserObject(us); // 将组节点加到根节点上
+rootNode.add(teamNode);
+
+//取得所属于这个用户的blog对象列表
+
+List<UserBlog> blogList=us.getBlogList();
+for (int t = 0; t <blogList.size(); t++) {
+DefaultMutableTreeNode userNode = new DefaultMutableTreeNode();
+UserBlog ub=blogList.get(t);//从队列中得到blog对象
+userNode.setUserObject(ub);
+teamNode.add(userNode); // 将用户节点加到组节点上
+}
+
+// 创建树的Model对象，创建时传入根节点：
+
+javax.swing.tree.DefaultTreeModel dm = new DefaultTreeModel(rootNode);
+
+// 将模型设给树,树上显示的将上前面所加载的节点
+
+}
+
+};
+
+//2 给菜单项加上事件监听器：
+
+mi_open.addActionListener(ac_listener);
+mi_new.addActionListener(ac_listener);
+
+KOWLOON 内部资料
+
+182
+
+tree.setModel(dm);
+}
+
+return tree;
+
+}
+/**
+
+* 创建传入的JTree对象上的弹出菜单，并指定事件处理
+
+* @param tree:弹出菜单所在的树对象
+
+* @return:创建好的弹出菜单对象
+
+*/
+private javax.swing.JPopupMenu createPopMenu(final JTree tree){
+
+//创建弹出菜单对象
+
+javax.swing.JPopupMenu popMenu=new javax.swing.JPopupMenu();
+
+//1创建文件菜单下的菜单项：
+
+javax.swing.JMenuItem mi_open=new javax.swing.JMenuItem("添加");
+mi_open.setActionCommand("add");//设置菜单的命令关键字
+javax.swing.JMenuItem mi_new=new javax.swing.JMenuItem("删除");
+mi_new.setActionCommand("del");
+javax.swing.JMenuItem mi_exit=new javax.swing.JMenuItem("修改");
+mi_exit.setActionCommand("mod");
+
+//创建内部类的菜单事件监听器对象：
+
+java.awt.event.ActionListener ac_listener=new
+java.awt.event.ActionListener(){
+public void actionPerformed(ActionEvent e){
+
+//当事件发生时，调用事件处理方法
+
+treeMenuAction(e,tree);
+
+软件项目开发讲义
+
+mi_exit.addActionListener(ac_listener);
+
+//3 将菜单项加到弹出菜单对象上:
+
+popMenu.add(mi_open);
+popMenu.add(mi_new);
+popMenu.add(mi_exit);
+return popMenu;
+
+}
+
+/**
+
+* 响应树上的弹出菜单事件
+
+* 1.当点击菜单时选中的树节点是代表UserInfo对象时调用changeUserInfo方法
+* 2.当点击菜单时选中的树节点是代表BlogInfo对象时调用chageBlogInfo方法
+* @param e :事件对象
+* @param tree :事件发生所在的树
+*/
+private void treeMenuAction(ActionEvent e,JTree tree){
+String command=e.getActionCommand();//得到选中菜单的命令
+
+//得到在树上选中的路径
+
+javax.swing.tree.TreePath tp=tree.getSelectionPath();
+
+//如果选中了树上的某个节点：
+
+if(null!=tp){
+///得到选中的节点，每个节点都是DefaultMutableTreeNode对象
+DefaultMutableTreeNode
+selectNode=(DefaultMutableTreeNode)tp.getLastPathComponent();
+//取得选中节点内的对象,即setUserObject传入的对象
+Object userObject=selectNode.getUserObject();
+
+//判断是何种对象
+
+if(userObject instanceof UserInfo){//选中用户节点
+UserInfo user=(UserInfo)userObject;//强制转型
+
+//调用处理方法，传入命令字和要处理的对象
+
+changeUserInfo(command,user,selectNode);
+
+}
+if(userObject instanceof UserBlog){//选中日志节点
+UserBlog blog=(UserBlog)userObject;//强制转型
+
+//调用处理方法，传处命令字和要处理的对象
+
+chageBlogInfo(command,blog,selectNode);
+
+}
+
+}else{
+
+}
+
+javax.swing.JOptionPane.showMessageDialog(this,"请选中树上的节点！");
+}
+
+//处理对树上UserInfo节点选中的事件
+
+private void changeUserInfo(String command,UserInfo
+user,DefaultMutableTreeNode selectNode){
+if(command.equals("del")){
+
+//让用户确认
+
+KOWLOON 内部资料
+
+183
+
+软件项目开发讲义
+
+int i=javax.swing.JOptionPane.showConfirmDialog(this, "确认要移除吗？");
+if(i==0){//确认框返架结果如为0，表示确认del
+selectNode.removeFromParent();
+javax.swing.SwingUtilities.updateComponentTreeUI(this);
+}
+
+}
+else if(command.equals("add")||command.equals("mod")){
+showAddOrModifyUserInfoDialog(command,user,selectNode);
+
+}
+
+}
+
+}
+
+}
+
+//处理树上UserBlog对象选中的事件
+
+private void chageBlogInfo(String command,UserBlog
+blog,DefaultMutableTreeNode selectNode){
+if(command.equals("del")){
+
+//让用户确认
+
+int i=javax.swing.JOptionPane.showConfirmDialog(this, "确认要移除吗？");
+if(i==0){//确认框返架结果如为0，表示确认del
+selectNode.removeFromParent();
+javax.swing.SwingUtilities.updateComponentTreeUI(this);
+}
+
+}
+else if(command.equals("add")||command.equals("mod")){
+showAddOrModifyBlogDialog(command,blog,selectNode);
+
+//显示添加/修改blog的对话话，并实现事件响应
+
+private void showAddOrModifyBlogDialog(final String command,final
+UserBlog blog,final DefaultMutableTreeNode selectNode){
+
+//创建并弹出对话框，显示输入组件，
+
+final javax.swing.JDialog jda=new javax.swing.JDialog();
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+jda.setLayout(fl);
+jda.setSize(this.getWidth(),this.getHeight()/2);
+jda.setModal(true); //设置为"模型"对话框
+javax.swing.JLabel la_title=new javax.swing.JLabel("日志标题：");
+final javax.swing.JTextField jta_title=new
+javax.swing.JTextField(15);
+javax.swing.JLabel la_content=new javax.swing.JLabel("日志内容：");
+final javax.swing.JTextArea jta_content=new
+javax.swing.JTextArea(5,15);
+jda.add(la_title);
+jda.add(jta_title);
+jda.add(la_content);
+jda.add(jta_content);
+
+javax.swing.JButton bu_blog=new javax.swing.JButton();
+
+KOWLOON 内部资料
+
+184
+
+软件项目开发讲义
+
+//根据不同的操作，设定对话框按钮上的标签
+
+if(command.equals("add")){
+jda.setTitle("用户"+blog.getUserinfo().getName()+"添加一篇日志");
+bu_blog.setText("添加");
+}else if(command.equals("mod")){
+jda.setTitle("修改日志");
+bu_blog.setText("修改");
+
+//将节点中所含对象的信息显示到界面上：
+
+jta_title.setText(blog.getTitle());
+jta_content.append(blog.getContent());
+
+}
+jda.add(bu_blog);
+
+////添加对话框上的按钮的事件处理器
+
+bu_blog.addActionListener(new ActionListener(){
+public void actionPerformed(ActionEvent e){
+String title=jta_title.getText();//得到用户输入的内容
+String content=jta_content.getText();
+if(command.equals("add")){//如果是添加命令
+UserBlog nb=new UserBlog();//根据输入内容创建blog对象
+nb.setId(1);
+nb.setTitle(title);
+nb.setContent(content);
+nb.setUserinfo(blog.getUserinfo());
+blog.getUserinfo().addBlog(nb);//加给对应的用户对象内
+DefaultMutableTreeNode dm=new DefaultMutableTreeNode();
+dm.setUserObject(nb);
+
+//创建新节点
+
+//得到己选中节点的父节点，将根据用户输入新建的节点加到树上:
+
+DefaultMutableTreeNode
+parent=(DefaultMutableTreeNode)selectNode.getParent();
+parent.add(dm);
+}
+if(command.equals("mod")){//如果是修改命令：
+
+//重新设定原来选中的节点所代表的blog对象的标题和内容：
+
+blog.setTitle(title);
+blog.setContent(content);
+
+}
+jda.dispose();//关闭对话框
+
+//刷新界面，否则树上显示不了！
+
+javax.swing.SwingUtilities.updateComponentTreeUI(mainUI);
+
+}
+
+});
+jda.setVisible(true);
+
+}
+
+//显示添加/修改UserInfo的对话话，并实现事件响应
+
+private void showAddOrModifyUserInfoDialog(final String command,final
+
+KOWLOON 内部资料
+
+185
+
+软件项目开发讲义
+
+UserInfo user,final DefaultMutableTreeNode selectNode){
+
+//修改或新建时，弹出一个Jdialog(对话框，类似于JFrame)对象
+
+final javax.swing.JDialog jda=new javax.swing.JDialog();
+java.awt.FlowLayout fl=new java.awt.FlowLayout();
+jda.setLayout(fl);
+jda.setSize(this.getWidth(),this.getHeight()/2);
+
+jda.setModal(true);
+javax.swing.JLabel la_name=new javax.swing.JLabel("用户名：");
+final javax.swing.JTextField jta_name=new
+javax.swing.JTextField(15);
+javax.swing.JLabel la_age=new javax.swing.JLabel("用户年令：");
+final javax.swing.JTextField jta_age=new
+javax.swing.JTextField(5);
+jda.add(la_name);
+jda.add(jta_name);
+jda.add(la_age);
+jda.add(jta_age);
+
+javax.swing.JButton bu_blog=new javax.swing.JButton();
+if(command.equals("add")){//如果是添加命令
+jda.setTitle("添加一个用户信息");
+bu_blog.setText("添加");
+}else if(command.equals("mod")){
+jda.setTitle("修改用户信息");
+bu_blog.setText("修改");
+
+//将节点中所含对象的信息显示到界面上：
+
+jta_name.setText(user.getName());
+jta_age.setText(""+user.getAge());//用户年令是设定到界面上必须是字符
+}
+jda.add(bu_blog);
+bu_blog.addActionListener(new ActionListener(){//添加对话框上的事件执行
+public void actionPerformed(ActionEvent e){
+String name=jta_name.getText();//得到用户输入的内容
+String str_age=jta_age.getText();
+
+//将从界面上得到的年令串转为int型:
+
+int age=Integer.parseInt(str_age);
+if(command.equals("add")){//如果是添加命令
+UserInfo newUser=new UserInfo();//根据输入内容创建blog对象
+newUser.setId(1);
+newUser.setAge(age);
+newUser.setName(name);
+
+//创建新节点,代表新建的用户对象
+
+DefaultMutableTreeNode newUserNode=new
+DefaultMutableTreeNode();
+newUserNode.setUserObject(newUser);
+
+//得到己选中节点的父节点，将根据用户输入新建的节点加到树上:
+
+KOWLOON 内部资料
+
+186
+
+软件项目开发讲义
+
+DefaultMutableTreeNode
+parent=(DefaultMutableTreeNode)selectNode.getParent();
+parent.add(newUserNode);
+
+//第一个新建的用户，要为其建一个blog对象
+
+UserBlog nb=new UserBlog();
+nb.setId(1);
+nb.setTitle("默认日志");
+nb.setContent("默认内容");
+nb.setUserinfo(newUser);
+newUser.addBlog(nb);//加给对应的用户对象内
+DefaultMutableTreeNode dmBlog=new
+DefaultMutableTreeNode();
+dmBlog.setUserObject(nb);
+
+//创建新节点
+
+//将给这个新用户默认的新日志对象做为一个节点加到新用户对象代表的节点下：
+
+newUserNode.add(dmBlog);
+}
+if(command.equals("mod")){//如果是修改命令：
+
+//重新设定原来选中的节点所代表的UserInfo对象的标题和内容：
+
+user.setAge(age);
+user.setName(name);
+
+}
+jda.dispose();//处理完毕后，关闭对话框
+
+//刷新界面，否则树上显示不了！
+
+javax.swing.SwingUtilities.updateComponentTreeUI(mainUI);
+
+}
+
+});
+jda.setVisible(true);
+
+}
+}
+
+以上程序运行的界面和功能实现如下图示：
+
+KOWLOON 内部资料
+
+187
+
+软件项目开发讲义
+
+5.完善分析
+
+必须明白的一个问题是：
+
+KOWLOON 内部资料
+
+188
+
+软件项目开发讲义
+
+ef.printStackTrace();
+
+}
+final JFormattedTextField ft_ipAdd = new JFormattedTextField(ip_mf);
+f.add(ft_ipAdd);
+
+//输入数字，做为年令
+
+final JFormattedTextField ft_age = new JFormattedTextField(ip_age);
+f.add(ft_age);
+
+// 创建一个事件监听器
+
+ActionListener acton = new ActionListener() {
+public void actionPerformed(ActionEvent e) {
+String date = ft_date.getText();
+String ipadd = ft_ipAdd.getText();
+
+//得到年令输入框中的值，并去掉前后的空格
+
+int age=Integer.parseInt(ft_age.getText().trim());
+String msg = "生日: " + date + "\r\n IP地址: " + ipadd
++ "\r\n 年令: " + age;
+javax.swing.JOptionPane.showMessageDialog(null, msg);
+
+// 给输入框加上监听器当按下回车弹出消息框显示输入值，如输入不正确，则不会弹出！！！
+
+}
+
+};
+
+ft_date.addActionListener(acton);
+ft_ipAdd.addActionListener(acton);
+ft_age.addActionListener(acton);
+f.setSize(300, 100);
+f.setVisible(true);
+
+//
+//
+
+}
+
+运行如上代码，界面如下图：
+
+特别要注意的是：格式化输入时，如果用户输入内容不足，事件将不出发生。
+
+3. 程序启动时，窗口第一次出现的位置总是在左上角，这不符合使用习惯，应当让它初始显示
+在屏的正中。如下代码所示，窗口初始化显示在屏的右下方：
+
+public static void main(String args[]) {
+JFrame f = new JFrame("初始化窗口显示位置测试--显在屏右下");
+f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//取得屏幕大小对象：dm的getWidth和getHeight返回屏幕的宽和高的double型值
+java.awt.Dimension
+dm=java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+int sc_width=(int)dm.getWidth();
+int sc_heigth=(int)dm.getHeight();
+
+KOWLOON 内部资料
+
+189
+
+软件项目开发讲义
+
+//组件对象的getWidth和getHeight方法得到自身的宽和高，int型
+//组件的setLocation设置组件所处位置的x,y坐标：
+
+2);
+
+f.setLocation((sc_width-f.getWidth())/2,(sc_heigth-f.getHeight())/
+
+f.setSize(300, 100);
+f.setVisible(true);
+
+}
+
+你来改正？让我们的 blog 管理程序初始显示在屏的正中！
+4. 界面功能的改进:
+树形结构，一般用做导航的功能，
+
+KOWLOON 内部资料
+
+190
+
+软件项目开发讲义
+
+第十六章 数据结构之链表
+
+本章目标：
+
+完成本章后，你将能够：
+1.链表的特性
+2.链表的用法分析及应用场景
+
+KOWLOON 内部资料
+
+191
+
+软件项目开发讲义
+
+1.链表
+
+链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中
+的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运
+行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结
+点地址的指针域。 相比于线性表顺序结构，链表比较方便插入和删除操作。
+
+2.单向链表
+
+单向链表的每一个结点由存储数据元素的数据域和指向下一个结点的指针域组成：
+
+数据 1
+
+数据 2
+
+数据 3
+
+数据 4
+
+我们可以自己实现一个链表的结构，首先定义一个链表的节点类：
+
+}
+
+}
+
+有了这个结点类，我们就可以实现一个单向的链表了。
+
+/**
+
+* 单向链表类
+
+KOWLOON 内部资料
+
+192
+
+/**
+
+* 单向链表节点类
+
+* @author KOWLOON
+*
+*/
+
+public class LinkNode {
+
+private Object obj;//节点内的数据对象
+private LinkNode next;//对下一个节点的引用
+public LinkNode(Object obj){
+this.obj = obj;
+
+//在创建节点对象的时候就传入节点中的数据对象
+
+}
+public Object getObj() {
+
+return obj;
+
+}
+public void setObj(Object obj) {
+this.obj = obj;
+
+}
+public LinkNode getNext() {
+
+return next;
+
+}
+public void setNext(LinkNode next) {
+this.next = next;
+
+软件项目开发讲义
+
+* @author KOWLOON
+*/
+
+public class LinkList {
+
+public static void main(String args[]){
+LinkList list = new LinkList();
+
+//创建链表
+
+LinkNode root = list.createLink();
+//遍历
+list.printLinKList(list.root);
+
+}
+
+// 手工创建链表
+
+public LinkNode createLink() {
+String s = "根节点";
+root = new LinkNode(s);
+LinkNode n1 = new LinkNode("一节点");
+LinkNode n2 = new LinkNode("二节点");
+LinkNode n3 = new LinkNode("三节点");
+LinkNode n4 = new LinkNode("四节点");
+root.setNext(n1);
+n1.setNext(n2);
+n2.setNext(n3);
+n3.setNext(n4);
+
+return root;
+
+* 遍历链表的方法
+
+*@param root:链表的根结点
+
+*/
+public void printLinKList(LinkNode root) {
+if (null != root) {
+Object data = root.getObj();
+System.out.println(data);
+LinkNode temp = root.getNext();
+printLinKList(temp);
+
+}
+/**
+
+}
+
+}
+
+}
+
+3.双向链表
+
+数据 1
+
+数据 2
+
+数据 3
+
+数据 4
+
+双向链表其实是单链表的改进。
+当我们对单链表进行操作时，有时你要对某个结点前面的一个结点进行操作时，又必须从表
+头开始查找。这是由单链表结点的结构所限制的。因为单链表每个结点只有一个存储直接子结点
+
+KOWLOON 内部资料
+
+193
+
+软件项目开发讲义
+
+地址的链域，那么能不能定义一个既有存储直接子结点地址的链域，又有存储直接父结点地址的
+链域的这样一个双链域结点结构呢？这就是双向链表。
+在双向链表中，结点除含有数据域外，还有两个链域，一个存储直接子结点地址，一般称之
+为右链域；一个存储直接父结点地址，一般称之为左链域。
+
+/**
+
+* 双向链表结点类
+
+* @author KOWLOON
+*/
+
+public class LinkNode {
+
+private Object obj;//节点内的数据对象
+private LinkNode child;//对下一个节点的引用
+private LinkNode parent;//对上一个节点的引用
+public LinkNode(Object obj){
+this.obj = obj;
+
+//在创建节点对象的时候就传入节点中的数据对象
+
+}
+public Object getObj() {
+
+return obj;
+
+}
+public void setObj(Object obj) {
+this.obj = obj;
+
+}
+public LinkNode getChild() {
+
+return child;
+
+}
+public void setChild(LinkNode child) {
+this.child = child;
+
+}
+public LinkNode getParent() {
+return parent;
+
+}
+public void setParent(LinkNode parent) {
+this.parent = parent;
+
+}
+
+}
+
+4.
+
+KOWLOON 内部资料
+
+194
+
+软件项目开发讲义
+
+public LinkNode last = null;// 最后一个节点
+public static void main(String args[]) {
+
+//加入节点
+
+LinkList list = new LinkList();
+list.add("aa");
+list.add("bb");
+list.add("cc");
+
+list.insertIndexObj(1, "000");
+
+//插入节点
+
+//删除节点
+
+//遍历链表
+
+list.deleteLinkNode(3);
+
+list.printLinKList(front);
+
+}
+/**
+
+* 插入节点
+
+* @param obj ：插入节点的对象
+*/
+public void add(Object obj) {
+
+// 创建一个新的节点
+
+LinkNode node = new LinkNode(obj);
+if (null == front) {// 如果链表为null
+front = node;
+last = front;
+
+} else {
+
+last.setChild(node);
+node.setParent(last);
+last = node;
+
+}
+
+}
+/**
+
+* 在指定索引下插入结点
+
+* @param index
+
+*/
+public void insertIndexObj(int index, Object obj) {
+if (this.getLength() < index || index < 0) {
+throw new java.lang.RuntimeException("下标越界：" + index + ",
++ this.getLength());
+
+size:"
+
+}else{
+
+// 创建一个新的节点
+
+LinkNode newNode = new LinkNode(obj);
+
+//得到当前索引位置的节点
+
+LinkNode node = this.getLinkNode(index);
+if(index==0){//如果链表没有节点
+front = newNode;
+
+}else{
+
+KOWLOON 内部资料
+
+195
+
+软件项目开发讲义
+
+//得到父节点
+
+LinkNode fNode = node.getParent();
+
+//设置新的引用关系
+
+fNode.setChild(newNode);
+newNode.setParent(fNode);
+
+}
+
+//设置新的引用关系
+
+newNode.setChild(node);
+node.setParent(newNode);
+
+}
+
+}
+/**
+
+* 根据索引删除结点
+
+* @param index ：索引
+*/
+public void deleteLinkNode(int index) {
+if (this.getLength() < index || index < 0) {
+throw new java.lang.RuntimeException("下标越界：" + index + ",
++ this.getLength());
+
+size:"
+
+}else{
+
+//得到当前索引位置的节点
+
+LinkNode node = this.getLinkNode(index);
+
+LinkNode fNode = node.getParent();
+
+//得到父节点
+
+//得到子节点
+
+LinkNode cNode = node.getChild();
+if(fNode==null){
+front=cNode;
+}else if(cNode==null){
+fNode.setChild(null);
+
+}else{
+
+fNode.setChild(cNode);
+cNode.setParent(fNode);
+
+}
+
+}
+
+}
+/**
+
+* 根据索引取出节点
+
+* @param index :第几个节点
+
+* @return：根据索引返回的节点
+
+*/
+public LinkNode getLinkNode(int index) {
+if (this.getLength() < index || index < 0) {
+throw new java.lang.RuntimeException("下标越界：" + index + ",
+
+size:"
+
+KOWLOON 内部资料
+
+196
+
+软件项目开发讲义
+
+}else{
+
++ this.getLength());
+
+int num = 0;
+LinkNode node = front;
+while(num!=index){
+node = node.getChild();
+num++;
+
+}
+
+return node;
+
+}
+
+}
+/**
+
+* 得到链表的长度
+
+* @return：链表的长度
+
+*/
+public int getLength() {
+int count = 0;
+if (front == null) {
+
+return count;
+
+}
+LinkNode node = front.getChild();
+
+while (null != node) {
+
+count++;
+node = node.getChild();
+
+}
+return count + 1;
+
+}
+/**
+
+* 修改对象节点
+
+* @param index ：对象节点索引
+* @param obj：修改对象内容
+*/
+public void UpdateLinkNode(int index, Object obj) {
+if (this.getLength() < index || index < 0) {
+throw new java.lang.RuntimeException("下标越界：" + index + ",
++ this.getLength());
+
+size:"
+
+//得到当前索引位置的节点
+
+LinkNode node = this.getLinkNode(index);
+node.setObj(obj);
+
+}else{
+
+}
+
+}
+/**
+
+* 遍历链表的方法
+
+* @param root:链表的根结点
+*/
+
+KOWLOON 内部资料
+
+197
+
+软件项目开发讲义
+
+public void printLinKList(LinkNode root) {
+if (null != root) {
+Object data = root.getObj();
+System.out.println(data);
+LinkNode temp = root.getChild();
+printLinKList(temp);
+
+}
+
+}
+
+}
+
+总结和任务
+
+1. 完成本节的示例代码
+2. 阐述链表的基本特征及使用场景
+
+3. 扩展：实现链表的排序
+
+KOWLOON 内部资料
+
+198
+
+软件项目开发讲义
+
+第十七章
+
+KOWLOON 内部资料
+
+199
+
+软件项目开发讲义
+
+1．哈夫曼树
+
+哈夫曼树又称最优树（二叉树），
+
+KOWLOON 内部资料
+
+200
+
+软件项目开发讲义
+
+（2）在 F
+
+KOWLOON 内部资料
+
+201
+
+软件项目开发讲义
+
+例，对字符串 EMCAD 编码。若等长编码，则：
+
+EMCAD => 000001010011100 共 15 位。
+设各字母的出现频率为 {E,M,C,A,D}={1,2,3,3,4}。以频率
+
+KOWLOON 内部资料
+
+202
+
+软件项目开发讲义
+
+比原来的字符还多了吗？怎么减少？）大家应该知道的，计算机中我们存储一个字节型数据的时
+候一般式占用了 8 个 01 位，因为计算机中所有的数据都是最后转化为二进制位去存储的。所以，
+想想我们的编码不就是只含有 0 和 1 了，因此我们就直接将编码按照计算机的存储规则用位的
+方法写入进去就能实现压缩了。
+下面开始动手开发我们自己的压缩软件。
+开始些程序之前，必须想好自己的文件存储格式，和存储规则是什么
+为了简便，我自定义存储的基本信息，格式如下：
+
+SaveCode[i].n
+int 型 // 每一个字节的编码长度 i:0~256
+B yte[] byte 数组型 // 每一个字节的编码 SaveCode[i].node 中 String 的 01 串转化而来。
+
+Byte[] byte 数组型 // 对文件中每一个 byte 的重新编码的哈夫曼编码写入。
+
+①
+
+KOWLOON 内部资料
+
+203
+
+软件项目开发讲义
+
+}
+
+③取得每一个叶子节点的哈夫曼编码:
+
+/**
+
+* 获得叶子节点的哈弗曼编码
+
+* @param root 根节点
+
+* @param s
+
+*/
+public void getMB(hfmNode root,String s){
+if ((root.lChild==null)&&(root.rChild==null)){
+Code hc=new Code();
+hc.node=s;
+hc.n=s.length();
+System.out.println("节点"+root.data+"编码"+hc.node);
+SaveCode[root.data]=hc;//保存字节 root.data 的编码 HC
+
+}
+if (root.lChild!=null){//左0 右 1
+getMB(root.lChild,s+'0');
+
+}
+if (root.rChild!=null){
+getMB(root.rChild,s+'1');
+
+}
+
+}
+
+//…code…
+
+}
+//…code…
+
+如此一来我们的哈夫曼树就建好了。
+下面就是按照我们之前定义的文件存储格式直接写进文件就可以了。
+
+④写出每一个字节对应编码的长度：
+
+//写出每一个编码的长度
+
+for (int i=0;i<SaveCode.length;i++){
+fos.write(SaveCode[i].n);
+
+⑤写出每一个字节所对应的编码：
+这一步较为复杂，因为 JAVA 中没有自己定义的二进制为写入，我们就不得不将每 8 个
+01 String 转化为一个 byte 再将 byte 写入。但是，问题又来了不是所有的 01String 都是 8 的
+整数倍，所以就又得在不是 8 整数倍的 String 后面补上 0
+//写入每一个字节所对应的 String编码
+
+int count=0;//记录中转的字符个数
+int i=0;//第i个字节
+String writes ="";
+String tranString="";//中转字符串
+String waiteString;//保存所转化的所有字符串
+while((i<256)||(count>=8)){
+
+//如果缓冲区的等待写入字符大于8
+
+KOWLOON 内部资料
+
+204
+
+软件项目开发讲义
+
+if (count>=8){
+waiteString="";//清空要转化的的码
+for (int t=0;t<8;t++){
+waiteString=waiteString+writes.charAt(t);
+
+}
+//将writes前八位删掉
+if (writes.length()>8){
+tranString="";
+for (int t=8;t<writes.length();t++){
+tranString=tranString+writes.charAt(t);
+
+}
+writes="";
+writes=tranString;
+
+}else{
+
+writes="";
+
+}
+count=count-8;//写出一个8位的字节
+int intw=changeString(waiteString);//得到String转化为int
+
+//写入文件
+
+fos.write(intw);
+
+}else{
+
+//得到地i个字节的编码信息，等待写入
+
+count=count+SaveCode[i].n;
+writes=writes+SaveCode[i].node;
+i++;
+
+}
+
+}
+
+//把所有编码没有足够8的整数倍的String补0使得足够8的整数倍，再写入
+
+if (count>0){
+waiteString="";//清空要转化的的码
+for (int t=0;t<8;t++){
+if (t<writes.length()){
+waiteString=waiteString+writes.charAt(t);
+
+}else{
+
+}
+
+waiteString=waiteString+'0';
+
+}
+fos.write(changeString(waiteString));//写入
+System.out.println("写入了->"+waiteString);
+
+}
+
+/**
+
+* @param s
+* @return
+
+return
+
+* 将一个八位的字符串转成一个整数
+
+*/
+public int changeString(String s){
+
+KOWLOON 内部资料
+
+205
+
+软件项目开发讲义
+
+((int)s.charAt(0)-48)*128+((int)s.charAt(1)-48)*64+((int)s.charAt(2)-4
+8)*32
++((int)s.charAt(3)-48)*16+((int)s.charAt(4)-48)*8+((int)s.charAt(5)-48
+)*4
+
++((int)s.charAt(6)-48)*2+((int)s.charAt(7)-48);
+
+}
+
+⑥将源文件中的所有 byte 转化为 01 哈夫曼编码，写入压缩文件
+这一步也比较复杂，原理同上一步，在 SaveCode 中查找一个 byte 所对应的哈夫曼编码，
+不够 8 的整数倍的就不足，再写入。
+值得注意的事，最后一定要写一个 byte 表示，补了多少个 0 方便解压缩时的删除 0
+//再次读入文件的信息，对应每一个字节写入编码
+
+count=0;
+writes ="";
+tranString="";
+int idata=fis.read();
+
+//文件没有读完的时候
+
+while ((fis.available()>0)||(count>=8)){
+
+//如果缓冲区的等待写入字符大于8
+
+if (count>=8){
+waiteString="";//清空要转化的的码
+for (int t=0;t<8;t++){
+waiteString=waiteString+writes.charAt(t);
+
+}
+//将writes前八位删掉
+if (writes.length()>8){
+tranString="";
+for (int t=8;t<writes.length();t++){
+tranString=tranString+writes.charAt(t);
+}
+writes="";
+writes=tranString;
+
+}else{
+
+writes="";
+
+}
+count=count-8;//写出一个8位的字节
+int intw=changeString(waiteString);
+fos.write(intw);//写到文件中区
+
+//读入idata字节，对应编码写出信息
+
+count=count+SaveCode[idata].n;
+writes=writes+SaveCode[idata].node;
+idata=fis.read();
+
+}else{
+
+}
+
+}
+count=count+SaveCode[idata].n;
+writes=writes+SaveCode[idata].node;
+
+KOWLOON 内部资料
+
+206
+
+软件项目开发讲义
+
+//把count剩下的写入
+int endsint=0;
+if (count>0){
+waiteString="";//清空要转化的的码
+for (int t=0;t<8;t++){
+if (t<writes.length()){
+waiteString=waiteString+writes.charAt(t);
+
+}else{
+
+waiteString=waiteString+'0';
+endsint++;
+}
+
+}
+fos.write(changeString(waiteString));//写入所补的 0
+
+如此一来，整个的压缩过程就完毕了。
+要想知道压缩的数据是否正确，我们还得将压缩之后的数据进行解压，解压之后如果能够还
+原证明我们的压缩过程是正确的。
+解压缩就是压缩的一个逆运算，我想能够实现压缩的你一定能够实现。赶快动手吧！
+
+总结和任务
+
+1. 完成哈夫曼压缩与解压。
+2. 哈夫曼压缩项目总结
+3. 查阅资料：了解其它常用的树结构
+
+KOWLOON 内部资料
+
+207
+
+软件项目开发讲义
+
+第十八章 多线程基础:线程创建
+
+本章目标：
+
+完成本章后，你将能够：
+1. 理解多线程概念；
+2. 掌握创建线程的不同方式；
+3. 应用多线程优化文件搜索程序
+4. 完成弹球游戏的开发
+
+KOWLOON 内部资料
+
+208
+
+软件项目开发讲义
+
+1.多线程基础理论
+
+1.1.什么是线程：
+
+mb();
+md();
+
+mc();
+
+}
+
+}
+
+public void mb(){
+
+public void mc(){
+
+public void md(){
+
+public void mb(){
+
+public void mc(){
+
+}
+
+public void md(){
+
+}
+
+}
+
+}
+
+}
+
+}
+
+每个 Java 程序都至少有一个线程 ― 主线程。当一个 Java 程序启动时，JVM 会创建主
+线程，并在该线程中调用程序的 main() 方法。 线程可以理解为“程序内部一个独立的运行单位”
+在此之前，我们编写的程序都是单线程程序，程序运行时，如下调用模型：
+
+public void ma(){
+
+这种模型的特点是：只有当 mb 执行完毕后，ma 才会返回，只明当 mc 执行完毕后，方 mb
+才可能完成；在 ma()调用中，只有当 mb()执行完后，才会执行到 md()，这种顺序的调用模型，
+我们称之为单线程模型。
+多线程模型是将代码的调用放到一个独立的运行单元---即线程中，让多个调用并行执行。
+多线程模型代码示例如下：
+
+public void ma(){
+
+在线程中调用mb();---->
+在线程中调用mc();---->
+在线程中调用md();---->
+System.out.println("三个线程运行啦。。");
+
+在 ma 中对 mb,mc,md 的调用，会启动独立线程---这意味着 ma 的调用马上就会返回，而其中
+启动了三个线程，在这三个线程中并行运行 mb,mc,md。
+
+KOWLOON 内部资料
+
+209
+
+软件项目开发讲义
+
+2.多个进程的内部数据和状态都是完全独立的,
+
+KOWLOON 内部资料
+
+210
+
+软件项目开发讲义
+
+}
+
+//线程执行入口 :调用线程对象的start()方法后，线程就从它的run方法开始独立执行
+public void run(){
+long start=System.currentTimeMillis();
+int fileCount=countDir(this.rootDirName);
+long timeCost=System.currentTimeMillis()-start;
+System.out.println("-----驱动器: "+this.rootDirName+"
+
+KOWLOON 内部资料
+
+211
+
+软件项目开发讲义
+
+CountFileThread cf=new CountFileThread(dirF[i].getAbsolutePath());
+cf.start();//启运线程
+
+}
+System.out.println(dirF.length+"
+
+KOWLOON 内部资料
+
+212
+
+软件项目开发讲义
+
+}
+
+//线程运行入口
+public void run(){
+//循环输出当前时间点
+while(true){
+long currentTime=System.currentTimeMillis();
+System.out.println(id+"号线程："+currentTime);
+
+}
+
+}
+
+private int id;
+
+}
+
+程序输出如下：
+
+线程的暂停：
+执行这段程序，会发现如下输入，另外，你会感觉到机器非常慢！打开任务管理器就会发现，
+CPU 的占用率是 100%；这是因为我们的线程在循环时，一直在占用 CPU 资源---没有一点时间让给
+其它程序。这是不合理的；在应用设计中，如果一个线程要长时间循环执行某一任务，就有必要
+让线程隔一段时间暂停一下，Thread 类提供了一个静态方法 sleep(long time)，在线程运行时，
+调用这个方法，可以让线程暂停 time 指定的时间后再开始运行，暂停的单位以毫秒计，即千分之
+一秒；
+Thread.sleep(long time)方法只会让被调用的线程暂停(或叫作挂起)---不是停止，也不是
+退出，这个时间段一过，线程对象又会被 VM 调度到运行状态。当线程在 Sleep 状态时，如果 VM
+或其它线程强行终止这个线程，sleep 方法会抛出 InterruptedException 异常，这叫作线程中断
+异常，所以在调用 sleep 方法时，需要处理这个异常。
+具体一个线程在循环时，要暂停多久要根据具体程序要求而定；我们将如上代码设计为每个
+线程暂停它自己 ID 长度的时间，修改后的代码如下:
+
+/**
+* 通过实现Runnable接口创建线程
+* @author KOWLOON
+*/
+public class RunnableTest implements Runnable{
+
+KOWLOON 内部资料
+
+213
+
+软件项目开发讲义
+
+//程序启动主类
+public static void main(String args[]){
+for(int t=1;t<5;t++){
+RunnableTest rt=new RunnableTest(t); //创建Runnable对象
+Thread thread=new Thread(rt); //构造Thread对象
+thread.start();//启动线程
+}
+
+}
+
+//构造器传入这个线程的ID
+public RunnableTest(int id){
+this.id=id;
+
+}
+
+//线程运行入口
+public void run(){
+//循环输出当前时间点
+while(true){
+long currentTime=System.currentTimeMillis();
+System.out.println(id+" 号线程："+currentTime);
+try{
+//每个线程暂停不同的时间
+Thread.sleep(this.id*1000);
+}catch(InterruptedException ie){
+System.out.println("线程在sleep中收到中断信号，但不退出："+ie);
+
+}
+
+}
+
+}
+private int id;
+
+}
+
+现在再看 Cpu 的占用率，不会到 100%了，每个线程的输出也是很有规则的：
+4 号线程：1198214425967
+2 号线程：1198214426427
+1 号线程：1198214426708
+3 号线程：1198214427179
+1 号线程：1198214427719
+2 号线程：1198214428440
+1 号线程：1198214428731
+1 号线程：1198214429732
+4 号线程：1198214429973
+3 号线程：1198214430183
+2 号线程：1198214430443
+
+KOWLOON 内部资料
+
+214
+
+软件项目开发讲义
+
+2.3.以内部类的方式创建线程
+
+创建线程的第三种方法是以匿名内部类的方式创建，即可以在一个方法中创建线程，当方法
+被调用时，线程即启动，这在编写一些简单线程应用时十分方便，如 swing 事件中处理一个可能
+时间较长的任务，使用这种方法就不致与阻塞用户界面的操作。
+
+KOWLOON 内部资料
+
+215
+
+软件项目开发讲义
+
+/**
+* 测试匿名线程线程创建
+* @author KOWLOON
+*/
+public class ThreadTest {
+//程序主方法
+public static void main(String args[]){
+ThreadTest tt=new ThreadTest();
+for(int i=0;i<10;i++){
+tt.strartMyThread(i);
+
+}
+
+}
+
+/**
+* 这个方法会启动一个匿名线程线程
+*/
+public void strartMyThread(int threadID){
+//要传入匿名线程内使用的参数必须定义为final型
+final int id=threadID;
+java.lang.Runnable runner=new Runnable(){
+public void run(){
+int i=10;
+boolean flag=true;
+while(flag){
+try{
+Thread.sleep(3000);
+//在匿名线程类调用类中的其它方法
+otherMethod(id);
+if(i>13){
+flag=false;
+}
+}catch(Exception ef){}
+
+}
+
+}
+
+};
+//最后，启动这个内部线程
+Thread t=new Thread(runner);
+t.start();
+
+}
+//测试方法
+private void otherMethod(int i){
+System.out.println("可以直接调用类中的其它方法: "+i);
+
+}
+
+}
+
+在程序中使用匿名内部类创建线程十分方便：在一个方法调用中就可以启动一个线程，而且
+这个线程还可以直接调用类中的属性和方法；特别注意的是，在方法中启动匿名内部线程时，如
+要向这个线程的 run 方法内传递参数，在创建方法中这个参数必须定义为 final 类型，如上代码
+
+KOWLOON 内部资料
+
+216
+
+软件项目开发讲义
+
+中的
+//要传入匿名线程内使用的参数必须定义为final型
+final int id=threadID;
+
+2.4.继承 TimerTask
+
+KOWLOON 内部资料
+
+217
+
+软件项目开发讲义
+
+3 多线程弹球游戏开发
+
+3.1.弹球游戏开发思路
+
+(本项目由中南大学罗春桉贡献)
+先看一下弹球游戏的界面：
+
+我们把窗体上的每一个弹球看作是一个单独的线程，每一个小球都在按照自己的方式运行，
+要开发这个游戏，首先我们要定义一个小球的线程类，然后启动多个线程去运行就行了！
+
+小球的线程 BallThread 类：
+
+/**
+
+* 小球的线程类
+
+* @author KOWLOON
+*/
+
+public class BallThread extends Thread {
+
+// 球的初始坐标
+
+private int x = 20, y = 200;
+
+private int width = 20, height = 20;
+
+// 球的宽与高
+
+// 传入画布
+
+private Graphics g;
+// 传入游戏对象用于获得background
+private BallGame bg;
+
+// 传入监听器对象用于获得挡板的实时横坐标x2；
+
+private Listener listener;
+
+// 球的横纵坐标变化的幅度（与休眠时间共同决定速度大小）
+
+KOWLOON 内部资料
+
+218
+
+传入画布
+
+传入BallGame对象，以便调用getBackground
+
+* @param listener 传入监听器对象，用于获得实时的挡板横坐标
+传入BallGame中随机生成的球的坐标
+
+* @param x , y
+
+*/
+public BallThread(Graphics g, BallGame bg, Listener listener, int x,
+
+软件项目开发讲义
+
+public int speedx;
+public int speedy;
+public static int x1,y1;
+public int count1;
+
+// 用于球在各个范围内，变换颜色
+
+private Color c;
+
+/**
+
+* 线程的构造函数
+
+* @param g
+* @param bg
+
+int y) {
+
+this.g = g;
+this.bg = bg;
+this.listener = listener;
+this.x = x;
+this.y = y;
+
+}
+/**
+
+*/
+
+* 球运动的方法
+
+public void run() {
+
+count1=ThreadTime.count;
+
+// 球移动的幅度(与休眠时间共同决定球的速度v=s/t)
+
+speedx = bg.getspeedX();
+speedy = bg.getspeedY();
+
+//获取初始运动幅度，用于球反向时，改变speedx，speedy的正负
+
+x1 = speedx;
+y1 = speedy;
+while (!ThreadTime.isFinish) {
+while (!ThreadTime.isPause) {
+
+// 游戏开始前的准备时间
+
+try {
+
+Thread.sleep(1000);
+} catch (Exception ef) {
+ef.printStackTrace();
+
+}
+
+// 球运动的循环体，只要满足条件，就会照此一直运行下去
+
+while (!ThreadTime.isPause) {
+System.out.println("--------->"+speedx);
+
+//颜色分区
+
+if (y > 60 && y < 120) {
+c = java.awt.Color.BLACK;
+
+}
+
+KOWLOON 内部资料
+
+219
+
+软件项目开发讲义
+
+if (y > 120 && y < 180) {
+c = java.awt.Color.WHITE;
+
+}
+if (y > 180 && y < 240) {
+c = java.awt.Color.RED;
+
+}
+if (y > 240 && y < 300) {
+c = java.awt.Color.GREEN;
+
+}
+if (y > 300 && y < 360) {
+c = java.awt.Color.YELLOW;
+
+}
+if (y > 360 && y < 420) {
+c = java.awt.Color.BLUE;
+
+}
+if (y > 420 && y < 480) {
+c = java.awt.Color.GREEN;
+
+}
+if (y > 480 && y < 540) {
+c = java.awt.Color.YELLOW;
+
+}
+
+// 画一个圆
+
+g.setColor(bg.getBackground());
+g.fillOval(x, y, width, height);
+x += speedx;
+y += speedy;
+
+// 各种条件下的运动方向,x1,y1正负表示移动的方向
+
+int x2 = listener.getX();
+if (x > 590) {
+speedx = -x1;
+
+}
+if (x < 0 && speedx < 0) {
+speedx = x1;
+
+}
+if (y < 80 && speedy < 0) {
+speedy = y1;
+
+}
+
+}
+
+//球落在挡板上时，反向并加分
+
+if (y > 555 && x > x2 && x < x2 + 100) {
+speedy = -y1;
+ThreadTime.point++;
+
+if (y > 580) {
+ThreadTime.stopThread();
+bg.but.setText("开始");
+
+//球落没被接到时，停止循环。弹出游戏结束消息框和得分框，并将暂停
+/继续按钮改为开始按钮
+
+KOWLOON 内部资料
+
+220
+
+软件项目开发讲义
+
+javax.swing.JOptionPane.showMessageDialog(null,
+"Game Over!!!");
+BallGame.label.setText("第1关");
+javax.swing.JOptionPane.showMessageDialog(null,"您
+本次得分为:"+ThreadTime.point);
+}
+g.setColor(c);
+g.fillOval(x, y, width, height);
+
+//打印出"计时"字样
+
+bg.paintime();
+
+//画布每次画球的间隔时间，休眠时间
+
+try {
+
+Thread.sleep(10);
+} catch (Exception ef) {
+ef.printStackTrace();
+
+}
+if(ThreadTime.count>count1){
+
+try {
+
+Thread.sleep(500);
+} catch (Exception ef) {
+ef.printStackTrace();
+
+}
+count1=ThreadTime.count;
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+当小球移动到最下方的时候，我们用一个挡板去接住小球，如果没有接住，则游戏结束，接
+住 了 就 反 弹 回 去 ， 所 以 我 们 还 需 要 一 个 挡 板 Listener 类 ， 这 个 类 是 继 承 了 鼠 标 适 配 器
+
+(MouseAdapter)的一个类：
+import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+/**
+
+* 挡板类
+* 继承了鼠标适配器，重写了鼠标移动的方法
+
+* @author KOWLOON
+*/
+public class Listener extends MouseAdapter{
+private int width = 100, height = 20;
+
+private int x = 0, y = 580;
+
+private Graphics g;
+private BallGame bg;
+/**
+
+KOWLOON 内部资料
+
+221
+
+软件项目开发讲义
+
+* 监听器的构造方法
+
+* @param g
+* @param bg
+
+*/
+public Listener(Graphics g,BallGame bg){
+this.g=g;
+this.bg=bg;
+
+* 重写的鼠标移动的方法
+* 画一个随着鼠标移动的挡板
+
+*/
+public void mouseMoved(MouseEvent e) {
+g.setColor(bg.getBackground());
+g.fillRect(x, y, width, height);
+x= e.getX()-50;
+g.setColor(java.awt.Color.BLACK);
+g.fillRect(x, y, width, height);
+
+}
+/**
+
+}
+/**
+
+*/
+
+}
+
+* 获得监听到的鼠标的横坐标的方法
+
+* @return
+
+public int getX(){
+return x;
+
+import java.awt.Choice;
+import java.awt.Graphics;
+import java.awt.TextField;
+import java.awt.event.ItemEvent;
+/**
+
+* 时间线程，用于改变进度条的value值
+
+* @author KOWLOON
+*/
+
+为了控制小球的开始，暂停，继续和结束，我们还定以了一个控制类，用来控制小球的状态：
+
+public class ThreadTime extends Thread {
+
+// 传入画布和游戏对象，以便游戏结束后将游戏界面清空，还原
+
+private Graphics g;
+private BallGame bg;
+
+// 传入进度条，以便改变value值
+
+static private javax.swing.JProgressBar pbar;
+// 进度条的value值
+
+static public int value = 0;
+
+// 计分变量
+
+static public int point = 0;
+
+// 循环条件，用于控制线程的开始，停止，暂停，结束
+
+static boolean isFinish = false;// 是否停止线程
+
+KOWLOON 内部资料
+
+222
+
+软件项目开发讲义
+
+static boolean isPause = false;// 是否暂停
+static public int count = 1;
+
+/**
+
+* 时间线程的构造函数
+
+*/
+public ThreadTime(javax.swing.JProgressBar pbar, Graphics g, BallGame
+bg) {
+
+* 继承Thread后重写的run方法， 相当于一个主函数
+
+this.pbar = pbar;
+this.g = g;
+this.bg = bg;
+
+}
+/**
+
+*/
+
+public void run() {
+
+changeValue();
+
+}
+/**
+* value值改变的方法
+*/
+public void changeValue() {
+while (!isFinish) {
+while (!isPause) {
+
+// 打印出时间进程
+
+g.setColor(java.awt.Color.BLACK);
+g.drawString("" + getValue(), 90, 80);
+g.drawString("" + getPoint(), 150, 80);
+pbar.setValue(value);
+
+value++;
+
+try {
+
+Thread.sleep(100);
+} catch (Exception ef) {
+ef.printStackTrace();
+
+}
+
+// 休眠时间，决定value值增加快慢；休眠时间越长，游戏总耗时越长
+
+// 打印一次后，设为背景色，并刷新
+
+g.setColor(bg.getBackground());
+g.drawString("" + getValue(), 90, 80);
+g.drawString("" + getPoint(), 150, 80);
+bg.updateDrawFrame();
+if (point / 10 > 0 && point % 10 == 0) {
+if (count == point / 10) {
+javax.swing.JOptionPane.showMessageDialog(null,
+
+"恭喜您已经进入第" + (point / 10 + 1) + "关！再
+
+BallGame.label.setText("第" + (point / 10 + 1) + "
+
+223
+
+接再厉哦！");
+
+关");
+
+KOWLOON 内部资料
+
+软件项目开发讲义
+
+BallThread.x1++;
+BallThread.y1++;
+
+count++;
+
+}
+
+}
+
+if (value == 100) {
+
+stopThread();
+
+// value值为100时游戏结束，按钮恢复为“开始”，并弹出对话框
+
+g.setColor(bg.getBackground());
+bg.but.setText("开始");
+javax.swing.JOptionPane.showMessageDialog(null, "时间已到!!!!"
++ "\n" + "您本次得分为:" + point);
+BallGame.label.setText("第1关");
+String save =
+javax.swing.JOptionPane.showInputDialog(null,
+"要保存你的记录吗？(y/n)");
+if (save.equals("y")) {
+String name =
+javax.swing.JOptionPane.showInputDialog(
+null, "请输入你的名字？");
+int score = point;
+Player p = new Player();
+p.setName(name);
+p.setScore(score);
+BallGame.listp.add(p);
+if (bg.fl == null) {
+bg.fl = new File();
+
+}
+bg.fl.saveFile(bg.path, bg.listp);
+
+}
+String s =
+javax.swing.JOptionPane.showInputDialog(null,
+
+"您要继续玩吗？（y/n）");
+
+if (s.equals("y")) {
+System.out.println("----------->继续");
+}
+if (s.equals("n")) {
+System.out.println("----------->退出");
+System.exit(0);
+
+}
+
+}
+
+break;
+
+}
+
+// 若跳出第二个循环，则进入第一个死循环（处于暂停状态），占用cpu很多（%99左
+
+右）
+
+// 所以有必要分配一定时间给cpu做其他事情
+
+KOWLOON 内部资料
+
+224
+
+软件项目开发讲义
+
+try {
+
+Thread.sleep(10);
+} catch (Exception ef) {
+ef.printStackTrace();
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+}
+
+// 停止线程
+
+static public void stopThread() {
+
+value = 0;
+
+pbar.setValue(value);
+
+isFinish = true;
+isPause = true;
+
+// 暂停线程
+
+public void pauseThread() {
+
+isPause = true;
+isFinish = false;
+
+// 继续线程
+
+static public void continueThread() {
+isPause = false;
+
+isFinish = false;
+
+}
+// 获取value值的方法
+
+static public int getValue() {
+return value;
+
+static public int getPoint() {
+return point;
+
+}
+
+3.2.弹球游戏优化思路
+
+到现在一个很简单的多线程弹球游戏就初具形状了，但是我们要做的事情还很多，这个弹球
+游戏太简陋了，我们显然还能能做得更好：
+1. 我们能定义很多小球在界面上运动，其中一个小球表示玩家自己，玩家的目标就是自己
+的小球不能被别的小球碰到，这里我们不仅要考虑到小球碰到边界的问题，还要考虑运
+动中的小球之间的相互碰撞的问题；
+
+KOWLOON 内部资料
+
+225
+
+软件项目开发讲义
+
+（本图来自湖南师大宁建文弹球项目）
+2. 如果你实现了这一步，那么恭喜你，你马上就可以实现一个类似于我们小时候玩过的【雷
+电】游戏了，我们只要将游戏中的每一个小球都变成一些飞机或者坦克，将自己的小球
+也变成一个飞机，再将背景换成一张战场的图片，是不是很像了？
+至于如何将小球换成图片，前面我们做【仿 QQ 五子棋】的时候你就已经做过啦!
+3. 如果你还不满足，那我们也可以将这个弹球游戏改装成一个坦克大战：
+
+（本图来自湖南大学周圣韬坦克大战项目）
+
+KOWLOON 内部资料
+
+226
+
+软件项目开发讲义
+
+总结和任务
+
+1.实践：完成本节所有示例代码的编写；
+2.
+
+KOWLOON 内部资料
+
+227
+
+软件项目开发讲义
+
+第十九章 线程间通信和线程同步(扩展)
+
+本章目标：
+
+完成本章后，你将能够：
+1. 掌握“监控线程模型”;
+2. 理解“同步”原理。
+
+KOWLOON 内部资料
+
+228
+
+软件项目开发讲义
+
+1.多线程间通信: “监视线程”通讯模型
+
+多线程程序的应用，是为了提高程序性能和灵活性，为了让程序能并行的执行一些工作，比如
+
+KOWLOON 内部资料
+
+229
+
+软件项目开发讲义
+
+/**
+*
+
+KOWLOON 内部资料
+
+230
+
+软件项目开发讲义
+
+return count;
+
+}
+for(int i=0;i<subFile.length;i++)
+{
+
+if(subFile[i].isDirectory()){
+dirCount++;
+count+=countProcess(subFile[i].getAbsolutePath());//递归计算
+
+目录下文件长度
+}
+if(subFile[i].isFile()){
+realFileCount++;
+count+=subFile[i].length();
+
+}
+
+}
+return count;
+
+}
+private String rootDirName; /**本对象所操作的根目录的名称*/
+private int
+realFileCount=0; /**
+
+KOWLOON 内部资料
+
+231
+
+软件项目开发讲义
+
+/**监视线程每隔 3
+
+KOWLOON 内部资料
+
+232
+
+软件项目开发讲义
+
+2.线程同步问题及解决方法
+
+2.1.同步问题示例
+
+多线程程序可能存在的一个问题就是：可能会出现多个线程同时操作某一个对象的数据，结
+果就会出现线程对象对自己操作的数据不同步的情况。
+
+可以假设，当线程 1 首先改变了对象的 userID 属性值后，开始另一个依据这个改变后的
+userID 值进行计算，这时，线程 2 改变了 userID 的值---线程 1 参与计算的 userID 就不是它以
+前所改过的 userID，而是线程 1 所不知道的被线程 2 改变过后的值，这在程序运行中是十分危险
+的，所谓线程的同步，就是要保证线程在执行某个计算时，需要保证相关的数据在这个计算过程
+中只能被一个线程访问，即保证访问数据的原子性---就像一个坐位，只能同时被一个人（线程）
+所使用。我们将用一个银行转帐的过程展现这个问题以及其解决方案。
+当你在银行开户存入 5K 人民币后，你得到一个 ATM
+
+KOWLOON 内部资料
+
+233
+
+软件项目开发讲义
+
+if(total<count){
+return -1;
+
+}
+//从帐户上减去提取金额
+disSave(count);
+return count;
+
+}
+
+//模执从帐户上减去提取金额的过程
+private void disSave(int count){
+try{
+//假设这个过程银行要花 1 秒时间来处理
+Thread.sleep(3000);
+}catch(Exception ef){}
+total=total-count;
+
+}
+
+public String toString(){
+return "帐户余额："+total;
+
+}
+
+}
+
+private int total=0;
+
+创建取款线程类 GetCashThread，用以生成两个取款线程对象：
+
+public class GetCashThread extends Thread{
+/**
+* 创建时即传入一个帐户对象和取款方式
+* @param ac:帐户对象
+* @param flag:取款方式
+* @param disCount:取现金额
+*/
+public GetCashThread(Account ac,String flag,int disCount){
+this.ac=ac;
+this.flag=flag;
+this.disCount=disCount;
+
+}
+
+public void run(){
+//在这里取钱
+int cash=ac.getCash(disCount);
+System.out.println(flag+" 取了: "+cash);
+
+}
+//这个取钱线程所要操作的帐户对象变量
+private Account ac;
+//取款方式
+
+KOWLOON 内部资料
+
+234
+
+软件项目开发讲义
+
+private String flag;
+//取现金额
+private int disCount;
+
+}
+
+最后，编写一个驱动类，让他们动起来，取钱！
+/**
+* 银行帐户及取款驱动主类
+* @author KOWLOON
+*/
+public class DriverBank {
+//程序主方法
+public static void main(String args[])throws Exception{
+//创建一个帐号
+Account ac=new Account(5000);
+//ATM线程取 2500 元
+GetCashThread
+threadATM=new GetCashThread(ac,"ATM取款",2500);
+//柜台线程取 2600 元
+GetCashThread
+threadBank=new GetCashThread(ac,"柜台取款",2600);
+//启动两个取款线程
+threadATM.start();
+threadBank.start();
+//主线程暂停，等前面两个取款线程完成，打印出帐户余额
+Thread.sleep(5000);
+System.out.println(ac);
+
+}
+
+}
+
+执行以上程序，输出结果如下：
+ATM取款 取了: 2500
+柜台取款 取了: -1
+帐户余额：2500
+
+哈哈，多取了 100 元，最终银行少了钱？！问题出在哪里？我们仔细分析帐户对象取款的过
+程中两个主要的方法：
+
+KOWLOON 内部资料
+
+235
+
+软件项目开发讲义
+
+/**从帐户上提取现金的调用方法*/
+public int getCash(int count){
+//金额不足
+if(total<count){
+return -1;
+
+}
+//从帐户上减去提取金额
+disSave(count);
+return count;
+
+}
+
+//模执从帐户上减去提取金额的过程
+private void disSave(int count){
+try{
+//假设这个结算过程银行要花 1 秒时间来处理
+Thread.sleep(3000);
+}catch(Exception ef){}
+total=total-count;
+
+}
+
+1.threadATM 线程可以取
+
+threadBank 线 程 进 入 时 ，
+
+threadATM 线程还未结算完，帐号
+上还是 5K，所以它也取了
+
+2.threadATM 线程等待结算
+
+也就是说，有二个线程同时进入了取款的流程中，引计了计算混乱！这就是常见的一种线程
+同步问题。
+
+2.2.使用 synchronized 关键字保证同步
+
+Java 在解决这个问题时，引入了一个关键字 synchronized，这个关键字可以放在一个方法
+前，表示这个方法同时只能被一个线程访问，或通过锁定某个对象放在代码块前，表示其限定的
+代码块只能同时被一个线程防问，可以将 synchronized 理解为“锁”；例如，我们可以在 Account
+类的 getCash 方法前加个锁定，这样，前面的问题就不会出现：
+/**从帐户上提取现金的调用方法,
+* 加了synchronized关键字限定后这个方法只能同时由一个线程访问
+* */
+public synchronized int getCash(int count){
+//金额不足
+if(total<count){
+return -1;
+
+}
+//从帐户上减去提取金额
+disSave(count);
+return count;
+
+}
+
+同样的道理，我们也可以按如下格式用 synchronized 锁定代码 GetCashThread 线程中 run
+方法内的代码块，也可以防止如上问题出现：
+public void run(){
+//锁定可能会被同时访问的对象
+synchronized(this.ac){
+
+KOWLOON 内部资料
+
+236
+
+软件项目开发讲义
+
+//在这里取钱
+int cash=ac.getCash(disCount);
+System.out.println(flag+" 取了: "+cash);
+}
+
+}
+
+注意代码synchronized(this.ac),这样相当在ac对象上加了锁，任何一个线程如果得到了这
+把锁（即最先执行到这段代码，就会进入这行代码后面的大括号保护中的代码去执行---直至它执
+行完后面大括号中的代码，其它线程才有可能得到这把锁，再进入执行；如果己进入这段代码块
+的线程还在执行中，另外的线程就只在在synchronized(this.ac)代码块处等待！线程同步的解决
+方案主要是将可能会并行执行的代码限制为只能顺序执行。
+
+2.3.新用 JDK1.5 新的同步机制：
+
+在JDK1.5 中新增的一个关于并发编程处理的包，java.util.concurrent包，这个包中有许多
+对并发编程有良好支持的类，其中新增了一个java.util.concurrent.locks.Lock接口，这是一个
+“锁”对象的接口，它的多个实现的子类可用来支持线程同步时灵活的锁机制，如下代码示例：
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+/**
+* jdk5 中的锁机制
+* @author KOWLOON
+*/
+public class Thread5Lock {
+
+// 定义一个同步锁
+private static Lock lock = new ReentrantLock();
+
+// 在方法内使用锁
+public String getResult(){
+try{
+// 开始锁定
+lock.lock();
+// do someThing
+// 仅有一个线程可同时执行此段代码
+....
+}finally{
+// 释放锁
+lock.unlock();
+}
+return "OK";
+}
+}
+
+KOWLOON 内部资料
+
+237
+
+软件项目开发讲义
+
+3.java 内存模型及同步分析
+
+Java 中所有变量都储存在主存中，对于所有线程都是共享的。每条线程都有自己的工作内存
+(Working Memory)，工作内存中保存的是主存中某些变量的拷贝，线程对所有变量的操作都是在
+工作内存中进行，线程之间无法相互直接访问，变量传递均需要通过主存完成，如下图示：
+
+Thread
+1
+
+工作
+
+内存
+
+Obj1
+
+Obj1
+
+,obj2
+
+主存空间:
+
+Thread
+1
+
+工作
+
+内存
+
+Obj1
+
+由与这种机制的存在，极端情况下，对与某些对象甚止原子类型的多线程访问也变得不安全，
+即有可能一个线程在它的工作内存中改变了某个值---这个改变还未刷新到另外一个线程的工作
+内存中，导致另外一个线程看不到这个值的改变，因此在 java 中又引入了另外一个“轻量级“的
+同步关键字 volatile，volatile 的英文意思是“不稳定的“，它用来放在一个类的属性变量定义
+前；告诉 JVM，当这个值被某个线程改变后，一定要与主存中的值同步刷新一次。
+Volatile 关键字用法如下代码示意：
+//这个取钱线程所要操作的帐户对象变量
+private volatile Account
+ac;
+//取款方式
+private volatile String flag;
+//取现金额
+private volatile int disCount;
+
+volatile 保证 各线程间共享数据的一致性，和数据操作的原子性，不能保证线程间同步。
+
+总结和任务
+
+1. 实践：完成本节示例代码的编写，
+2. 总结：说明监控线程设计模型实现思路，要解决的问题和适用场景；
+
+3. 总结：清晰说明同步问题存的原理和解决方式；
+
+KOWLOON 内部资料
+
+238
+
+软件项目开发讲义
+
+KOWLOON 内部资料
+
+239
+
+软件项目开发讲义
+
+第二十章 生产/消费者模型和线程池(扩展)
+
+本章目标：
+
+完成本章后，你将能够：
+
+1.理解 wait/notify 机制和规则
+
+2.掌握阻塞队列的用户；
+3.理解线程状态概念；
+4.理解线程池的概念。
+
+KOWLOON 内部资料
+
+240
+
+软件项目开发讲义
+
+1.生产/
+
+KOWLOON 内部资料
+
+241
+
+软件项目开发讲义
+
+public void run(){
+System.out.println("生产线程己启动...."+shareList.size() );
+while(true){
+try{
+Thread.sleep(2000);
+synchronized(shareList){
+while(shareList.size()>0){
+shareList.wait();
+
+}
+while(shareList.size()==0){
+Student st=new Student();
+count++;
+st.id=count;
+st.name=count+"aaa";
+System.out.println("--->生产线程放入对象:"+st.toString() );
+shareList.add(st);
+//通知消费线程,队列中有对象了
+shareList.notify();
+}
+
+}
+}catch(Exception ef){
+ef.printStackTrace();
+
+}
+}
+
+}
+/**用来标记放入对象的每一个独立ID号*/
+private static int count=0;
+//与消费线程或以共同存取的对象列表
+private List shareList;
+
+}
+
+第三个类是消费者线程 CustomerThread.java，消费线程运一但运行，就会尝试锁定与生产
+线程对象共享的对象集合，一但它锁定这个集合(即进入 synchronized 保护的代码块，如果集合
+中没有对象，消费线程就会调用 wait()方法，将自己处于“等待”状态，直到收到一个 notify()
+通知；如果集中有对象，它将取出这个对象后，发出 notify()通知告诉生产者线程，要放入数据
+了：
+//取数据线程:当有数据时取,取完发通知
+class CustomerThread extends Thread{
+
+CustomerThread(List shareList){
+this.shareList=shareList;
+
+}
+
+public void run(){
+System.out.println("消费线程己启动...."+shareList.size() );
+while(true){
+
+KOWLOON 内部资料
+
+242
+
+软件项目开发讲义
+
+try{
+synchronized(shareList){
+while(shareList.size()==0){
+//如果没有,消费线程则等待
+shareList.wait();
+
+消
+
+费
+
+线
+
+程
+
+取
+
+出
+
+:
+
+}
+while(shareList.size()>0){
+System.out.println("<---
+"+shareList.remove(0).toString() );
+//取了一个后,立即发出通知
+shareList.notify();
+}
+
+}
+}catch(Exception ef){
+ef.printStackTrace();
+
+}
+}
+
+}
+
+private List shareList;
+
+}
+
+KOWLOON 内部资料
+
+243
+
+软件项目开发讲义
+
+<---消费线程取出: 2 2aaa
+--->生产线程放入对象:3 3aaa
+<---消费线程取出: 3 3aaa
+…
+
+1.2.
+
+KOWLOON 内部资料
+
+244
+
+软件项目开发讲义
+
+//测试方法
+public static void main(String args[]){
+Customer cs=new Customer(cq);
+Thread ct=new Thread(cs);
+ct.start();
+Produce pd=new Produce(cq);
+Thread pt=new Thread(pd);
+pt.start();
+
+}
+
+}
+
+/**
+* 模拟消费者,做为独生线程启动,当队列有数据时,从中取出数据
+* @author KOWLOON
+*/
+class Customer implements Runnable{
+//构造器
+Customer(java.util.concurrent.BlockingQueue<Student> bk){
+this.bk=bk;
+
+}
+
+}
+
+//线程运行方法
+public void run(){
+while(true){
+try{
+while(true){
+Object obj= bk.take();
+System.out.println(" <---从阻塞队列取出对象: "+obj.toString());
+}
+
+}catch(Exception ef){
+
+}
+
+}
+
+}
+private java.util.concurrent.BlockingQueue<Student> bk;
+
+/**
+* 模拟生产者,从独立线程中向队列中放入数据
+* @author KOWLOON
+*
+*/
+class Produce implements Runnable{
+
+Produce(java.util.concurrent.BlockingQueue bk){
+this.bk=bk;
+
+KOWLOON 内部资料
+
+245
+
+软件项目开发讲义
+
+}
+
+//线程运行方法
+public void run(){
+while(true){
+try{
+Student st=new Student();
+count++;
+st.id=count;
+st.name=count+"aaa";
+bk.put(st);
+System.out.println(" --->向阻塞队列放入对象 ");
+Thread.sleep(3000);
+}catch(Exception ef){
+
+}
+
+}
+
+}
+private java.util.concurrent.BlockingQueue bk;
+private static int count=0;
+
+}
+
+执行如上程序，输出结果如下示：
+--->向阻塞队列放入对象
+<---从阻塞队列取出对象: 1 1aaa
+--->向阻塞队列放入对象
+--->向阻塞队列放入对象
+<---从阻塞队列取出对象: 2 2aaa
+. . .
+
+KOWLOON 内部资料
+
+246
+
+软件项目开发讲义
+
+3.线程池应用
+
+3.1.线程池的创建与使用：
+
+在应用程序中，创建线程是一个开销（耗费时间）较大的动作，如果应用程序中要使用大量
+的线程处理一些固定的工作，就需要反复的创建线程---明智的做法是，我们可以预先创建一些线
+程对象，当有任务需要执行时，就取出线程对象执行任务，执行完毕后，并不销毁（等待 JVM 回
+收）线程对象，而是将其放入一个集合中，等待下一次任务的执行；这是大多数大型的应用服务
+器，通讯服务器中常用的技巧，即线程的池使用。
+如下代码，我们创建一个线程池类 NetJavaThreadPool.java，这个类在创建时，它的构造器
+接收一个 Int 型参数，代表线程池对象要预创建的线程个数，预创建的线程对象会被放个集合中，
+处于等待状态。同时它提供一个 execute(Runnable r)的方法调用，接收一个实现了 Runnable 接
+口的任务对象并执行这个任务对象---如果己执行的任务未超过预创建的线程数量，否则，这个任
+务会等待线程池中有空闲线程时再被执行。代码如下：
+
+import java.util.*;
+/**
+* 一个简单线程池的实现
+* @author KOWLOON
+*/
+public class NetJavaThreadPool
+{
+
+//初始大小
+private final int initThreadCount;
+//保存线程池的队列
+private final PoolWorker[] threadPool;
+//要执行的任务队列
+private final LinkedList workerList;
+
+/**
+* 初始化线程池
+* @param initThreadCount:预设的线程数目
+
+KOWLOON 内部资料
+
+247
+
+软件项目开发讲义
+
+*/
+public NetJavaThreadPool(int initThreadCount){
+this.initThreadCount = initThreadCount;
+workerList = new LinkedList();
+threadPool = new PoolWorker[initThreadCount];
+for (int i=0; i<threadPool.length;i++){
+threadPool[i] = new PoolWorker();
+//预创建执行工作的线程
+threadPool[i].setName(i+"号线程");
+threadPool[i].start();
+System.out.println("---"+i+"号线程己创建,在等待任务中...");
+
+}
+System.out.println("******* 线程池初始化完毕 ***********");
+
+}
+
+/**
+* 执行一个线程任务
+* @param worker:实现了Runnable接口的一个任务对象
+*/
+public void execute(Runnable worker) {
+synchronized(workerList) {
+workerList.addLast(worker);
+//加入任务时,通知线程池中预创建的线程来执行它
+workerList.notify();
+System.out.println("--------------> 加入了一个任务");
+
+}
+
+}
+
+/**
+* 池内的工作线程:等待加入的任务,如有,即执行
+* @author KOWLOON
+*/
+private class PoolWorker extends Thread {
+public void run() {
+Runnable r;
+while (true) {
+synchronized(workerList) {
+//当任务队列为空时,等待
+while (workerList.isEmpty()) {
+try{
+workerList.wait();
+}catch (InterruptedException ignored){}
+
+}
+//收到notify通知时,执行线程
+r = (Runnable) workerList.removeFirst();
+
+}
+try {
+
+KOWLOON 内部资料
+
+248
+
+软件项目开发讲义
+
+//执行线程
+r.run();
+}catch (RuntimeException e) {
+
+}
+
+}
+
+}
+
+}
+
+//程序运行入口
+public static void main(String args[]){
+NetJavaThreadPool wq=new NetJavaThreadPool(10);//10 个工作线程
+Mytask r[]=new Mytask[20];//20 个任务
+
+for(int i=0;i<20;i++){
+r[i]=new Mytask();
+wq.execute(r[i]);
+
+}
+
+}
+}
+
+接下来，我们创建一个模拟的任务类：
+/**
+* 一个模拟的任务线程,实现Runnable
+* @author KOWLOON
+*/
+class SamplTask implements Runnable{
+
+public void run(){
+String name=Thread.currentThread().getName();
+try{
+while(true){
+System.out.println("
+当
+前
+是 :"+name+" :"+System.currentTimeMillis());
+Thread.sleep(3000);
+}
+}catch(InterruptedException e){
+System.out.println(name+" 异常中断! "+e);
+
+运
+
+行
+
+线
+
+程
+
+名
+
+}
+System.out.println(name+" 执行完毕! ");
+
+}
+
+}
+
+现在，可以测试让线程池执行某些数量的任务了，即创建任务类的对象，调用线程池对象的
+execute 方法来执行它：
+public static void main(String args[]){
+//预设 5 个线程的线程池
+
+KOWLOON 内部资料
+
+249
+
+软件项目开发讲义
+
+NetJavaThreadPool wq=new NetJavaThreadPool(5);//5 个工作线程
+//执行 20 个任务
+for(int i=0;i<20;i++){
+SamplTask st=new SamplTask();
+wq.execute(st);
+
+}
+
+}
+
+线程池创建后，其中只有 5 预设的个线程，而我们加入的是 20 个任务，那么线程池会分四
+次执行完这些任务---没有创建新的线程；当然，你可以将线程池初始参数改为 20，这些任务就
+可一次执行完毕。程序输出如下示：
+---0 号线程己创建,在等待任务中...
+---1 号线程己创建,在等待任务中...
+---2 号线程己创建,在等待任务中...
+---3 号线程己创建,在等待任务中...
+---4 号线程己创建,在等待任务中...
+******* 线程池初始化完毕 ***********
+当前运行线程名是 :0 号线程 :1198315949577
+当前运行线程名是 :1 号线程 :1198315949577
+当前运行线程名是 :2 号线程 :1198315949577
+当前运行线程名是 :3 号线程 :1198315949577
+当前运行线程名是 :4 号线程 :1198315949577
+当前运行线程名是 :0 号线程 :1198315952581
+当前运行线程名是 :4 号线程 :1198315952581
+当前运行线程名是 :3 号线程 :1198315952581
+当前运行线程名是 :2 号线程 :1198315952581
+. . .
+
+3.2.JDK 内置的线程池使用
+
+我们己经说过，JDK1.5 起，引入了一个 java.util. concurrent 包，这个包下是关与并发编
+程 使 用 的 类 库 。 其 中 提 供 了 一 个 多 线 程 调 度 及 线 程 池 定 义 的 接 口
+java.util.concurrent.ExecutorService ， 这 个 接 口 有 一 个 实 现 类
+java.util.concurrent.Executors，这个类就是一个标准线程池实现，它类似与前面我们编写的
+NetJavaThreadPool 类，用起来十分简单：
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+/**
+* 使用jdk5 中的concurrent中的内置线程池
+* @author KOWLOON
+*/
+public class ThreadPoolJDK {
+
+public static void main(String args[]) throws InterruptedException {
+//使用JDK内置的线程池，创建具有 5 个内置线程的池
+ExecutorService exec = Executors.newFixedThreadPool(5);
+// 创建 50 个任务
+
+KOWLOON 内部资料
+
+250
+
+软件项目开发讲义
+
+for(int index = 0; index < 50; index++) {
+SamplTask st=new SamplTask();
+//开始执行
+exec.execute(st);
+
+}
+//执行完任务后再关闭线程池，
+exec.shutdown();
+}
+
+}
+
+4.线程的调度及其它方法
+
+4.1.线程的 join()调用
+
+在程序中，有需一个线程需要得到另外一个线程的计算结果，即要等这个线程完成后再运行；
+这也是线程间通信的一种方式，对线程对象的 join 调用，会让线程挂起，等待，如下代码示例，
+当 second 线程启动后，马上调用它的 join()方法，后面启动的线程就只有等到 second 线程执行
+完后，才可以运行----就像是变成了一个单线程的程序一样。代码如下：
+
+KOWLOON 内部资料
+
+251
+
+软件项目开发讲义
+
+/**
+* 线程join示例
+* @author KOWLOON
+*/
+public class ThreadJoinTest {
+
+public static void main(String args[]){
+ThreadJoinTest tt=new ThreadJoinTest();
+Thread first=new TestThread("FirstThread
+Thread second=new TestThread("secondThread
+second.start();
+try{
+second.join();
+}catch(Exception ef){ef.printStackTrace();}
+first.start();
+
+");
+");
+
+}
+
+}
+/**示例线程*/
+class TestThread extends Thread{
+TestThread(String name){
+myName=name;
+
+}
+public void run(){
+int count=0;
+while(count<5){
+count++;
+System.out.println(this.myName+""+count);
+try{
+Thread.sleep(1000);
+}catch(Exception ef){ef.printStackTrace();}
+
+}
+
+}
+private String myName;
+
+}
+
+4.2.线程的其它方法
+
+KOWLOON 内部资料
+
+252
+
+软件项目开发讲义
+
+总结和任务
+
+1．实践：完成两种方式实现的生产/消费者模型；
+2.提高：通过 Swing 界面，以可视化方式展示生产/消费模型；*
+3.总结：明确阐述 wait/notify 机制；
+
+4.总结： 阐述线程池原理，理解软件中的“池化”技术。
+
+KOWLOON 内部资料
+
+253
+
+软件项目开发讲义
+
+第二十一章 LZW 字典压缩(扩展)
+
+本章目标：
+
+完成本章后，你将能够：
+1.理解字典压缩的几种算法;
+2.完成一种字典压缩算法
+(本章由中南大学贾彪和湖南大学周圣韬贡献)
+
+KOWLOON 内部资料
+
+254
+
+软件项目开发讲义
+
+1 数据压缩分类
+
+数据压缩
+
+通用无损数据压缩
+
+多媒体数据压缩（一般为有损）
+
+统计模型
+
+压缩技术
+
+字典模型
+
+压缩技术
+
+音频，图像，视频
+
+等类型文件压缩
+
+Huffman 编码
+
+算数编码
+
+LZ77 系列
+
+LZ78 系列
+
+2.字典压缩的基本原理
+
+以色列人 Lempel 与 Ziv 发现在正文流中词汇和短语很可能会重复出现。当出现一个重复时，
+重复的序列可以用一个短的编码来代替。压缩程序重复扫描这样的重复，同时生成编码来代替重
+复序列。随着时间的过去，编码可以用来捕获新的序列。算法必须设计成压缩程序能够在编码和
+原始数据序列推导出当前的映射。
+
+2.1.LZ77 算法
+
+LZ77 字典算法的想法是企图查找正在压缩的字符序列是否在以前输入的数据中出现过，然后用已
+经出现过的字符串代替重复的部分，它的输出仅仅是指向早期出现过的字符串的“指针”。例如：
+
+LZ77 算法在某种意义上又可以称为“滑动窗口压缩”，该算法将一个虚拟的、可以跟压缩进
+程滑动的窗口作为词典，要压缩的字符串如果在该窗口中出现，则输出其出现的位置和长度。使
+用固定大小窗口进行匹配，而不是在所有已经编码的信息中匹配，是因为匹配算法的时间消耗往
+往很多，必须限制词典的大小才能保证算法的效率，随着压缩进程移动窗口词典窗口，使其中总
+包含最近编码过的信息，对大多数信息而言，要编码的字符串往往在最近的上下文中更容易找到
+匹配串。
+
+KOWLOON 内部资料
+
+255
+
+软件项目开发讲义
+
+LZ77 算法的基本流程：
+1. 从当前压缩位置开始，考察未编码的数据，并试图在滑动窗口中找出最长的匹配字符串，
+如果找到，则进行步骤 2，否则进行步骤 3；
+2. 输出三元符号组(off,len,c),其中 off 为窗口中匹配字符串相对窗口边界的偏移，len 为可匹配
+的仓长度，c 为下一个字符，即不匹配的第一个字符，然后将窗口向后滑动 len+1 个字符，继
+续步骤 1；
+3. 输出三元符号组(0,0,c),其中 c 为下一个字符。然后将窗口向后滑动一个字符，继续步骤 1.
+
+LZ77 算法示例：
+
+A
+
+A
+
+B
+
+C
+
+B
+
+B
+
+A
+
+B
+
+C
+
+如上一段字符串，我们可以通过下面的步骤来进行压缩：
+
+步骤
+
+位置
+
+1
+2
+3
+4
+5
+
+1
+2
+4
+5
+7
+
+输入
+
+A
+AB
+C
+BB
+ABC
+
+匹配串
+
+--
+A
+--
+B
+AB
+
+输出
+
+0,0,A
+1,1,B
+0,0,C
+3,1,B
+2,2,C
+
+LZ77 算法通过输出真实的字符解决了在窗口中出现没有匹配串的问题，但是这个解决方案包含有
+冗余信息。冗余学习表现在连个方面：一是空指针；二是编码器可能输出额外的字符，这种字符
+是指可能包含在下一个匹配串中的字符。
+
+2.2.LZSS 算法
+
+LZSS 算法的思想是如果匹配串的长度比指针本身的长度还要长就输出指针，否则就输出真
+实字符。另外要输出额外的标志位区分是指针还是字符。
+
+KOWLOON 内部资料
+
+256
+
+软件项目开发讲义
+
+LZSS 算法基本流程：
+1.从当前压缩位置开始，考察未编码的字符，并试图在滑动窗口中找出最长的匹配字符串，
+如果匹配字符串长度大于等于最小匹配串长度，则决心步骤 2，否则进行步骤 3；
+2.输出指针二元组(off,len)。其中 off 为窗口匹配字符串相对窗口边界的偏移，len 为匹配串的
+长度，然后将窗口向后滑动 len 各字符，继续步骤 1；
+3.输出当前字符 c，然后将窗口向后滑动 1 个字符，继续步骤 1.
+
+LZSS 算法示例：
+
+A
+
+A
+
+B
+
+C
+
+B
+
+B
+
+A
+
+B
+
+C
+
+如上一段字符串，我们可以通过下面的步骤来进行压缩：
+
+步骤
+
+位置
+
+1
+2
+3
+4
+5
+6
+
+1
+2
+3
+4
+5
+7
+
+输入
+
+A
+AB
+BC
+CB
+BCA
+ABC
+
+匹配串
+
+输出
+
+--
+--
+--
+--
+BC
+ABC
+
+A
+A
+B
+C
+3,2
+1,3
+
+在相同的计算机环境下，LZSS 算法比 LZ77 算法可获得更高的压缩比，而编码同样简单，这
+也就是往上面这种算法成为开发新算法的基础。许多后来的开发文档压缩程序都是使用 LZSS 的
+思想。例如：PKZip、GZip、ARJ、LHArc 和 ZOO 等。其差别仅仅是指针的长度和窗口的大小有
+所不同。
+
+2.3.LZ78 算法
+
+LZ78 算法的想法是企图从输入的数据中创建一个“短语词典(Dirctionary of the Phrases)”，这种短
+
+语可以是任意字符的组合。编码数据过程中当遇到已经在词典中出现的短语时，编码器就输出这
+个词典中短语的索引号，而不是短语本身。
+
+LZ78 的编码思想是不断的从字符流中提取新的字符串，通俗的理解为新的“词条”,然后用
+码字(Code Word)表示这个“词条”。这样一来，对字符流的编码就变成了用码字去替换字符流，
+生成码字流，从而达到压缩数据的目的。
+LZ78 编码器输出的是码字-字符(w,c)对，每次输出一对到码子流中，与码字 W 相对的字符串
+用字符 C 进行扩展生成新的字符串，然后添加到词典中。
+
+KOWLOON 内部资料
+
+257
+
+软件项目开发讲义
+
+LZ78 算法基本流程：
+1.将词典和当前前缀 P 都初始化为空；
+2.当前字符 C：=字符流中的下一个字符；
+3.判断 P+C 是否在词典中
+（1）如果“是”，则用 C 扩展 P，即让 P:=P+C,返回到步骤 2；
+（2）如果“否”，则输出与当前前缀 P 相对应的码字 W 和当前字符 C，即(W,C)，将 P+C
+添加到词典中，令 P=空值，并返回步骤 2。
+
+LZSS 算法示例：
+位置 1
+字符 A
+
+2
+B
+
+3
+B
+
+4
+C
+
+5
+B
+
+6
+C
+
+7
+A
+
+8
+B
+
+9
+A
+
+如上一段字符串，我们可以通过下面的步骤来进行压缩：
+
+步骤
+
+位置
+
+1
+2
+3
+4
+5
+
+1
+2
+3
+5
+8
+
+输入
+
+A
+B
+BC
+CBA
+BCA
+
+词典
+
+A
+B
+BC
+BCA
+BA
+
+输出
+
+0,A
+0,B
+2,C
+3,A
+2,A
+
+2.4.LZW 算法
+
+J.Ziv 和 A.Lempel 在 1978 年首次发表了介绍第二类词典编码算法的文章。在他们的研究基础
+上，Terry A.Wlch 在 1984 年发表了改进这种编码算法的文章。因此把这种编码方法称为 LZW 压
+缩算法。
+在编码原理上，LZW 与 LZ78 相比有如下差别：
+1. LZW 输出代表词典中的字符串码字。这就意味着开始时词典不能是空的，它必须包含可
+能在流中出现的所有单个字符。即在编码匹配时，至少可以在词典中找到长度为 1 的匹
+配串。LZW 编码是围绕称为词典的转换表来完成的；
+2. LZW 编码器就是通过管理这个词典完成输入与输出之间的转换。LZW 编码器的输出是字
+符流，字符流可以是 8 为的 ASCII 字符组成的字符串，而输出是用 n 位表示的码字流，
+码字代表单个字符或者多个字符组成的字符串。
+比如 Ababcabab 这个字符串，是由 9 个字符组成的，但是会发现一点就是 ab 这个字符组合比
+较的多。如果我们用一个数字，也就是 7 来表示 ab 的话，则字符串就变为了 77c77，这样一来字
+符串的字符个数就变为了 5 个，如果大家仔细些会发现，如果我们用一个数字 8 来表示 abab，则
+原来的字符串就变为了 8c8 只有 3 个字符了，是不是很神奇哈。
+
+LZW
+
+KOWLOON 内部资料
+
+258
+
+软件项目开发讲义
+
+后最 suffix：反之，为后一个字符，比如 ab,后缀为 b，8f 后缀为 f；
+有了前缀后缀，我们就能清楚的表示出来一个词了。同样，我们还来做一个字符串 ababbacb 8
+个字符
+
+第几步
+
+前缀
+
+后缀
+
+1
+2
+3
+4
+5
+6
+7
+8
+
+a
+b
+a
+256
+b
+257
+c
+
+a
+b
+a
+b
+b
+a
+c
+b
+
+词
+
+(,a)
+(a,b)
+(b,a)
+(a,b)
+(256,b)
+(b,a)
+(257,c)
+(c,b)
+
+存在对应码
+
+输出 码
+
+no
+no
+yes
+no
+yes
+no
+no
+
+a
+b
+
+256
+
+257
+c
+
+256
+257
+
+258
+
+259
+260
+
+把输出来的和最后一个后缀连在一起则是：a,b,256,257,c,b 这 6 个字符，那么就达到了压缩
+的目的。对应生成的码表则是：
+
+256
+（a,b）
+
+257
+(b,a)
+
+258
+(256,b)
+
+259
+(257,c)
+
+260
+(c,b)
+
+解压缩就很简单了，将输出字符串按照码表对应转化回来就实现了。即 a,b,256（ab）,257(ba),c,b
+
+即 ababbacb 压缩成功。
+
+当然我们不能一直无穷之境的增加码表的长度，再说内存也容不下这么长的码表。所以我们
+
+用 0~65534 保存字节所对应的编码，0~255
+
+KOWLOON 内部资料
+
+259
+
+软件项目开发讲义
+
+}
+//…code…
+
+// System.out.println("输出了~"+prefix);
+dos.writeChar(prefix);//输出前缀
+lz.add(prefix,suffix);//加入到表中
+prefix=suffix;//前缀变为后缀
+
+}
+
+③如果超过了最大的长度则，将当前码表写出到文件中，清空，再次读入
+
+//…code…
+if(lz.length==lzw.Max_Length){//超过最大长度则，重置
+dos.writeChar(65535);//写出一个65535作为重置的标示 与码表的打印
+for(int i=256;i<lz.length;i++){
+dos.writeChar(lz.node[i].prefix);//前缀写出
+dos.writeChar(lz.node[i].suffix);//后缀写出
+
+}
+
+lz = new lzw();//清空原来信息
+
+}
+//…code…
+
+④最后，将没有写完的信息，和码表都输出，压缩就完成了
+
+//…code…
+dos.writeChar(prefix);//输出最后一个没有配对的
+
+//输出最后的的码表
+
+//写出码表
+
+dos.writeChar(65535);//写出一个-1作为重置的标示 与码表的打印
+
+dos.writeInt(lz.length-256);//码表长度
+for(int i=256;i<lz.length;i++){
+dos.writeChar(lz.node[i].prefix);//前缀写出
+dos.writeChar(lz.node[i].suffix);//后缀写出
+
+}
+//…code…
+
+解压缩过程:
+1 读入码表之前的压缩信息
+
+//…code…
+char data;
+int current=0;
+char []codeData = new char[65536];
+lzw lz = new lzw();//自定义码表
+data=dis.readChar();
+while(data!=65535){//把码表钱的东西读取出来
+codeData[current]=data;
+current++;//当前位置增加
+data=dis.readChar();
+
+KOWLOON 内部资料
+
+260
+
+软件项目开发讲义
+
+}
+//…code…
+
+2 读入对应长度的码表
+
+//…code…
+int length = dis.readInt();//得到码表的长度
+for(int i=0;i<length;i++){//读入码表
+int prefix = dis.readChar();
+int suffix = dis.readChar();
+lz.add(prefix, suffix);
+
+}
+//…code…
+
+③翻译编码，写出源文件
+
+//…code…
+
+//解压缩、写出该部分的源文件
+
+for(int i=0;i<current;i++){
+//System.out.println("传进来的数据是~"+codeData[i]);
+lz.writeIt(dos, codeData[i]);
+
+}
+//…code…
+public void writeIt(java.io.DataOutputStream dos,int index){
+if(index>255){//是生成的码则需要转化为byte输出
+writeIt(dos,node[index].prefix);
+writeIt(dos,node[index].suffix);
+
+}else{
+try {
+
+dos.write((char)index);
+} catch (IOException e) {
+e.printStackTrace();
+
+}
+
+}
+
+}
+//…code…
+
+字典压缩到这里就完成了，聪明的你还在等什么呢？赶快动手吧！
+
+KOWLOON 内部资料
+
+261
+
+软件项目开发讲义
+
+总结和任务
+
+1．实践：完成至少一种字典压缩的算法；
+2．提高：查阅资料，了解哈夫曼压缩与字典压缩各自的优劣；*
+3．总结：字典压缩项目总结；
+
+KOWLOON 内部资料
+
+262
+
+软件项目开发讲义
+
+KOWLOON 经验：如何提高学习效率？
+
+1.培养兴趣：
+
+把程序设计当成兴趣，你可以学得更快乐,学的更深
+入；当你把工作，学习，娱乐结合在一起的时候，时间就
+是别人的三倍！
+在 KOWLOON，一开始是有些枯燥，要自己尝试从中寻
+找有趣的乐子：当你明白一个困惑己久的原理时，解决一个因粗心导致的 Bug 时，要体验那种豁
+然开朗的兴奋心情。这样日子就快乐多了---你总是在以积极的心态迎接挑战，因为你需要挑战！
+
+2.动手实践
+
+谁都知道技术要靠自己动手实践才可掌握；因为站在岸上，是不可能学会游泳的，因为实践
+是检验真理的标准-----但我们很少动手或害怕动手，因为动手就意味着要犯错误！
+如果我们不担心犯错误，或者，我们认识到只有犯了很多的
+错误，改正了，经历了，明白其原由，掌握解决方法，我们才获
+得经验，掌握了技术----错误的改正，是组成我们前进之路的垫
+脚石；是克服困难的过程，让我们变得更加强大。我们就会大胆
+的说，让我动手吧！让我犯错吧!！让错误来得更猛烈些吧！！！
+结论就是：不动手实践，就等于没有学习。
+
+3.独立思考
+
+蛮干是不行滴，光举着脑袋让老师灌名词也是不行滴. . .程序开发是
+聪明人玩的游戏；技术的精进需要创意和灵感，这东东不能像电脑文件那
+样复制。不把自己的脑袋当成一张光盘可以有如下做法：
+专注精力思考一个问题点直到有豁然开朗的畅通。
+找志同道合的朋友一起讨论，在网上找资料，参加论坛，视区讨论；
+向上实践开发：Design Patters,Refactoring,分析，设计大型项目
+的能力；
+向下深入研究:理解内部底层动作机制，如数据结构，OS 原理，内存管理等；
+旁逸斜出创新：不同应用方向如通信，多媒体，数据库，分布式等组合应用。
+加强英文能力，拓宽视界；
+. . .
+
+KOWLOON 内部资料
+
+263
+
